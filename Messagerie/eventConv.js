@@ -1,7 +1,7 @@
 // Appel du sous programme pour refresh la conv
 setInterval(refreshConversation, 1000);
 
-setInterval(definirBoutonContact(),5000);
+setInterval(definirBoutonContact,5000);
 
 /* * * Affichage de tous les contacts qui ont deja envoyé un message à l'utilisateur connecté ****************************** */
 function afficherContacts() {

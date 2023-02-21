@@ -10,8 +10,8 @@ $bdd = getConnection();
 */
 
 // Préparation d'une requete qui regarde qui a eu une interaction avec l'user connecté
-$recupContactsAssocies = $bdd->prepare('SELECT DISTINCT(id_destinataire) FROM messages WHERE id_auteur = ? OR id_destinataire = ? ORDER BY id_destinataire');
-$recupContactsAssocies->execute(array($_SESSION['id'],$_SESSION['id']));
+$recupContactsAssocies = $bdd->prepare('SELECT DISTINCT CASE WHEN id_auteur = ? THEN id_destinataire ELSE id_auteur END AS id FROM messages WHERE id_auteur = ? OR id_destinataire = ?');
+$recupContactsAssocies->execute(array($_SESSION['id'],$_SESSION['id'],$_SESSION['id']));
 $idContacts = $recupContactsAssocies->fetchAll();
 
 // Préparation d'une requete qui récupèrera le pseudo d'un utilisateur

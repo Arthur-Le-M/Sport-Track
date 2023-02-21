@@ -1,0 +1,68 @@
+<?xml version="1.1"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>insererJoueur</nom>
+  <date_creation>4/10/2022 10:47</date_creation>
+  <Elements>
+    <Action>
+      <Position>752;44</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>idEquipe
+poste</PreAssertion>
+      <PostAssertion>?</PostAssertion>
+      <Titre>insererJoueur</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Iteration>
+          <Position>896.5;148.5</Position>
+          <StyleLien>1</StyleLien>
+          <Titre>?</Titre>
+          <IterationFixe>0</IterationFixe>
+          <Enfants>
+            <Action>
+              <Position>613;265</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>idEquipe
+poste</PreAssertion>
+              <PostAssertion>dicoJoueur</PostAssertion>
+              <Titre>générerJoueur</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Condition>
+              <Position>1004.5;270</Position>
+              <StyleLien>1</StyleLien>
+              <estUnique>1</estUnique>
+              <operationsLogiques>
+                <operation>
+                  <Titre>id non utilisé</Titre>
+                  <Enfants>
+                    <Sortie>
+                      <Position>1060;378</Position>
+                    </Sortie>
+                  </Enfants>
+                </operation>
+                <operation>
+                  <Titre>Sinon</Titre>
+                  <Enfants/>
+                </operation>
+              </operationsLogiques>
+            </Condition>
+          </Enfants>
+        </Iteration>
+        <Action>
+          <Position>1162;157</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>insérer joueur dans la Table Joueur</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+</Algorithme>

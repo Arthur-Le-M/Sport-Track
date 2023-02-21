@@ -1,0 +1,87 @@
+<?xml version="1.1"?>
+<!DOCTYPE Tabula_Rasa>
+<Algorithme>
+  <nom>genererEquipe</nom>
+  <date_creation>4/10/2022 10:55</date_creation>
+  <Elements>
+    <Action>
+      <Position>699;58</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>idStade</PreAssertion>
+      <PostAssertion>?</PostAssertion>
+      <Titre>insererEquipe</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>0</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>252;200</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>idStade</PreAssertion>
+          <PostAssertion>ville</PostAssertion>
+          <Titre>récupérer la ville du stade</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Iteration>
+          <Position>747.5;210.5</Position>
+          <StyleLien>1</StyleLien>
+          <Titre>?</Titre>
+          <IterationFixe>0</IterationFixe>
+          <Enfants>
+            <Action>
+              <Position>480;328</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>idStade
+ville</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>genererEquipe</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+            <Condition>
+              <Position>826.5;339</Position>
+              <StyleLien>1</StyleLien>
+              <estUnique>1</estUnique>
+              <operationsLogiques>
+                <operation>
+                  <Titre>id non utilisé</Titre>
+                  <Enfants>
+                    <Sortie>
+                      <Position>880;433</Position>
+                    </Sortie>
+                  </Enfants>
+                </operation>
+                <operation>
+                  <Titre>Sinon</Titre>
+                  <Enfants/>
+                </operation>
+              </operationsLogiques>
+            </Condition>
+          </Enfants>
+        </Iteration>
+        <Action>
+          <Position>952;213</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>insérer dans la Table Equipe</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+        <Action>
+          <Position>1190;214</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>return idEquipe</Titre>
+          <DetailsVisible>0</DetailsVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+  </Elements>
+</Algorithme>
