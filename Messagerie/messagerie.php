@@ -46,6 +46,6 @@ require "config.php"; // Lien pour la connexion a la BD
     // Import du footer (commun à toutes les pages)
     // require "footer.php";
     ?>
-    <script src="eventConv.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

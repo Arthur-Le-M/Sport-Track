@@ -14,8 +14,11 @@ $recupContactsAssocies = $bdd->prepare('SELECT DISTINCT CASE WHEN id_auteur = ? 
 $recupContactsAssocies->execute(array($_SESSION['id'],$_SESSION['id'],$_SESSION['id']));
 $idContacts = $recupContactsAssocies->fetchAll();
 
+// Préparation d'une requete qui récupèrera la licence d'un utilisateur
+$recupLicence = $bdd->prepare('SELECT licence FROM inscrit WHERE id = ?');
+
 // Préparation d'une requete qui récupèrera le pseudo d'un utilisateur
-$recupPseudoUnUser = $bdd->prepare('SELECT pseudo FROM users WHERE id = ?');
+$recupPseudo = $bdd->prepare('SELECT * FROM joueur WHERE licence = ?');
 
 // Récupération du dernier message entre 2 utilisateurs
 $recupLastMsg = $bdd->prepare('SELECT * FROM messages WHERE (id_destinataire=? AND id_auteur=? AND date = (SELECT MAX(date) FROM messages WHERE id_destinataire=? AND id_auteur=?)) OR (id_destinataire=? AND id_auteur=? AND date = (SELECT MAX(date) FROM messages WHERE id_destinataire=? AND id_auteur=?)) ORDER BY id DESC');
@@ -32,12 +35,22 @@ foreach($idContacts as $contact) {
         // Je place l'id en cours dans le tab
         array_push($unContact,$contact[0]);
 
+        // Récupération du numéro de licence
+        $recupLicence->execute(array($contact[0]));
+        $licenceJoueur = $recupLicence->fetch();
+        $licence = $licenceJoueur[0];
+
         // Pour chaque id d'un contact, j'execute la requete qui récupère le pseudo de l'utilisateur
-        $recupPseudoUnUser->execute(array($contact[0]));
-        $pseudoContact = $recupPseudoUnUser->fetchAll();
+        $recupPseudo->execute(array($licence));
+        $infoJoueur = $recupPseudo->fetch();
+
+        $nom = $infoJoueur[1];
+        $prenom = ucfirst(strtolower($infoJoueur[2])); // je met la chaine en minuscule (strtolower) et je met la première lettre en majuscule (ucfirst)
+
+        $pseudo = $prenom." ".$nom;
 
         // je place le pseudo en cours dans le tab
-        array_push($unContact,$pseudoContact[0]['pseudo']);
+        array_push($unContact,$pseudo);
 
         // Je récupère le dernier message 
         $recupLastMsg->execute(array($_SESSION['id'],$contact[0],$_SESSION['id'],$contact[0],$contact[0],$_SESSION['id'],$contact[0],$_SESSION['id']));
