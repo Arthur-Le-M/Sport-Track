@@ -26,7 +26,6 @@
 body {
   position: relative;
   min-height: 100vh;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
@@ -34,6 +33,7 @@ body {
 }
 
 .container {
+  z-index: -1;
   position: relative;
   width: 1200px;
   min-height: 850px;

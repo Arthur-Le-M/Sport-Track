@@ -1,12 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['role'])){
-    $_SESSION['role']='coach';
-    $_SESSION['idClub']='12427';
-    $_SESSION['idStade']='1720';
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +5,22 @@ if(!isset($_SESSION['role'])){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Template/index.css">
   <link href="style.css" rel="stylesheet">
   <title>Document</title>
 </head>
+<?php
+session_start();
+if(!isset($_SESSION['role'])){
+    $_SESSION['role']='coach';
+    $_SESSION['idClub']='12427';
+    $_SESSION['idStade']='1720';
+}
+
+?>
 
 <body>
+<?php require("../Template/header.php"); ?>
   <div class="container">
     <div class="left">
       <div class="calendar">
@@ -131,6 +133,8 @@ if(!isset($_SESSION['role'])){
                   </script>';
                   }
                 ?>
+    <?php require("../Template/footer.php"); ?>
 </body>
+
 
 </html>
