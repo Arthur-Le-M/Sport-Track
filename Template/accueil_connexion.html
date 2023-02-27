@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template_SportTrack</title>
+</head>
+<body>
+    <header class="header">
+        <div id="menu">
+            <div id="logo" > <img src="img/logo.png" width="60" alt=""></div>
+            <div id="barre-menu">
+                <span> <a href="#"> <img src="img/maison.png"  width="25"> </a></span>
+                <span> <a href="#"> <img src="img/messager.png" width="25"></a></span>
+                <span> <a href="#"> <img src="img/calendrier.png"  width="25"></a></span>
+                <span> <a href="#"> <img src="img/personne.png" width="25"></a></span>
+            </div>
+            <div id="scanner"> <a href="#"> <img src="img/scanner.png" width="25"> </a></div>
+            <div class="conteneur-dropdown">
+                <div class="dropdown">
+                    <button class="dropdownButton">
+                        <div class="dropdownButton-icon">
+                            <img id="icon" src="img/menu.png" width="30" />
+                        </div>
+                    </button>
+                    <div class="dropdownContent">
+                    <a href="#"> <p> partager</p> </a>
+                    <a href="#"> <p> avis</p> </a>
+                    <a href="#"> <p> Reglage</p> </a>
+                    <a href="#"> <p> contact</p> </a>
+                    <a href="#"> <p> aide</p> </a>
+                    <a href="#"> <p> deconnexion</p> </a>
+                    </div>
+                </div>
+            </div>
+             </div>
+        </div>
+    </header>
+    <div class="body">
+        <form id="form-newsletter">
+            <input type = "text" id="con-mail" name="con-email" placeholder="email" size="20" maxsize="50">
+            <input type = "text" id="con-mdp" name="con-mdp" placeholder="Mot de passe" size="20" maxsize="50">
+            <p id="texte-newsletter">Vous affirmez avoir pris connaissance de notre Politique de confidentialité. Vous pouvez à tout moment vous désinscrire en utilisant le lien de désabonnement intégré dans nos emails.</p> <BR>
+            <input type="submit" value="s'inscrire"> 
+        </form>
+    </div>
+    <footer class="footer">
+        <div class = bas-page>
+            <div id="reseaux"> 
+                <div> <img src="img/logo.png" width="40"></div>
+                <div> <p> Atteigner votre potentiel maximal avec ©SportTrack</p> </div>
+                <div> <img src="img/twitter.png" width="20"> <img src="img/instagram.png" width="20"> <img src="img/github.png" width="20"></div>
+            </div>
+            <div id="mentions-legales">
+                <div id="titres-mentions-legales"> <h3>Mentions légales</h3> <div id="conditions-d-utilisation"><h3>Conditions d'utilisation</h3> </div></div>
+                <div id="liens-mentions-legales"> 
+                    <section> <p>©2023 SportTrack, Inc</p> </section>
+                    <section> <p>Plan du site</p> </section>
+                    <section> <p>Confidentialité</p></section>
+                    <section> <p>Fonctionnement du site</p></section>
+                    <section> <p>Politique de confidentialité</p></section>
+                    <section> <p>Nous Contacter</p></section>
+                </div>
+            </div>
+            <div id="newsletter">
+                <p> Rejoindre le Club SportTrack !</p>
+                <form id="form-newsletter">
+                    <input type = "text" id="input-email" name="email" placeholder="Adresse e-mail" size="20" maxsize="50">
+                    <div id="checkbox-nouveautés">
+                        <input type = "checkbox" id="checkbox-news" name="consentement-nouveautés" > 
+                        <p> J'accepte de recevoir chaque mois les nouveautés sportives de la part de Sport Track.</p>
+                    </div>
+                    <div id="checkbox-publicités">
+                        <input type = "checkbox" id="checkbox-pubs" name="consentement-publicités" >
+                        <p> J'accepte de recevoir des publicités de nos partenaires.</p> 
+                    </div>
+                    <p id="texte-newsletter">Vous affirmez avoir pris connaissance de notre Politique de confidentialité. Vous pouvez à tout moment vous désinscrire en utilisant le lien de désabonnement intégré dans nos emails.</p> <BR>
+                    <input type = "submit" id="submit-button" value="LET'S GO"> 
+                </form>
+            </div>
+        </div>
+      </footer>   
+      <script src="javascript/newsletter.js"></script>
+</body>
+</html>
