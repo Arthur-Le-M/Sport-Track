@@ -1,4 +1,9 @@
-var conn = new WebSocket('ws://193.55.218.254:8080');
+
+var id = document.getElementsByName("id_client")[0].value;
+var conn = new WebSocket('ws://localhost:8080', {
+  query: "id=${id}"
+});
+
 
 conn.onopen = function(e) {
     console.log("Connection ouvert!");
@@ -11,7 +16,7 @@ conn.onmessage = function(e) {
 };
 
 conn.onclose = function(e) {
-    console.log("Connection fermé!");
+    console.log("Connexion fermée!");
 }
 
 function leaveChat(){
