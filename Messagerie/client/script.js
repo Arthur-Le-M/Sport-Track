@@ -308,22 +308,10 @@ function envoyerUnMessage() {
   } else {
     // On retire le message d'erreur 
     document.getElementById("champ-vide").innerHTML = "";
-
-    var url = "API/insertMsg.php?id=" + id + "&message=" + message;
-
-    //Requete AJAX 
-    var xhr5 = new XMLHttpRequest();
-    xhr5.open("GET", url, true);
-    xhr5.send();
-    xhr5.onload = () => {
-      if (xhr5.status === 200) {
-        // Affichage du message qui vient d'être saisi (refresh de la conv)
-        refreshDiscussion();
-        eventContacts();
-      }
+    // envoi du message sur le websocket
+    socket.send(message)
     }
   }
-}
 
 
 /* ********** Autres sous programmes ********** */
