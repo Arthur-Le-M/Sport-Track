@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald';
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 3%;
+}
+
+#barre-nav {
+    margin-left: 5%;
+    width: 425px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px;
+    box-shadow: 1px 1px 3px rgb(67, 67, 67);
+}
+
+#barre-nav a {
+    display: flex;
+    justify-content: center;
+}
+
+#barre-nav a img {
+    width: 25px;
+}
+
+#right-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10%;
+}
+
+#scanner a {
+    display: flex;
+    justify-content: center;
+}
+#scanner a img {
+    width: 30px;
+}
+
+.conteneur-dropdown .dropdownButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgb(67, 67, 67);
+}
+
+.conteneur-dropdown .dropdownButton #icon {
+    width: 35px;
+    padding-top: 1px;
+}
+
+.dropdownContent {
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    width: 125px;
+    box-shadow: 1px 1px 3px rgb(67, 67, 67);
+    border-radius: 15px;
+    padding: 10px 0;
+    top: 80px;
+    right: 0;
+    margin-right: 3%;
+}
+.conteneur-dropdown {
+    height: 55px;
+}
+.conteneur-dropdown:hover .dropdownContent {
+    display: flex;
+    position: absolute;
+}
+
+.conteneur-dropdown .dropdownContent a {
+    color: black;
+    text-decoration: none;
+    padding: 1px 15px;
+}
+
+#separation {
+    border-top: 1px #EBEBEB solid;
+    border-bottom: 1px #EBEBEB solid;
+    margin: 2px 0;
+    padding: 3px 15px;
+}
+
+/* ******************* RESPONSIVITE HEADER ******************* */
+/* @media screen and (max-width: 1300px) {
+
+} */
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+}
+
+#foot-top {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    padding: 40px 80px;
+    border-bottom: 1px #bbbbbb dashed;
+}
+
+#sport-track-infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    width: 20%;
+    padding-right: 50px;
+}
+
+#sport-track-infos #slogan {
+    text-align: center;
+}
+#sport-track-infos #slogan strong {
+    color: #F9B233;
+}
+
+#sport-track-infos #reseaux-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#sport-track-infos #reseaux-container .iconReseau {
+    width: 20px;
+    margin: 0 10px;
+}
+
+#mentions-du-site {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    width: 40%;
+    height: 200px;
+    color: black;
+}
+
+#mentions-du-site div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 180px;
+    height: 100%;
+}
+
+#mentions-du-site  div ul {
+    padding-left: 20px;
+}
+#mentions-du-site div ul li {
+    color: #f9b233;
+    list-style-position: outside;
+    padding-bottom: 5px;
+}
+#mentions-du-site div a {
+    color: black;
+}
+#mentions-du-site div a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9b233;
+}
+
+#mentions-du-site div .libelle-liens {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+#newsletter {
+    width: 40%;
+    padding-left: 7%;
+}
+
+#newsletter form {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+#newsletter form #newsletter-title {
+    font-size: 1.5em;
+}
+
+#newsletter form #input-email {
+    border: 2px solid #F9B233;
+    border-radius: 5px;
+    padding: 8px 5px;
+    font-size: 1em;
+    margin: 10px 0;
+}
+#newsletter form #input-email:focus {
+    outline: none;
+}
+
+#newsletter form .checkbox-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#newsletter form .label-checkbox {
+    width: 95%;
+}
+
+#newsletter form input[type="checkbox"] {
+    appearance: none;
+    margin-right: 5px;
+    margin-top: 5px;
+
+    width: 15px;
+    height: 15px;
+    border: 0.15em solid #F9B233;
+    border-radius: 0.15em;
+  
+    display: grid;
+    place-content: center;
+}
+
+#newsletter form input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); /* Code qui construit la nouvelle coche */
+    transform: scale(0);
+    transition: 120ms transform ease-in-out; /* Permet de faire l'effet fluide */
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+#newsletter form input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+#newsletter form #texte-newsletter {
+    margin: 10px 0;
+}
+
+#newsletter form input[type="submit"] {
+    cursor: pointer;
+    background-color: #F9B233;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    padding: 7px 5px;
+}
+
+#newsletter form #PDC {
+    color: #3882b7;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+#newsletter form #PDC:hover {
+    color: #75b9eb;
+    transition: 0.3s;
+}
+
+.label-checkbox {
+    cursor: pointer;
+}
+
+#droit-auteur {
+    font-size: 0.9em;
+    padding: 15px 40px;
+}
+
+
+/* ******************* RESPONSIVITE FOOTER ******************* */
+@media screen and (max-width: 1300px) {
+    #newsletter {
+        padding-left: 3%;
+    }
+
+    #newsletter form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #mentions-du-site {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    #sport-track-infos {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 915px) {
+    #foot-top {
+        padding: 40px 40px;
+    }
+}
+
+@media screen and (max-width: 835px) {
+    #foot-top {
+        padding: 40px 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #foot-top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    #sport-track-infos,#mentions-du-site,#newsletter {
+        width: 75%;
+        padding: 20px 0;
+    }
+
+    #sport-track-infos {
+        padding-bottom: 20px;
+        height: 130px;
+    }
+
+    #mentions-du-site {
+        flex-direction: row;
+        height: 100%;
+        align-items: start;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #sport-track-infos #reseaux-container .iconReseau {
+        width: 20px;
+        margin: 25px 30px 0 30px;
+    }
+
+    #mentions-du-site {
+        flex-direction: column;
+        align-items: center;
+    }
+    #mentions-du-site div {
+        justify-content: center;
+        align-items: center;
+        width: 180px;
+        height: 100%;
+    } 
+    #mentions-du-site #liens-utiles {
+        margin-bottom: 25px;
+    }
+    #mentions-du-site div ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+    } 
+    #mentions-du-site div ul li {
+        padding: 5px 0;
+    } 
+    #mentions-du-site div .libelle-liens {
+        text-decoration: underline;
+        text-decoration-color: #f9b233;
+    }
+
+    #newsletter form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #newsletter form input[type="email"] {
+        width: 100%;
+    }
+
+    #newsletter form #newsletter-title,#texte-newsletter {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    #sport-track-infos,#mentions-du-site,#newsletter {
+        width: 85%;
+    }
+}
