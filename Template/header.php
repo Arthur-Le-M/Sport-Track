@@ -1,20 +1,20 @@
 <header>
     <div id="logo"> 
-        <img src="img/logo.png" width="60" alt=""> 
+        <img src="../Template/img/logo.png" width="60"> 
     </div>
     <div id="barre-nav">
-        <a href="#"> <img src="img/maison.png"> </a>
-        <a href="#"> <img src="img/messager.png"> </a>
-        <a href="#"> <img src="img/calendrier.png"> </a>
-        <a href="#"> <img src="img/personne.png"> </a>
+        <a href="#"> <img src="../Template/img/maison.png"> </a>
+        <a href="#"> <img src="../Template/img/messager.png"> </a>
+        <a href="#"> <img src="../Template/img/calendrier.png"> </a>
+        <a href="#"> <img src="../Template/img/personne.png"> </a>
     </div>
     <div id="right-part">
         <div id="scanner"> 
-            <a href="#"> <img src="img/scanner.png"> </a>
+            <a href="#"> <img src="../Template/img/scanner.png"> </a>
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
-                <img id="icon" src="img/menu.png" />
+                <img id="icon" src="../Template/img/menu.png" />
             </button>
             <div class="dropdownContent">
                 <a href="#"> Partager </a>

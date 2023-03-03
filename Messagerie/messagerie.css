@@ -10,14 +10,10 @@ body {
     background-color: #F7F7F7;
 }
 
-header {
-    height: 100px;
-    background-color: rgb(24, 19, 19);
-}
-
 main {
     margin: 40px 0;
     height: 65vh;
+    margin-bottom: 100px;
 }
 
 #champ-vide {

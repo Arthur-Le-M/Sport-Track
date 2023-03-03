@@ -1,12 +1,12 @@
 <footer>
     <section id="foot-top">
         <div id="sport-track-infos">
-            <img src="img/logo.png" width="40">
+            <img src="../Template/img/logo.png" width="40">
             <p id="slogan">Atteignez votre potentiel maximal avec <strong>SportTrack</strong>.</p>
             <div id="reseaux-container">
-                <a href="#"> <img class="iconReseau" src="img/twitter.png"> </a>
-                <a href="#"> <img class="iconReseau" src="img/instagram.png"> </a>
-                <a href="#"> <img class="iconReseau" src="img/github.png"> </a>
+                <a href="#"> <img class="iconReseau" src="../Template/img/twitter.png"> </a>
+                <a href="#"> <img class="iconReseau" src="../Template/img/instagram.png"> </a>
+                <a href="#"> <img class="iconReseau" src="../Template/img/github.png"> </a>
             </div>
         </div>
         <div id="mentions-du-site">
