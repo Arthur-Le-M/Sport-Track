@@ -6,6 +6,7 @@ use Ratchet\ConnectionInterface;
 
 class Chat implements MessageComponentInterface {
     protected $clients;
+    protected $array= array();
 
     public function __construct() {
         $this->clients = new \SplObjectStorage;
@@ -15,7 +16,9 @@ class Chat implements MessageComponentInterface {
     public function onOpen(ConnectionInterface $conn) {
         // Store the new connection to send messages to later
         $this->clients->attach($conn);
-        echo "New connection! ({$conn->resourceId})\n";
+        $querystring = $conn->httpRequest->getUri()->getQuery();
+        $this->array[$querystring] = $conn->resourceId;
+        echo "New connection!(${querystring})({$conn->resourceId})\n";
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
@@ -43,4 +46,10 @@ class Chat implements MessageComponentInterface {
 
         $conn->close();
     }
+
+    public function trouver_id_socket($val) {
+        return isset($this->array[$val]);
+    }
 }
+
+

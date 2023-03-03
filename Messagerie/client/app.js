@@ -1,5 +1,5 @@
 var id=1000;
-var conn = new WebSocket('ws://localhost:8080/?id='+ id);
+var conn = new WebSocket('ws://localhost:8080?'+ id);
 
 conn.onopen = function(e) {
     console.log("Connection ouvert!");
