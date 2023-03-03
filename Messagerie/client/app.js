@@ -1,4 +1,5 @@
-var conn = new WebSocket('ws://193.55.218.254:8080');
+var id=1000;
+var conn = new WebSocket('ws://localhost:8080/?id='+ id);
 
 conn.onopen = function(e) {
     console.log("Connection ouvert!");
@@ -14,19 +15,3 @@ conn.onclose = function(e) {
     console.log("Connection fermé!");
 }
 
-function leaveChat(){
-
-    $.ajax({
-        url:"action.php",
-        method:"post",
-        data: "userId="+userId+"&action=leave"
-    }).done(function(result){
-        var data = JSON.parse(result);
-        if(data.status == 1) {
-            conn.close();
-            location = "index.php";
-        } else {
-            console.log(data.msg);
-        }		
-    });
-}
