@@ -1,13 +1,15 @@
 var id=1000;
+
 var conn = new WebSocket('ws://localhost:8080?'+ id);
 
 conn.onopen = function(e) {
     console.log("Connection ouvert!");
     let messageJSON = {
-        "message": "hello",
-        "destinataire": 84,
+        message: "hello2",
+        destinataire: 24,
+        envoyeur: 30
       };
-    conn.send(messageJSON);
+    conn.send(JSON.stringify(messageJSON));
 };
 
 

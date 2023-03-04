@@ -2,14 +2,16 @@
 namespace MyApp;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
-
+error_reporting(E_ALL ^ E_DEPRECATED);
 
 class Chat implements MessageComponentInterface {
     protected $clients;
     protected $array= array();
+    protected $db = null;
 
-    public function __construct() {
+    public function __construct($db) {
         $this->clients = new \SplObjectStorage;
+        $this->db = $db;
         echo "server started! ";
     }
 
@@ -27,20 +29,32 @@ class Chat implements MessageComponentInterface {
             , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
         $data = json_decode($msg, true);
-        $message = $data["message"];
-        $id_destinataire = $data["destinataire"];
-    
-        if (isset($this->array[$id_destinataire])) {
-            $idSocket = $this->array[$id_destinataire];
-            foreach ($this->clients as $client) {
-                if ($client->resourceId == $idSocket) {
-                    $client->send($message);
-                    break;
+        if ($data !== null) {
+            $message = $data["message"];
+            $id_destinataire = $data["destinataire"];
+            $id_envoyeur = $data["envoyeur"];
+            // votre code de traitement du message ici
+            $params = array('id' => $id_destinataire, 'message' => $message);
+            $query_str = http_build_query($params);
+
+            if (isset($this->array[$id_destinataire])) {
+                $idSocket = $this->array[$id_destinataire];
+                foreach ($this->clients as $client) {
+                    if ($client->resourceId == $idSocket) {
+                        $client->send($message);
+                        break;
+                    }
                 }
+                //include("../API/insertMsg.php?".$query_str);
             }
-            include ('./../API/insertMsg.php?id='.$id_destinataire.'&message='.$message);
+            //include("../API/insertMsg.php?".$query_str);
+            $this->db->insert($message,$id_envoyeur,$id_destinataire);
+
+
+        } else {
+            // gérer l'erreur de décodage JSON ici
+            echo "Erreur de décodage JSON : " . json_last_error_msg() . "\n";
         }
-        include ('./../API/insertMsg.php'.$id_destinataire.'&message='.$message);
     }
 
     public function onClose(ConnectionInterface $conn) {
