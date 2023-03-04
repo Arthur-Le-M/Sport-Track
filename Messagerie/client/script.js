@@ -1,18 +1,37 @@
 // Fichier contenant tous les sous programmes à utiliser
 // Enchainement des étapes :
+connexionServeur()
 eventNouveauContactBtn();
 afficherJoueursModale();
 
 // Affiche les contacts et définit les évents lors d'un clic sur contact
 eventContacts();
 
-// Rafraichis la conversation toutes les secondes
-setInterval(refreshDiscussion, 1000);
-// Rafraichis la conversation toutes les 10 secondes
-setInterval(eventContacts, 10000);
 
 
 
+
+// connexion au serveur de websocket
+connexionServeur()
+{
+  var id = document.getElementsByName("id_client")[0].value;
+  var conn = new WebSocket('ws://localhost:8080?id=' + id);
+}
+
+conn.onopen = function(e) {
+  console.log("Connexion ouverte!");
+};
+
+conn.onmessage = function(e) {
+  //Récupération du JSON
+  var data = JSON.parse(e.data);
+  //Ajouter le message en html sur la page
+
+};
+
+conn.onclose = function(e) {
+  console.log("Connexion fermée!");
+}
 
 // Déclare les actions à réaliser lors d'un clic sur le bouton "Nouveau Contact" 
 function eventNouveauContactBtn() {
@@ -269,18 +288,6 @@ function afficherDiscussion(baliseAffichage,id) {
   }
 }
 
-// Refresh la conversation afin d'afficher les derniers messages saisis
-function refreshDiscussion() {
-    // On verifie si l'utilisateur a cliqué sur un contact en regardant si une conversation a été affichée
-  if (document.getElementById("tous-les-messages")) {
-    // Recup de l'id de la conv affichée 
-    var form = document.querySelector('#form');
-    var id = parseInt(form.getAttribute('name'));
-
-    afficherDiscussion(document.getElementById("tous-les-messages"),id);
-  }
-}
-
 // Déclare l'action à réaliser lors d'un clic sur le bouton "Envoyer" de la barre de saisie
 function eventEnvoyerMessage() {
   // Récupération de l'élément bouton par son id
@@ -293,11 +300,21 @@ function eventEnvoyerMessage() {
 }
 
 // Insérer un message dans la BD
+
 function envoyerUnMessage() {
   const msgInput = document.getElementById("msg-input")
   var message = msgInput.value;
   const form = document.querySelector('#form');
-  var id = parseInt(form.getAttribute('name'));
+  var id_destinataire = parseInt(form.getAttribute('name'));
+  // Preparation du message à envoyer
+  let messageJSON = {
+      "message": message,
+      "destinataire": id_destinataire,
+    };
+
+  // envoi du message au serveur
+    conn.send(messageJSON);
+    console.log("message envoyé au serveur");
 
   // Après récupération du message dans la table, on vide l'input 
   msgInput.value = "";
@@ -309,11 +326,8 @@ function envoyerUnMessage() {
     // On retire le message d'erreur 
     document.getElementById("champ-vide").innerHTML = "";
     // envoi du message sur le websocket
-    socket.send(message)
     }
-  }
-
-
+  };
 /* ********** Autres sous programmes ********** */
 
 // Transforme une date sql (2023-02-08 19:21:06) en string pour affichage (19h21)
@@ -339,3 +353,25 @@ function dateToString(dateSql) {
   
   return date;
 } 
+
+function ajouterMessageEnvoi(message){
+  // on recupere la date d'envoi
+  var date = heureToString(messages[j].date);
+  // on recupere la zone des message
+  var messages = document.getElementById("tous-les-messages");
+  // on creer le nouveau message 
+  var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  // on ajoute ce nouveau message 
+  messages.appendChild(nouveauMessage);
+}
+
+function ajouterMessageReception(message){
+  // on recupere la date d'envoi
+  var date = heureToString(messages[j].date);
+  // on recupere la zone des message
+  var messages = document.getElementById("tous-les-messages");
+  // on creer le nouveau message 
+  var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  // on ajoute ce nouveau message 
+  messages.appendChild(nouveauMessage);
+}
