@@ -1,5 +1,5 @@
 var id=1000;
-
+let currentDate = new Date();
 var conn = new WebSocket('ws://localhost:8080?'+ id);
 
 conn.onopen = function(e) {
@@ -7,8 +7,9 @@ conn.onopen = function(e) {
     let messageJSON = {
         message: "hello2",
         destinataire: 24,
-        envoyeur: 30
-      };
+        heure: currentDate,
+        envoyeur:1000
+    };
     conn.send(JSON.stringify(messageJSON));
 };
 
