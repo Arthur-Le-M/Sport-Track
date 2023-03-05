@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Template/index.css"/>
+        <title>SPORT TRACK</title>
+    </head>
+
 <header class="header">
     <div id="menu">
         <div id="logo" > <img src="../Template/img/logo.png" width="60" alt=""></div>
@@ -25,6 +35,5 @@
                 </div>
             </div>
         </div>
-            </div>
     </div>
 </header>
