@@ -7,11 +7,9 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 class Chat implements MessageComponentInterface {
     protected $clients;
     protected $array= array();
-    protected $db = null;
 
-    public function __construct($db) {
+    public function __construct() {
         $this->clients = new \SplObjectStorage;
-        $this->db = $db;
         echo "server started! ";
     }
 
@@ -29,6 +27,7 @@ class Chat implements MessageComponentInterface {
             , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
         $data = json_decode($msg, true);
+
         if ($data !== null) {
             $message = $data["message"];
             $id_destinataire = $data["destinataire"];
@@ -48,7 +47,12 @@ class Chat implements MessageComponentInterface {
                 //include("../API/insertMsg.php?".$query_str);
             }
             //include("../API/insertMsg.php?".$query_str);
-            $this->db->insert($message,$id_envoyeur,$id_destinataire);
+           // Paramètres de connexion à la base de données
+           if ($this->sauvegarderMessage($data)) {
+            echo 'Saved message to DB';
+            } else {
+            echo 'Failed to save message';
+            }
 
 
         } else {
@@ -71,6 +75,23 @@ class Chat implements MessageComponentInterface {
 
     public function existe_socket($val) {
         return isset($this->array[$val]);
+    }
+    public function sauvegarderMessage($data)
+    {
+        echo("sauvegarde :");
+        $db = new \PDO("mysql:host=127.0.0.1:3306;dbname=bd_sporttrack", "root", "root"); 
+        
+        $stmt = $db->prepare('INSERT INTO messages(message, id_destinataire, id_auteur, date) VALUES (?, ?, ?, NOW())');
+        
+        if ($stmt) {
+            $stmt->bindParam(1, $data['message']);
+            $stmt->bindParam(2, $data['destinataire']);
+            $stmt->bindParam(3, $data['envoyeur']);
+            $stmt->execute();
+            return true;
+        }
+
+        return false;
     }
 }
 
