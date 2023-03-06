@@ -23,15 +23,19 @@ eventContacts();
     var data = JSON.parse(e.data);
     //recuperer les données
   var message = data.message
-  var date = data.date;
-  var id = datae.envoyeur;
+  var id = data.auteur;
+  var date = data.heure;
+  console.log("id recevoir: ",id,
+  "date: ",date,
+  "message: ",message)
+
     //verifier si la conversation est ouverte  
     if(document.getElementsByName(id).length > 0)
     {
       //Ajouter le message en html sur la page
       ajouterMessageReception(message,date);
     }
-    else{ console.log("conversation avec " + id + "pas ouverte")}
+    else{ console.log("conversation avec: " + id + " pas ouverte")}
   };
 
   conn.onclose = function(e) {
