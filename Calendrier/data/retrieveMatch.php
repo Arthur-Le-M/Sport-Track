@@ -6,7 +6,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function readMatch($db, $id){
     $queryParams = [];
-    $queryText = "SELECT m.heure_debut, m.heure_fin, eq.nom as equipe_dom, eq2.nom as equipe_ext, st.nom as nomStade 
+    $queryText = "SELECT m.id, m.heure_debut, m.heure_fin, eq.nom as equipe_dom, eq2.nom as equipe_ext, st.nom as nomStade 
                   FROM MatchTable m 
                   LEFT JOIN Equipe eq ON m.id_equipe_dom = eq.id 
                   LEFT JOIN Equipe eq2 ON m.id_equipe_ext = eq2.id 

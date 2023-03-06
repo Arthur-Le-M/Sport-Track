@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Template/index.css">
+  <link rel="stylesheet" href="../Template/style.css">
   <link href="style.css" rel="stylesheet">
-  <title>Document</title>
 </head>
 <?php
 session_start();
 if(!isset($_SESSION['role'])){
-    $_SESSION['role']='coach';
+    $_SESSION['role']='cch';
     $_SESSION['idClub']='12427';
     $_SESSION['idStade']='1720';
 }
@@ -20,7 +19,7 @@ if(!isset($_SESSION['role'])){
 ?>
 
 <body>
-<?php require("../Template/header.php"); ?>
+  <?php require("../Template/header.php"); ?>
   <div class="container">
     <div class="left">
       <div class="calendar">
@@ -130,10 +129,29 @@ if(!isset($_SESSION['role'])){
         }
       }
     });
-                  </script>';
+    </script>';
+    echo '<style>
+      .events .event:hover {
+        background: #e73d16;
+      }
+      .events .event::after {
+        content: "X";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: 3rem;
+        line-height: 1;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.3;
+        color: var(--primary-clr);
+        transform: translateY(-50%);
+      }
+    </style>';
                   }
                 ?>
-    <?php require("../Template/footer.php"); ?>
+  <?php require("../Template/footer.php"); ?>
 </body>
 
 
