@@ -1,7 +1,10 @@
 <?php
 session_start();
-require "../config.php"; // Lien pour la connexion a la BD
-
+$_SESSION['id']=10;
+function getConnection() {
+    $bdd = new PDO('mysql:host=localhost;dbname=bd_sporttrack;charset=utf8;','root','root');
+    return $bdd;
+}
 $bdd = getConnection();
 
 $idDest = $_GET['id'];

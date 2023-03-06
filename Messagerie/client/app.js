@@ -8,6 +8,7 @@ conn.onopen = function(e) {
     console.log("Connexion ouverte!");
 };
 
+
 conn.onmessage = function(e) {
     //Récupération du JSON
     var data = JSON.parse(e.data);
