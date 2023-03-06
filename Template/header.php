@@ -1,6 +1,6 @@
 <header>
     <div id="logo"> 
-        <img src="../Template/img/logo.png" width="60"> 
+        <a href="#"> <img src="../Template/img/logo.png"> </a>
     </div>
     <div id="barre-nav">
         <a href="#"> <img src="../Template/img/maison.png"> </a>

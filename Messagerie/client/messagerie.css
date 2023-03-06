@@ -11,9 +11,8 @@ body {
 }
 
 main {
-    margin: 40px 0;
-    height: 65vh;
-    margin-bottom: 100px;
+    height: 75vh;
+    margin: 85px 0;
 }
 
 #champ-vide {
@@ -353,3 +352,5 @@ main {
     width: 30px;
     margin-right: 8px;
 }
+
+/* ******************* RESPONSIVITE ******************* */
