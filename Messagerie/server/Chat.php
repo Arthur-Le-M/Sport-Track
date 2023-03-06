@@ -16,15 +16,9 @@ class Chat implements MessageComponentInterface {
     public function onOpen(ConnectionInterface $conn) {
         // Store the new connection to send messages to later
         $this->clients->attach($conn);
-<<<<<<< HEAD
-        $query = $conn->WebSocket->request->getQuery();
-        echo "$query";
-        echo "New connection! ({$conn->resourceId})\n";
-=======
         $querystring = $conn->httpRequest->getUri()->getQuery();
         $this->array[$querystring] = $conn->resourceId;
         echo "New connection!({$querystring})({$conn->resourceId})\n";
->>>>>>> websockets
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
