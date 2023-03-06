@@ -14,8 +14,7 @@ eventContacts();
     var id = document.getElementsByName("id_client")[0].value;
     var conn = new WebSocket('ws://localhost:8080?id=' + id);
 
-
-  conn.onopen = function(e) {
+  conn.onopen = function() {
     console.log("Connexion ouverte!");
   };
 
@@ -23,9 +22,9 @@ eventContacts();
     //Récupération du JSON
     var data = JSON.parse(e.data);
     //recuperer les données
-  var message = data[message]
-  var date = data[heure];
-  var id = data[envoyeur];
+  var message = data.message
+  var date = data.date;
+  var id = datae.envoyeur;
     //verifier si la conversation est ouverte  
     if(document.getElementsByName(id).length > 0)
     {
@@ -314,7 +313,6 @@ function envoyerUnMessage() {
   var id_destinataire = parseInt(form.getAttribute('name'));
   console.log("destinataire: ",id_destinataire);
   let date = new Date();
-  var id = document.getElementsByName("id_client");
   // Preparation du message à envoyer
   let messageJSON = {
       "message": message,

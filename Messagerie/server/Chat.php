@@ -19,7 +19,7 @@ class Chat implements MessageComponentInterface {
         $querystring = $conn->httpRequest->getUri()->getQuery();
         if (preg_match('/\d+/', $querystring, $match)) {
             $id = $match[0];}
-        $this->array[$id] = $conn->resourceId;
+        $this->array[$id] = $conn;
         echo "New connection!({$querystring})({$conn->resourceId})\n";
     }
 
@@ -27,16 +27,10 @@ class Chat implements MessageComponentInterface {
         $numRecv = count($this->clients) - 1;
         echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
             , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
-
         $data = json_decode($msg, true);
         // on recupere l'id de l'envoyeur
-        foreach ($this->array as $id_auteur => $resourceId) {
-            if ($resourceId === $from->resourceId) {
-                $envoyeur = $id_auteur;
-                $data['envoyeur'] = $envoyeur; // Ajouter le paramètre envoyeur à $data
-                break;
-            }
-        }
+        $envoyeur = array_search($from,$this->array);
+        $data["envoyeur"] = $envoyeur; // Ajouter le paramètre envoyeur à $data
 
         // on prepare le message a envoyé
         if($data !== null) 
@@ -54,14 +48,13 @@ class Chat implements MessageComponentInterface {
             $id_destinataire = $data["destinataire"];
             $heure = $data["date"];
 
-            $params = array('id' => $id_destinataire, 'message' => $message);
-            $query_str = http_build_query($params);
-            if (isset($this->array[$id_destinataire])) 
+            if (isset($this->array[$id_destinataire]))  // si le destinataire est connecté
             {
                 $idSocket = $this->array[$id_destinataire];
-                        $idSocket->send($messageJSON);
+                $idSocket->send($messageJSON);
                         
             }
+            else{ echo("--- destinataire non connecté --- <br>");};
 
             
                      
