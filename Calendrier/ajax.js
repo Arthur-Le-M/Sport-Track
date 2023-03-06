@@ -2,7 +2,7 @@
 const eventsArr = [];
 async function getEvents(_id) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", 'http://localhost:8888/Sport-Track/Calendrier/data/retrieveEvent.php?id=' + _id);
+    xhr.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/retrieveEvent.php?id=' + _id);
     xhr.send();
     // Attendre la réponse avant de continuer
     const response = await new Promise((resolve, reject) => {
@@ -58,7 +58,7 @@ async function getEvents(_id) {
 
 async function getMatchs(id_) {
     const xhr2 = new XMLHttpRequest();
-    xhr2.open("GET", 'http://localhost:8888/Sport-Track/Calendrier/data/retrieveMatch.php?id=' + id_);
+    xhr2.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/retrieveMatch.php?id=' + id_);
     xhr2.send();
     // Attendre la réponse avant de continuer
     const response = await new Promise((resolve, reject) => {
@@ -76,6 +76,7 @@ async function getMatchs(id_) {
                     const [dateStringFin, timeStringFin] = datetimeStringFin.split(" ");
                     const [fhour, fminute, fsecond] = timeStringFin.split(":").map(part => (part));
                     const newEvent = {
+                        id:event.id,
                         title: "Match " + event.equipe_dom + " - " + event.equipe_ext,
                         time: dhour + ":" + dminute + " - " + fhour + ":" + fminute,
                         team: event.nom_equipe,

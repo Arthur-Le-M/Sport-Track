@@ -33,7 +33,6 @@ body {
 }
 
 .container {
-  z-index: -1;
   position: relative;
   width: 1200px;
   min-height: 850px;
@@ -325,14 +324,43 @@ body {
   width: 95%;
   min-height: 70px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   gap: 5px;
-  padding: 0 20px;
+  padding: 0 10px;
   padding-left: 30px;
   color: #fff;
   background: #d7d6d6;
   cursor: pointer;
+}
+
+.title_time_event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.divBoutonConsulter {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.boutonConsulter {
+  background-color: #f9b233;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  float: right;
+}
+
+.boutonConsulter:hover{
+  background-color: #edecea;
 }
 
 /* even event */
@@ -340,9 +368,6 @@ body {
   background: transparent;
 }
 
-.events .event:hover {
-  background: #F9B233;
-}
 
 .events .event .title {
   display: flex;
@@ -353,7 +378,6 @@ body {
 .events .event .title .event-title {
   font-size: 1rem;
   font-weight: 400;
-  margin-left: 20px;
 }
 
 .events .event i {
@@ -369,7 +393,6 @@ body {
   font-size: 0.8rem;
   font-weight: 400;
   color: #878895;
-  margin-left: 15px;
   pointer-events: none;
 }
 
@@ -377,21 +400,6 @@ body {
   color: #fff;
 }
 
-/* add tick in event after */
-.events .event::after {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  font-size: 3rem;
-  line-height: 1;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.3;
-  color: var(--primary-clr);
-  transform: translateY(-50%);
-}
 
 .events .event:hover::after {
   display: flex;
@@ -546,17 +554,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* media queries */
 
 @media screen and (max-width: 1000px) {
@@ -566,6 +563,7 @@ body {
   }
 
   .container {
+    width:100%;
     min-height: 100vh;
     flex-direction: column;
     border-radius: 0;
@@ -608,6 +606,10 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+
   .calendar .month {
     height: 75px;
   }
@@ -618,8 +620,8 @@ body {
   }
 
   .calendar .days .day {
-    height: 40px;
-    font-size: 0.9rem;
+    height: 60px;
+    font-size: 0.8rem;
   }
 
   .calendar .days .day.active,
