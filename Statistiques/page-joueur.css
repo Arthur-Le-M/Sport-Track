@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+main{
+    display: flex;
+}
+
+#containerGauche{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#sectionPP{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+#pp{
+    width: 50%;
+    border-radius: 12%;
+}
+
+#sectionPP h5{
+    font-size: 25px;
+    color: #606060;
+    font-weight: 500;
+    height: 3%;
+}
+
+#sectionPP h3{
+    font-size: 50px;
+    font-weight: bold;
+    height: 11%;
+}
+
+#sectionPP h4{
+    font-size: 30px;
+    font-weight: 600;
+    height: 7%;
+}
+
+#statPerso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
+
+.statElement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 15%;
+    border: #E0E0E0 1px solid;
+    box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.statElementVal{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.statElementUnité{
+    font-size: 20px;
+    font-weight: 500;
+    color: #606060;
+}
+
+#containerDroite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100vh;
+}
+
+#matchContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+#matchContainerTitle{
+    font-size: 30px;
+    color: #606060;
+}
+
+.match{
+    align-self: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    border: #E0E0E0 1px solid;
+    box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.dateContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+}
+
+.equipesContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.equipe{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.equipe-win{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-weight: bold;
+}
+
+.resultatContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    font-weight: bold;
+}
+
+.resultat-gagnant{
+    background-color: #CCFFA5;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+}
+
+.resultat-perdant{    
+    background-color: #FF9C9C;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+}
+
+.resultat-egalite{
+    background-color: #FFD9A5;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+}
+
+
+
+
+
