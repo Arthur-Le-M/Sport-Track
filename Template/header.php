@@ -1,16 +1,16 @@
 <header>
     <div id="logo"> 
-        <img src="../Template/img/logo.png" width="60"> 
+        <a href="#"> <img src="../Template/img/logo.png"> </a>
     </div>
     <div id="barre-nav">
         <a href="#"> <img src="../Template/img/maison.png"> </a>
         <a href="#"> <img src="../Template/img/messager.png"> </a>
-        <a href="#"> <img src="../Template/img/calendrier.png"> </a>
+        <a href="../Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
         <a href="#"> <img src="../Template/img/personne.png"> </a>
     </div>
     <div id="right-part">
         <div id="scanner"> 
-            <a href="#"> <img src="../Template/img/scanner.png"> </a>
+            <a href="./Scaneur/index.php"> <img src="../Template/img/scanner.png"> </a>
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
