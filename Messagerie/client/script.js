@@ -312,7 +312,9 @@ function envoyerUnMessage() {
   var message = msgInput.value;
   const form = document.querySelector('#form');
   var id_destinataire = parseInt(form.getAttribute('name'));
+  console.log("destinataire: ",id_destinataire);
   let date = new Date();
+  var id = document.getElementsByName("id_client");
   // Preparation du message à envoyer
   let messageJSON = {
       "message": message,
@@ -320,8 +322,9 @@ function envoyerUnMessage() {
       "date":date,
     };
 
+  let messageJSONString = JSON.stringify(messageJSON);
   // envoi du message au serveur
-    conn.send(messageJSON);
+    conn.send(messageJSONString);
     console.log("message envoyé au serveur");
   // ajout du message
   ajouterMessageEnvoi(message,date);

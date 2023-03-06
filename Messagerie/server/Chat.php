@@ -17,7 +17,9 @@ class Chat implements MessageComponentInterface {
         // Store the new connection to send messages to later
         $this->clients->attach($conn);
         $querystring = $conn->httpRequest->getUri()->getQuery();
-        $this->array[$querystring] = $conn->resourceId;
+        if (preg_match('/\d+/', $querystring, $match)) {
+            $id = $match[0];}
+        $this->array[$id] = $conn->resourceId;
         echo "New connection!({$querystring})({$conn->resourceId})\n";
     }
 
@@ -27,13 +29,23 @@ class Chat implements MessageComponentInterface {
             , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
         $data = json_decode($msg, true);
+        // on recupere l'id de l'envoyeur
+        foreach ($this->array as $id_auteur => $resourceId) {
+            if ($resourceId === $from->resourceId) {
+                $envoyeur = $id_auteur;
+                $data['envoyeur'] = $envoyeur; // Ajouter le paramètre envoyeur à $data
+                break;
+            }
+        }
 
         // on prepare le message a envoyé
-        if ($data !== null) {
+        if($data !== null) 
+        {
+            echo($data["message"]);
             $message = array(
                 "message" => $data["message"],
                 "auteur" => $data["envoyeur"],
-                "heure" => $data["heure"]
+                "heure" => $data["date"],
             );
             $messageJSON = json_encode($message);
 
@@ -44,25 +56,14 @@ class Chat implements MessageComponentInterface {
 
             $params = array('id' => $id_destinataire, 'message' => $message);
             $query_str = http_build_query($params);
-            echo $message;
-            if (isset($this->array[$id_destinataire])) {
+            if (isset($this->array[$id_destinataire])) 
+            {
                 $idSocket = $this->array[$id_destinataire];
-                foreach ($this->clients as $client) {
-                    if ($client->resourceId == $idSocket) {
-                        $client->send($messageJSON);
-                        break;
+                        $idSocket->send($messageJSON);
                         
-                    }
-                }
             }
 
-            foreach ($this->array as $querystring => $resourceId) {
-                if ($resourceId === $from->resourceId) {
-                    $envoyeur = $querystring;
-                    $data['envoyeur'] = $envoyeur; // Ajouter le paramètre envoyeur à $data
-                    break;
-                }
-            }
+            
                      
            // Paramètres de connexion à la base de données
            if ($this->sauvegarderMessage($data)) {
@@ -70,7 +71,9 @@ class Chat implements MessageComponentInterface {
             } else {
             echo 'Failed to save message';
             }
-        } else {
+        }
+        else
+        {
             // gérer l'erreur de décodage JSON ici
             echo "Erreur de décodage JSON : " . json_last_error_msg() . "\n";
         }
@@ -81,7 +84,7 @@ class Chat implements MessageComponentInterface {
         $this->clients->detach($conn);
         foreach ($this->array as $querystring => $resourceId) {
             if ($resourceId === $conn->resourceId) {
-                unset($this->array[$querystring]);
+                unset($this->array[$querystring]); // erreur <----------
                 break;
             }
         }
@@ -99,6 +102,7 @@ class Chat implements MessageComponentInterface {
     }
     public function sauvegarderMessage($data)
     {
+        echo($data["envoyeur"]);
         echo("sauvegarde :");
         $db = new \PDO("mysql:host=127.0.0.1:3306;dbname=bd_sporttrack", "root", "root"); 
         
