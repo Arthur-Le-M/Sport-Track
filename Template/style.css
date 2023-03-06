@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Oswald';
+    box-sizing: border-box;
 }
 
 a {
@@ -11,10 +12,16 @@ a {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 25px 3%;
+    padding: 25px 3%;
+}
+#logo img {
+    width: 60px;
 }
 
 #barre-nav {
@@ -41,15 +48,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 10%;
+    width: 125px;
 }
 
 #scanner a {
     display: flex;
     justify-content: center;
 }
+
 #scanner a img {
     width: 30px;
+    margin-bottom: 4px;
 }
 
 .conteneur-dropdown .dropdownButton {
@@ -58,12 +67,11 @@ header {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 25px;
     border: none;
     outline: none;
     cursor: pointer;
-    box-shadow: 1px 1px 3px rgb(67, 67, 67);
 }
 
 .conteneur-dropdown .dropdownButton #icon {
@@ -82,10 +90,13 @@ header {
     top: 80px;
     right: 0;
     margin-right: 3%;
+    background-color: white;
 }
+
 .conteneur-dropdown {
     height: 55px;
 }
+
 .conteneur-dropdown:hover .dropdownContent {
     display: flex;
     position: absolute;
@@ -105,9 +116,45 @@ header {
 }
 
 /* ******************* RESPONSIVITE HEADER ******************* */
-/* @media screen and (max-width: 1300px) {
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px 3%;
+        background-color: rgb(250, 250, 250);
+    }
 
-} */
+    #barre-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: initial;
+        background-color: rgb(250, 250, 250);
+    }
+
+    .conteneur-dropdown .dropdownButton {
+        background-color: rgb(250, 250, 250);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #right-part {
+        width: 100%;
+    }
+    #logo {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logo img {
+        width: 50px;
+    }
+}
 
 
 
@@ -141,6 +188,7 @@ footer {
 #sport-track-infos #slogan {
     text-align: center;
 }
+
 #sport-track-infos #slogan strong {
     color: #F9B233;
 }
@@ -150,6 +198,7 @@ footer {
     justify-content: center;
     width: 100%;
 }
+
 #sport-track-infos #reseaux-container .iconReseau {
     width: 20px;
     margin: 0 10px;
@@ -174,17 +223,20 @@ footer {
     height: 100%;
 }
 
-#mentions-du-site  div ul {
+#mentions-du-site div ul {
     padding-left: 20px;
 }
+
 #mentions-du-site div ul li {
     color: #f9b233;
     list-style-position: outside;
     padding-bottom: 5px;
 }
+
 #mentions-du-site div a {
     color: black;
 }
+
 #mentions-du-site div a:hover {
     text-decoration: underline;
     text-decoration-color: #f9b233;
@@ -218,6 +270,7 @@ footer {
     font-size: 1em;
     margin: 10px 0;
 }
+
 #newsletter form #input-email:focus {
     outline: none;
 }
@@ -240,7 +293,7 @@ footer {
     height: 15px;
     border: 0.15em solid #F9B233;
     border-radius: 0.15em;
-  
+
     display: grid;
     place-content: center;
 }
@@ -249,9 +302,11 @@ footer {
     content: "";
     width: 0.65em;
     height: 0.65em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%); /* Code qui construit la nouvelle coche */
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    /* Code qui construit la nouvelle coche */
     transform: scale(0);
-    transition: 120ms transform ease-in-out; /* Permet de faire l'effet fluide */
+    transition: 120ms transform ease-in-out;
+    /* Permet de faire l'effet fluide */
     /* Windows High Contrast Mode */
     background-color: CanvasText;
 }
@@ -279,6 +334,7 @@ footer {
     text-decoration: underline;
     transition: 0.3s;
 }
+
 #newsletter form #PDC:hover {
     color: #75b9eb;
     transition: 0.3s;
@@ -337,7 +393,9 @@ footer {
         padding: 0;
     }
 
-    #sport-track-infos,#mentions-du-site,#newsletter {
+    #sport-track-infos,
+    #mentions-du-site,
+    #newsletter {
         width: 75%;
         padding: 20px 0;
     }
@@ -356,6 +414,10 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
+    #foot-top {
+        padding: 20px 0;
+    }
+
     #sport-track-infos #reseaux-container .iconReseau {
         width: 20px;
         margin: 25px 30px 0 30px;
@@ -365,15 +427,18 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
     #mentions-du-site div {
         justify-content: center;
         align-items: center;
         width: 180px;
         height: 100%;
-    } 
+    }
+
     #mentions-du-site #liens-utiles {
         margin-bottom: 25px;
     }
+
     #mentions-du-site div ul {
         display: flex;
         flex-direction: column;
@@ -381,10 +446,12 @@ footer {
         padding: 0;
         list-style-type: none;
         text-align: center;
-    } 
+    }
+
     #mentions-du-site div ul li {
         padding: 5px 0;
-    } 
+    }
+
     #mentions-du-site div .libelle-liens {
         text-decoration: underline;
         text-decoration-color: #f9b233;
@@ -400,14 +467,16 @@ footer {
         width: 100%;
     }
 
-    #newsletter form #newsletter-title,#texte-newsletter {
+    #newsletter form #newsletter-title,
+    #texte-newsletter {
         text-align: center;
     }
-
 }
 
 @media screen and (max-width: 350px) {
-    #sport-track-infos,#mentions-du-site,#newsletter {
+    #sport-track-infos,
+    #mentions-du-site,
+    #newsletter {
         width: 85%;
     }
 }
