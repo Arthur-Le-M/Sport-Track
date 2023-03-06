@@ -3,6 +3,7 @@ require "config.php"; // Lien pour la connexion a la BD
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
+else{echo("id non-defini");}
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ if(isset($_SESSION['id'])){
     // Import du footer (commun à toutes les pages)
     // require "footer.php";
     ?>
-    <script src="./app.js"></script>
+    <script src="script.js"></script>
     <!--<script src="script.js"></script>-->
 </body>
 </html>

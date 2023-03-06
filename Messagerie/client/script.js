@@ -1,8 +1,7 @@
 // Fichier contenant tous les sous programmes à utiliser
 // Enchainement des étapes :
-connexionServeur()
 eventNouveauContactBtn();
-afficherJoueursModale();
+//afficherJoueursModale();
 
 // Affiche les contacts et définit les évents lors d'un clic sur contact
 eventContacts();
@@ -12,36 +11,33 @@ eventContacts();
 
 
 // connexion au serveur de websocket
-function connexionServeur()
-{
-  var id = document.getElementsByName("id_client")[0].value;
-  var conn = new WebSocket('ws://localhost:8080?id=' + id);
+    var id = document.getElementsByName("id_client")[0].value;
+    var conn = new WebSocket('ws://localhost:8080?id=' + id);
 
 
-conn.onopen = function(e) {
-  console.log("Connexion ouverte!");
-};
+  conn.onopen = function(e) {
+    console.log("Connexion ouverte!");
+  };
 
-conn.onmessage = function(e) {
-  //Récupération du JSON
-  var data = JSON.parse(e.data);
-  //recuperer les données
- var message = data[message]
- var date = data[heure];
- var id = data[envoyeur];
-  //verifier si la conversation est ouverte  
-  if(document.getElementsByName(id).length > 0)
-  {
-    //Ajouter le message en html sur la page
-    ajouterMessageReception(message,date);
+  conn.onmessage = function(e) {
+    //Récupération du JSON
+    var data = JSON.parse(e.data);
+    //recuperer les données
+  var message = data[message]
+  var date = data[heure];
+  var id = data[envoyeur];
+    //verifier si la conversation est ouverte  
+    if(document.getElementsByName(id).length > 0)
+    {
+      //Ajouter le message en html sur la page
+      ajouterMessageReception(message,date);
+    }
+    else{ console.log("conversation avec " + id + "pas ouverte")}
+  };
+
+  conn.onclose = function(e) {
+    console.log("Connexion fermée!");
   }
-  else{ console.log("conversation avec " + id + "pas ouverte")}
-};
-
-conn.onclose = function(e) {
-  console.log("Connexion fermée!");
-}
-}
 // Déclare les actions à réaliser lors d'un clic sur le bouton "Nouveau Contact" 
 function eventNouveauContactBtn() {
   document.querySelector("#nv-conv").addEventListener('click', (event) => {
@@ -61,7 +57,7 @@ function eventNouveauContactBtn() {
     xhr1.send();
     xhr1.onload = () => {
       var tousLesJoueurs = JSON.parse(xhr1.response);
-
+      console.log("joueurs:",tousLesJoueurs);
       afficherJoueursModale(tousLesJoueurs);
   
       // Evenement correspondant à la saisie dans l'input (effectue un tri et affiche les joueurs correspondant à la saisie)
@@ -104,7 +100,7 @@ function afficherJoueursModale(tab) {
       html += htmlNoContact;
     } else {
       for (var i = 0; i < tab.length; i++) {
-        var htmlUnContact = "<a class='select-joueur'><div class='unJoueur' name='" + tab[i][0] + "'><div class='info-joueur'><img class='img-profil' src='images/pp.png' alt=''><p id='pseudo'>" + tab[i][1] + "</p></div><a class='lancer-nv-conv'>Lancer Nv Conv</a></div></a>";
+        var htmlUnContact = "<a class='select-joueur'><div class='unJoueur' name='" + tab[i][0] + "'><div class='info-joueur'><img class='img-profil' src='../images/pp.png' alt=''><p id='pseudo'>" + tab[i][1] + "</p></div><a class='lancer-nv-conv'>Lancer Nv Conv</a></div></a>";
         html += htmlUnContact;
       }
     }
@@ -148,7 +144,7 @@ function afficherContacts() {
     sectionContacts.innerHTML = "";
 
     // Interrogation de la bd qui va nous retourner les utilisateurs qui ont une interaction avec l'utilisateur connecté
-    var url = "API/retournerUsersAssocies.php";
+    var url = "../API/retournerUsersAssocies.php";
 
     // Requete AJAX 
     var xhr2 = new XMLHttpRequest();
@@ -174,7 +170,7 @@ function afficherContacts() {
         }
         
 
-        html += "<a class='select-contact'><div class='unContact' name='" + idContact + "'><img src='images/pp.png' alt=''><div class='infos-contact'><p class='nom-contact'>" + pseudoContact + "</p><p class='last-msg'>" + date + " : " + message + "</p></div></div></a>";
+        html += "<a class='select-contact'><div class='unContact' name='" + idContact + "'><img src='../images/pp.png' alt=''><div class='infos-contact'><p class='nom-contact'>" + pseudoContact + "</p><p class='last-msg'>" + date + " : " + message + "</p></div></div></a>";
 
         sectionContacts.innerHTML = html;
       }
@@ -199,7 +195,7 @@ function eventContacts() {
         var id = parseInt(unContact.getAttribute('name'));
 
         // Interrogation de la bd qui va nous retourner les infos de l'utilisateur sélectionné
-        var url = "API/retournerInfoUser.php?id=" + id;
+        var url = "../API/retournerInfoUser.php?id=" + id;
 
         //Requete AJAX 
         var xhr3 = new XMLHttpRequest();
@@ -232,7 +228,7 @@ function afficherPartieConversation(json,id) {
   htmlConv = "<div id='tous-les-messages'></div>";
 
   // Ecriture du code html de la barre de saisie
-  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='images/envoyer.png'></a></div></div>";
+  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='../images/envoyer.png'></a></div></div>";
 
   // Ecriture du code html de la balise <section id="conversation">
   var html = htmlEnTete + htmlConv + htmlSaisie;
@@ -262,7 +258,7 @@ function afficherDiscussion(baliseAffichage,id) {
   var htmlConv = "";
 
   // Interrogation de la bd qui va nous retourner tous les messages entre l'utilisateur connecté et celui sélectionné
-  var url = "API/retournerConversation.php?id=" + id;
+  var url = "../API/retournerConversation.php?id=" + id;
 
   //Requete AJAX
   var xhr4 = new XMLHttpRequest();
@@ -368,19 +364,22 @@ function dateToString(dateSql) {
 } 
 
 function ajouterMessageEnvoi(message,date){
-  // on recupere la zone des message
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
   var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
   // on ajoute ce nouveau message 
-  blocMessages.appendChild(nouveauMessage);
+  var messageElement = document.createElement("div");
+  messageElement.innerHTML = nouveauMessage;
+  blocMessages.appendChild(messageElement);
 }
 
 function ajouterMessageReception(message,date){
-  // on recupere la zone des message
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
-  var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
   // on ajoute ce nouveau message 
-  blocMessages.appendChild(nouveauMessage);
+  var messageElement = document.createElement("div");
+  messageElement.innerHTML = nouveauMessage;
+  blocMessages.appendChild(messageElement);
+
 }

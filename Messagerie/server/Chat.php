@@ -28,6 +28,7 @@ class Chat implements MessageComponentInterface {
 
         $data = json_decode($msg, true);
 
+        // on prepare le message a envoyé
         if ($data !== null) {
             $message = array(
                 "message" => $data["message"],
@@ -36,8 +37,10 @@ class Chat implements MessageComponentInterface {
             );
             $messageJSON = json_encode($message);
 
+
+            // données recupérées du message recu
             $id_destinataire = $data["destinataire"];
-            $heure = $data["heure"];
+            $heure = $data["date"];
 
             $params = array('id' => $id_destinataire, 'message' => $message);
             $query_str = http_build_query($params);
@@ -48,6 +51,7 @@ class Chat implements MessageComponentInterface {
                     if ($client->resourceId == $idSocket) {
                         $client->send($messageJSON);
                         break;
+                        
                     }
                 }
             }
