@@ -1,5 +1,8 @@
 <?php session_start();
 require "config.php"; // Lien pour la connexion a la BD
+if(isset($_SESSION['id'])){
+    $id = $_SESSION['id'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +43,7 @@ require "config.php"; // Lien pour la connexion a la BD
             </section>
         </article>
         <div id="champ-vide"></div>
+        <input type="hidden" name="id_client" value="<?php echo $id; ?>">
     </main>
 
     <?php

@@ -1,18 +1,3 @@
-var id=1000;
-let currentDate = new Date();
-var conn = new WebSocket('ws://localhost:8080?'+ id);
-
-conn.onopen = function(e) {
-    console.log("Connection ouvert!");
-    let messageJSON = {
-        message: "hello2",
-        destinataire: 24,
-        heure: currentDate,
-        envoyeur:1000
-    };
-    conn.send(JSON.stringify(messageJSON));
-};
-
 
 conn.onmessage = function(e) {
     //Récupération du JSON
@@ -21,6 +6,34 @@ conn.onmessage = function(e) {
 };
 
 conn.onclose = function(e) {
-    console.log("Connection fermé!");
-}
+    console.log("Connexion fermée!");
+};
 
+
+function envoyerUnMessage() {
+    const msgInput = document.getElementById("msg-input")
+    var message = msgInput.value;
+    const form = document.querySelector('#form');
+    var id_destinataire = parseInt(form.getAttribute('name'));
+    // Preparation du message à envoyer
+    let messageJSON = {
+        "message": message,
+        "destinataire": id_destinataire,
+      };
+
+    // envoi du message au serveur
+      conn.send(messageJSON);
+      console.log("message envoyé au serveur");
+
+    // Après récupération du message dans la table, on vide l'input 
+    msgInput.value = "";
+  
+    if (message === "" && message.length === 0) {
+      // Affichage message erreur
+      document.getElementById("champ-vide").innerHTML = "Veuillez saisir un message.";
+    } else {
+      // On retire le message d'erreur 
+      document.getElementById("champ-vide").innerHTML = "";
+      // envoi du message sur le websocket
+      }
+    }
