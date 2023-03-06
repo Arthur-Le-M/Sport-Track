@@ -12,11 +12,11 @@ eventContacts();
 
 
 // connexion au serveur de websocket
-connexionServeur()
+function connexionServeur()
 {
   var id = document.getElementsByName("id_client")[0].value;
   var conn = new WebSocket('ws://localhost:8080?id=' + id);
-}
+
 
 conn.onopen = function(e) {
   console.log("Connexion ouverte!");
@@ -25,14 +25,23 @@ conn.onopen = function(e) {
 conn.onmessage = function(e) {
   //Récupération du JSON
   var data = JSON.parse(e.data);
-  //Ajouter le message en html sur la page
-
+  //recuperer les données
+ var message = data[message]
+ var date = data[heure];
+ var id = data[envoyeur];
+  //verifier si la conversation est ouverte  
+  if(document.getElementsByName(id).length > 0)
+  {
+    //Ajouter le message en html sur la page
+    ajouterMessageReception(message,date);
+  }
+  else{ console.log("conversation avec " + id + "pas ouverte")}
 };
 
 conn.onclose = function(e) {
   console.log("Connexion fermée!");
 }
-
+}
 // Déclare les actions à réaliser lors d'un clic sur le bouton "Nouveau Contact" 
 function eventNouveauContactBtn() {
   document.querySelector("#nv-conv").addEventListener('click', (event) => {
@@ -44,7 +53,7 @@ function eventNouveauContactBtn() {
     const inputJoueur = document.querySelector("#input-pseudo");
   
     // Requete qui récupère tous les joueurs de la bd (sauf celui connecté)
-    var url = "API/retournerTousLesUsers.php";
+    var url = "../API/retournerTousLesUsers.php";
   
     //Requete AJAX 
     var xhr1 = new XMLHttpRequest();
@@ -79,6 +88,7 @@ function eventNouveauContactBtn() {
     });
   });
 }
+
 
 // Affiche tous les joueurs dans la liste de la fenêtre modale affichée suite au clic sur "Nouveau Contact"
 function afficherJoueursModale(tab) {
@@ -306,16 +316,19 @@ function envoyerUnMessage() {
   var message = msgInput.value;
   const form = document.querySelector('#form');
   var id_destinataire = parseInt(form.getAttribute('name'));
+  let date = new Date();
   // Preparation du message à envoyer
   let messageJSON = {
       "message": message,
       "destinataire": id_destinataire,
+      "date":date,
     };
 
   // envoi du message au serveur
     conn.send(messageJSON);
     console.log("message envoyé au serveur");
-
+  // ajout du message
+  ajouterMessageEnvoi(message,date);
   // Après récupération du message dans la table, on vide l'input 
   msgInput.value = "";
 
@@ -354,24 +367,20 @@ function dateToString(dateSql) {
   return date;
 } 
 
-function ajouterMessageEnvoi(message){
-  // on recupere la date d'envoi
-  var date = heureToString(messages[j].date);
+function ajouterMessageEnvoi(message,date){
   // on recupere la zone des message
-  var messages = document.getElementById("tous-les-messages");
+  var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
   var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
   // on ajoute ce nouveau message 
-  messages.appendChild(nouveauMessage);
+  blocMessages.appendChild(nouveauMessage);
 }
 
-function ajouterMessageReception(message){
-  // on recupere la date d'envoi
-  var date = heureToString(messages[j].date);
+function ajouterMessageReception(message,date){
   // on recupere la zone des message
-  var messages = document.getElementById("tous-les-messages");
+  var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
-  var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
   // on ajoute ce nouveau message 
-  messages.appendChild(nouveauMessage);
+  blocMessages.appendChild(nouveauMessage);
 }

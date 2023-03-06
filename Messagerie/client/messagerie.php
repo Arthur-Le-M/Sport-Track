@@ -50,6 +50,6 @@ if(isset($_SESSION['id'])){
     // Import du footer (commun à toutes les pages)
     // require "footer.php";
     ?>
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
