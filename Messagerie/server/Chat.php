@@ -29,32 +29,43 @@ class Chat implements MessageComponentInterface {
         $data = json_decode($msg, true);
 
         if ($data !== null) {
-            $message = $data["message"];
+            $message = array(
+                "message" => $data["message"],
+                "auteur" => $data["envoyeur"],
+                "heure" => $data["heure"]
+            );
+            $messageJSON = json_encode($message);
+
             $id_destinataire = $data["destinataire"];
-            $id_envoyeur = $data["envoyeur"];
-            // votre code de traitement du message ici
+            $heure = $data["heure"];
+
             $params = array('id' => $id_destinataire, 'message' => $message);
             $query_str = http_build_query($params);
-
+            echo $message;
             if (isset($this->array[$id_destinataire])) {
                 $idSocket = $this->array[$id_destinataire];
                 foreach ($this->clients as $client) {
                     if ($client->resourceId == $idSocket) {
-                        $client->send($message);
+                        $client->send($messageJSON);
                         break;
                     }
                 }
-                //include("../API/insertMsg.php?".$query_str);
             }
-            //include("../API/insertMsg.php?".$query_str);
+
+            foreach ($this->array as $querystring => $resourceId) {
+                if ($resourceId === $from->resourceId) {
+                    $envoyeur = $querystring;
+                    $data['envoyeur'] = $envoyeur; // Ajouter le paramètre envoyeur à $data
+                    break;
+                }
+            }
+                     
            // Paramètres de connexion à la base de données
            if ($this->sauvegarderMessage($data)) {
             echo 'Saved message to DB';
             } else {
             echo 'Failed to save message';
             }
-
-
         } else {
             // gérer l'erreur de décodage JSON ici
             echo "Erreur de décodage JSON : " . json_last_error_msg() . "\n";
@@ -64,7 +75,13 @@ class Chat implements MessageComponentInterface {
     public function onClose(ConnectionInterface $conn) {
         // The connection is closed, remove it, as we can no longer send it messages
         $this->clients->detach($conn);
-
+        foreach ($this->array as $querystring => $resourceId) {
+            if ($resourceId === $conn->resourceId) {
+                unset($this->array[$querystring]);
+                break;
+            }
+        }
+        
         echo "Connection {$conn->resourceId} has disconnected\n";
     }
 
@@ -90,7 +107,6 @@ class Chat implements MessageComponentInterface {
             $stmt->execute();
             return true;
         }
-
         return false;
     }
 }

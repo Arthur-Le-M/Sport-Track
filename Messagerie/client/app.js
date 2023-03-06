@@ -1,13 +1,3 @@
-connexionServeur()
-{
-    var id = document.getElementsByName("id_client")[0].value;
-    var conn = new WebSocket('ws://localhost:8080?id=' + id);
-}
-
-conn.onopen = function(e) {
-    console.log("Connexion ouverte!");
-};
-
 
 conn.onmessage = function(e) {
     //Récupération du JSON
