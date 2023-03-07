@@ -1,7 +1,7 @@
 // Fichier contenant tous les sous programmes à utiliser
 // Enchainement des étapes :
 eventNouveauContactBtn();
-//afficherJoueursModale();
+afficherJoueursModale();
 
 // Affiche les contacts et définit les évents lors d'un clic sur contact
 eventContacts();
@@ -259,7 +259,7 @@ function afficherPartieConversation(json,id) {
 // Affiche la conversation, c'est à dire affiche les messages dans la partie conversation préparée dans le sous programme précédent "afficherPartieConversation()"
 function afficherDiscussion(baliseAffichage,id) {
   var htmlConv = "";
-
+  console.log("affichage des messages ...")
   // Interrogation de la bd qui va nous retourner tous les messages entre l'utilisateur connecté et celui sélectionné
   var url = "../API/retournerConversation.php?id=" + id;
 
@@ -273,17 +273,24 @@ function afficherDiscussion(baliseAffichage,id) {
       var messages = JSON.parse(xhr4.response);
 
       if (messages.length === 0) {
+        console.log("aucune message")
         htmlConv += "<p id='pas-de-msg'>Début de la conversation.</p>";
-      } else {
+      } 
+      else {
+        console.log("plusieurs messages")
         // Ecriture de la partie messages 
         for (var j = 0; j < messages.length; j++) {
           var date = heureToString(messages[j].date);
-
+          console.log(messages[j])
+          console.log("l'id est un",typeof id)
+          console.log("l'auteur est un",typeof messages[j].id_auteur)
           switch (id) {
-            case messages[j].id_auteur:
+            case parseInt(messages[j].id_auteur):
+              console.log("recu")
               htmlConv += "<div class='recu'><p class='msg-contenu'>" + messages[j].message + "</p><p class='msg-date'>" + date + "</p></div>";
               break;
-            case messages[j].id_destinataire:
+            case parseInt(messages[j].id_destinataire):
+              console.log("envoye")
               htmlConv += "<div class='envoye'><p class='msg-contenu'>" + messages[j].message + "</p><p class='msg-date'>" + date + "</p></div>";
               break;
             default:
