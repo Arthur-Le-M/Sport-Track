@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: Oswald;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlever le outline par défaut sur les input */
+input:focus{
+    outline:none;
+}
+
+a{
+    text-decoration: none;
+    color: #F8B232;
+}
+
+body{
+    margin-top: 150px;
+    height: 100vh;
+}
+
+
+
+/* Main */
+/*Général*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.sectionTitre{
+    display: flex;
+    justify-content: center;
+}
+
+.titrePage{
+    font-size: 50px;
+    text-align: center;
+}
+
+button{
+    cursor: pointer;
+    width: 25%;
+    background-color: #F8B232;
+    padding-top:8px;
+    padding-bottom:8px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+}
+
+
+/*Spécifique à connexion et inscription*/
+.sectionPage{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.inputElement{
+    border: none;
+    background-color: rgb(242, 242, 242);
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.validConditionContainer{
+    display: flex;
+}
+
+.checkBox{
+    margin-right: 5px;
+}
+
+.buttonFormulaire{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    width: 25%;
+    background-color: #F8B232;
+    padding-top:8px;
+    padding-bottom:8px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+}
+.messageLinkToAnother{
+    text-align: center;
+}
+
+.linkToAnother a{
+    text-decoration: none;
+    color:#F8B232;
+    text-decoration: underline;
+}
+/* FIN Spécifique à connexion et inscription*/
+
+/*Spécifique à accueil*/
+#sectionSTCODE{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.divBarres{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    width:40%;
+    height:100px;
+    border-radius: 12px;
+}
+
+#imageLogoST{
+    height: 80px;
+    margin-right: 10px;
+}
+
+#licenceHiding{
+    visibility: hidden;
+}
+
+
+
+@media screen and (max-width: 735px)
+{
+
+    /*main */
+    /* Général*/
+    button{
+        width: 50%;
+    }
+
+    /* Spécifique à connexion inscription */
+    .inputElement{
+        width: 80%;
+    }
+
+    .buttonFormulaire{
+        width: 60%;
+    }
+    /* FIN Spécifique à connexion inscription */
+
+    /* Spécifique Accueil */
+    .divBarres{
+        width: 90%;
+    }
+    /*Fin Spécifique Accueil */
+
+
+}
