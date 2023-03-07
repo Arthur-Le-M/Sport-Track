@@ -267,8 +267,6 @@ main {
     margin-left: 25px;
     margin-right: 9px;
     height: 100%;
-    display: flex;
-    flex-direction: column-reverse;
     overflow-y: scroll;
 }
 
@@ -288,8 +286,8 @@ main {
 
 #messagerie #conversation #tous-les-messages .recu {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; 
+    align-items: flex-start; 
     padding-bottom: 5px;
 }
 
