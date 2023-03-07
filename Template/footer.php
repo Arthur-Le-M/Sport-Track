@@ -51,3 +51,5 @@
     </section>
     <p id="droit-auteur">©Sport Track, Inc</p>
 </footer>
+</body>
+<html>
