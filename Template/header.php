@@ -20,7 +20,7 @@
                 <a href="#"> Partager </a>
                 <a href="#"> Avis </a>
                 <a href="#" id="separation"> Réglages </a>
-                <a href="#"> Contact </a>
+                <a href="../information/contact.php"> Contact </a>
                 <a href="#"> Aide </a>
                 <a href="#"> Déconnexion </a>
             </div>
