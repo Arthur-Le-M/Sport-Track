@@ -1,0 +1,120 @@
+main {
+    margin: 85px 0;
+}
+
+#info-contact {
+    text-align: center;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    font-size: 1.2em;
+}
+
+#info-contact p {
+    margin: 15px;
+}
+
+
+#info-contact #text1 {
+    color: #F9B233;
+}
+#info-contact #text3 {
+    font-weight: bold;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style des groupes de champs */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Style des labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Style des inputs */
+input[type="text"],
+input[type="email"],
+button[type="submit"],
+textarea {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    font-size: 1em;
+}
+textarea {
+    resize: vertical;
+}
+input:focus,textarea:focus {
+    border: none;
+    outline: 2px solid #F9B233;
+}
+
+/* Style du bouton */
+button[type="submit"] {
+    background-color: #F9B233;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+button[type="submit"]:hover {
+    background-color: #e89b16;
+    color: #ffffff;
+}
+
+.messagesuccess {
+    display: flex;
+    margin-top: 10px;
+    width: 90px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #30b422;
+    color: #fff;
+}
+
+.messageerror {
+    display: flex;
+    margin-top: 10px;
+    width: 90px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: red;
+    color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+    .form-group {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+    button[type="submit"] {
+        width: 90%;
+    }
+}
