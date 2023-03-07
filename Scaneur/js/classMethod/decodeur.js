@@ -558,7 +558,7 @@ class Decodeur {
  {
  // Envoyez la requête AJAX
  const xhr = new XMLHttpRequest();
- xhr.open("GET" , 'http://localhost:8888/SportTrack/src/codeJavaScript/st_code/src/php/api.php?license='+numLicence);
+ xhr.open("GET" , 'http://localhost:80/Sport-Track/Scaneur/API/api.php?license='+numLicence);
  xhr.send();
  // Attendre la réponse avant de continuer
  const response = await new Promise((resolve,reject) => {

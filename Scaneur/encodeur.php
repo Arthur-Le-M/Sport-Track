@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']='aaaaaaaaaa';
+$_SESSION['id']='jetestavec';
 if(!isset($_SESSION['role'])){
     $_SESSION['role']='coach';
     $_SESSION['idClub']='12427';
@@ -65,3 +65,4 @@ if(!isset($_SESSION['role'])){
     }
     require("./../Template/footer.php"); ?>
 </body>
+</html>

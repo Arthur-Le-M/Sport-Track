@@ -2,9 +2,16 @@ body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     align-items: center;
 }
+
+.corpsScaneur{
+    height: 100vh;
+    margin-top:10%;
+}
+
+  
 
 .header{
     display: flex;
@@ -26,6 +33,7 @@ body{
 
 .content button {
     margin-top:15px;
+    margin-bottom: 3%;
     display: inline-block;
     font-size: 16px;
     padding: 10px 20px;
@@ -58,4 +66,20 @@ body{
 }
 .changePage:hover {
     background-color: #b78022;
+}
+
+
+
+body.cacher {
+background-color: black;
+}
+
+header,
+footer {
+display: block;
+}
+
+body.cacher header,
+body.cacher footer {
+display: none;
 }

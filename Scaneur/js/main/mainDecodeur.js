@@ -1,22 +1,13 @@
 //Main Decodeur 
 
-//Initiation des variables
 //Récupération des éléments de la page HTML par leur ID (context)
 const parametres = { video: true, audio: false };
 var video = document.getElementById("player");
 const photo = document.getElementById('canvas');
-const hiddenCanvas = document.getElementById('hiddenCanvas');
-const context = photo.getContext('2d');
+
 const boutonPhoto = document.getElementById('photo');
 navigator.mediaDevices.getUserMedia(parametres).then(function (stream) { player.srcObject = stream; });
-const output2 = document.getElementById('output2');
-var contx2 = output2.getContext('2d');
-const output3 = document.getElementById('output3');
-var contx3 = output3.getContext('2d');
-const output4 = document.getElementById('output4');
-var contx4 = output4.getContext('2d');
-const output5 = document.getElementById('output5');
-var contx5 = output5.getContext('2d');
+
 
 // Fonction d'affichage de la mire
 async function drawImg() {
@@ -59,8 +50,13 @@ video.onplay = async function () {
   setInterval(drawImg, 300);
 };
 
+function preparerEcran() {
+  body.classList.toggle('cacher');
+};
+
 //Fonction qui se lance lors du click sur un bouton et qui lance le scanneur
 boutonPhoto.addEventListener('click', async () => {
+  //body.classList.toggle('cacher');
   var trouve = false;
   while (true) {
     try {
