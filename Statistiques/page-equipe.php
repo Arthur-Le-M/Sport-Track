@@ -15,7 +15,7 @@ $req->execute(array('id_equipe' => $idEquipe));
 $matchs = $req->fetchAll();
 ?>
 
-
+<script src="script-statEquipe.js" defer></script>
 <link rel="stylesheet" href="page-equipe.css"/>
 <main>
     <?php
@@ -82,11 +82,20 @@ $matchs = $req->fetchAll();
             print("<p class='date'>".date("d/m/Y", strtotime($match[1]))."</p>");
             print("</div>");
             print("<div class='equipesContainer'>");
-            print("<div class='equipe-win'>");
+            //Si l'équipe est l'équipe gagnante alors elle aura la class equipe-win
+            if($match[4] > $match[5]){
+                print("<div class='equipe-win'>");
+            } else {
+                print("<div class='equipe'>");
+            }
             print("<p class='equipeNom'>".$match[2]."</p>");
             print("<p class='equipeScore'>".$match[4]."</p>");
             print("</div>");
-            print("<div class='equipe'>");
+            if($match[4] < $match[5]){
+                print("<div class='equipe-win'>");
+            } else {
+                print("<div class='equipe'>");
+            }
             print("<p class='equipeNom'>".$match[3]."</p>");
             print("<p class='equipeScore'>".$match[5]."</p>");
             print("</div>");

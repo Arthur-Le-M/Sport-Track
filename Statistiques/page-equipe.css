@@ -120,7 +120,7 @@ h3{
 
 /* Hover effect du container match qui s'agrandit sans bouger les autres*/
 .match:hover{
-    transform: scale(1.005);
+    transform: scale(1.02);
     transition: transform 0.1s;
 }
 
