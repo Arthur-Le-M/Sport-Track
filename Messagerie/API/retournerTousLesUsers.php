@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../config.php"; // Lien pour la connexion a la BD
+require "../client/config.php"; // Lien pour la connexion a la BD
 
 $bdd = getConnection();
 
