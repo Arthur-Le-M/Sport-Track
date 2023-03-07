@@ -10,7 +10,7 @@
     </div>
     <div id="right-part">
         <div id="scanner"> 
-            <a href="./Scaneur/index.php"> <img src="../Template/img/scanner.png"> </a>
+            <a href="/Sport-Track/Scaneur/encodeur.php"> <img src="../Template/img/scanner.png"> </a>
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
