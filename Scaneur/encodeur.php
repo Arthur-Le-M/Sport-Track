@@ -20,7 +20,7 @@ if(!isset($_SESSION['role'])){
 <body>
     <?php require("./../Template/header.php"); ?>
 
-    <div class="divBarres">
+    <span class="divBarres">
         <img class="logoST" src="./image.png">
         <span id="barreReference"></span>
         <span id="vertical0" class="barreHTML"></span>
@@ -45,7 +45,15 @@ if(!isset($_SESSION['role'])){
         <span id="vertical19"></span>
         <span id="vertical20"></span>
         <span id="barreReference"></span>
+</span>
+
+    <div id="modal-container">
+        <div id="modal-content">
+            <img src="./image.png" alt="Image">
+        </div>
     </div>
+
+    <div id="overlay"></div>
     <?php
     if ($_SESSION['role'] === 'coach') {
         echo "<button class='changePage' onclick=\"location.href='./decodeur.php'\">Scanneur</button>";

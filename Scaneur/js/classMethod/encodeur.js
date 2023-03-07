@@ -163,14 +163,14 @@ class Encodeur {
      * @param {Array} listeBarre - La liste de hauteur de barre
      */
     //Méthode : Aucune données >> genererCodeBarre >> Aucun résultat
-    genererCodeBarre(listeBarre) {
+    genererCodeBarre(listeBarre, indicateur) {
         //Affichage du ST code
         //Parcours complet du ST code avec traitement sytématique 
         for (var i = 0; i < listeBarre.length; i++) {
             //barreHTMLTemp >> Affectation de la hauteur pour les éléments grpahique correspondant aux barres >> barreHTMLTemp
             var barreHTMLTemp = document.getElementById('vertical' + i);
             //hateurBareTemp >> Affectation de la hauteur de barre dans une variable temporaire >> hauteurBarreTemp
-            var hauteurBarreTemp = 20 * listeBarre[i];
+            var hauteurBarreTemp = indicateur * listeBarre[i];
             //barreHTMLTemp, hauteurBarreTemp >> Affectation de la hauteur courante à l'élément graphique courant >> Aucun résultat
             barreHTMLTemp.style.height = `${hauteurBarreTemp}px`
             //Application de quelques rêgle CSS

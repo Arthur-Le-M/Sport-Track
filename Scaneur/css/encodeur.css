@@ -45,6 +45,61 @@ body {
     background-color: #b78022;
 }
 
+
+
+
+/* Masquer la fenêtre modale au départ */
+#modal-container {
+    display: none;
+  }
+  
+/* Définir l'apparence de l'arrière-plan */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+/* Afficher la fenêtre modale et l'arrière-plan au clic sur le bouton */
+#overlay.visible {
+    display: block;
+}
+
+#modal-container.visible {
+    display: block;
+}
+
+
+/* Styler le contenu de la fenêtre modale */
+#modal-content {
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+/* Centrer l'image dans la fenêtre modale */
+#modal-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+  
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
 
     .logoST{
@@ -75,7 +130,7 @@ body {
     #barreReference {
         background: white;
         border-radius: 50%;
-        margin-left: 0px;
+        margin-left: 5px;
         border: 5px solid white;
     }
     
@@ -92,7 +147,6 @@ body {
     .divBarres {
         padding: 0px 0px 0px 0px;
         width: 100%;
-        transform: rotate(90deg);
     }
     
     #barreReference {
