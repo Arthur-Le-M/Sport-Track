@@ -1,5 +1,5 @@
 <?php
-require "../config.php"; // Lien pour la connexion a la BD
+require "../../Template/config.php"; // Lien pour la connexion a la BD
 
 $id = $_GET['id'];
 

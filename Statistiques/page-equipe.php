@@ -134,3 +134,5 @@ $matchs = $req->fetchAll();
 <?php
 require "../Template/footer.php";
 ?>
+</body>
+</html>

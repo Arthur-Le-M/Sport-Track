@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Template/style.css">
+    <title>Sport-Track</title>
+</head>
+<body>
 <header>
     <div id="logo"> 
         <a href="#"> <img src="../Template/img/logo.png"> </a>
     </div>
     <div id="barre-nav">
         <a href="#"> <img src="../Template/img/maison.png"> </a>
-        <a href="#"> <img src="../Template/img/messager.png"> </a>
+        <a href="../Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
         <a href="../Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
-        <a href="#"> <img src="../Template/img/personne.png"> </a>
+        <a href="../Statistiques/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
     </div>
     <div id="right-part">
         <div id="scanner"> 
@@ -27,3 +37,4 @@
         </div>
     </div>
 </header>
+<body>

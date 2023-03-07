@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../config.php";
+require "../../Template/config.php";
 $bdd = getConnection();
 
 /* 

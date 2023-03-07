@@ -1,25 +1,15 @@
-<?php
-session_start();
-$_SESSION['id']='jetestavec';
-if(!isset($_SESSION['role'])){
-    $_SESSION['role']='coach';
-    $_SESSION['idClub']='12427';
-    $_SESSION['idStade']='1720';
-}
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/encodeur.css">
-    <link rel="stylesheet" href="../Template/style.css">
-</head>
-<body>
     <?php require("./../Template/header.php"); ?>
-
+    <?php
+    session_start();
+    $_SESSION['id']='jetestavec';
+    if(!isset($_SESSION['role'])){
+        $_SESSION['role']='coach';
+        $_SESSION['idClub']='12427';
+        $_SESSION['idStade']='1720';
+    }
+    ?>
+    <link rel="stylesheet" href="./css/encodeur.css">
     <div class="divBarres">
         <img class="logoST" src="./image.png">
         <span id="barreReference"></span>

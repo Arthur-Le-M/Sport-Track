@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../config.php"; // Lien pour la connexion a la BD
+require "../../Template/config.php"; // Lien pour la connexion a la BD
 
 $idAuteur = $_SESSION['id'];
 $idDestinataire = $_GET['id'];
