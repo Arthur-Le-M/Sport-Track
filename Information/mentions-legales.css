@@ -1,0 +1,61 @@
+main {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 85px 0;
+}
+
+#titre {
+    height: 130px;
+    background-color: #F9B233;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 25px;
+}
+#titre h2 {
+    padding-top: 20px;
+    font-size: 2.3em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+#titre .date {
+    color: rgb(233, 233, 233);
+}
+
+main section {
+    padding: 0 3%;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+main section h3{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+main section .adresse, main section .contact, main section .team {
+    padding-bottom: 15px;
+}
+
+main section ul li {
+    margin-left: 20px;
+}
+
+main section span {
+    text-decoration: underline;
+}
+
+main section #link {
+    color: #3882b7;
+}
+
+main section #link:hover {
+    color: #75b9eb;
+    transition: 0.3s;
+}

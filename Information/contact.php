@@ -23,7 +23,7 @@
             <p id="text2">Contactez-nous !</p>
             <p id="text3">Notre équipe est là pour vous aider.</p>
         </div>
-        <form method="post" action="traitement.php">
+        <form method="post" action="contact-traitement.php">
             <div class="form-group">
                 <label for="nom">Nom - Prénom :</label>
                 <input type="text" placeholder="Luc Leclerc" id="nom" name="nom" required>
