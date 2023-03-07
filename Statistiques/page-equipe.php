@@ -50,7 +50,13 @@ $matchs = $req->fetchAll();
             $defaite = 0;
             $egalite = 0;
             foreach ($matchs as $match) {
-                if ($match[4] > $match[5]) {
+                $numEquipe = 0;
+                if($equipe[0] == $match[2]){
+                    $numEquipe = 0;
+                } else {
+                    $numEquipe = 1;
+                }
+                if ($match[4] > $match[5] && $numEquipe == 0 || $match[4] < $match[5] && $numEquipe == 1) {
                     $victoire++;
                 } else if ($match[4] == $match[5]) {
                     $egalite++;
@@ -77,6 +83,13 @@ $matchs = $req->fetchAll();
         <h3>Matchs</h3>
         <?php
         foreach ($matchs as $match) {
+            $numEquipe = 0;
+            if($equipe[0] == $match[2]){
+                $numEquipe = 0;
+            } else {
+                $numEquipe = 1;
+            }
+            print("<a href='page-match.php?id=$match[0]'");
             print("<article class='match'>");
             print("<div class='dateContainer'>");
             print("<p class='date'>".date("d/m/Y", strtotime($match[1]))."</p>");
@@ -101,15 +114,18 @@ $matchs = $req->fetchAll();
             print("</div>");
             print("</div>");
             print("<div class='resultatContainer'>");
-            if ($match[4] > $match[5]) {
+            if ($match[4] > $match[5] && $numEquipe == 0) {
                 print("<p class='resultat-gagnant'>V</p>");
-            } else if ($match[4] == $match[5]) {
+            }elseif($match[4] < $match[5] && $numEquipe == 1){
+                print("<p class='resultat-gagnant'>V</p>");
+            }else if ($match[4] == $match[5]) {
                 print("<p class='resultat-egalite'>E</p>");
             } else {
                 print("<p class='resultat-perdant'>D</p>");
             }
             print("</div>");
             print("</article>");
+            print("</a>");
         }
         ?>
     </section>

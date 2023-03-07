@@ -57,6 +57,7 @@ $matchs = $req->fetchAll();
             <h5 id="matchContainerTitle">Matchs :</h5>
             <?php
             foreach ($matchs as $match) {
+                print("<a href='page-match.php?id=".$match[0]."'>");
                 print("<article class='match'>");
                 print("<div class='dateContainer'>");
                 //transformer le fomat de la date en date simple dd/mm/yyyy
@@ -91,6 +92,7 @@ $matchs = $req->fetchAll();
                 }
                 print("</div>");
                 print("</article>");
+                print("</a>");
             }
             ?>
             <!-- Template d'un match
