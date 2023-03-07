@@ -6,6 +6,11 @@
     font-family: 'Oswald', sans-serif;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 main{
     display: flex;
 }
@@ -43,6 +48,12 @@ main{
     font-size: 50px;
     font-weight: bold;
     height: 11%;
+}
+
+#lienEquipe{
+    font-size: 30px;
+    font-weight: 600;
+    height: 7%;
 }
 
 #sectionPP h4{

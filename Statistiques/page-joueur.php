@@ -29,7 +29,7 @@ $matchs = $req->fetchAll();
             <?php
             print("<h5>".$joueur[0]."</h5>");
             print("<h3>".$joueur[1]."</h3>");
-            print("<h4>".$joueur[4]."</h4>");
+            print("<a id='lienEquipe' href='page-equipe.php?id=$joueur[2]><h4'>".$joueur[4]."</h4></a>");
             print("<h5>".$joueur[3]."</h5>");
             ?>
         </section>
@@ -64,17 +64,31 @@ $matchs = $req->fetchAll();
                 print("<p class='date'>".$match[1]."</p>");
                 print("</div>");
                 print("<div class='equipesContainer'>");
-                print("<div class='equipe'>");
+                if($match[4] > $match[5]) {
+                    print("<div class='equipe-win'>");
+                } else {
+                    print("<div class='equipe'>");
+                }
                 print("<p class='equipeNom'>".$match[2]."</p>");
                 print("<p class='equipeScore'>".$match[4]."</p>");
                 print("</div>");
-                print("<div class='equipe'>");
+                if($match[4] < $match[5]) {
+                    print("<div class='equipe-win'>");
+                } else {
+                    print("<div class='equipe'>");
+                }
                 print("<p class='equipeNom'>".$match[3]."</p>");
                 print("<p class='equipeScore'>".$match[5]."</p>");
                 print("</div>");
                 print("</div>");
                 print("<div class='resultatContainer'>");
-                print("<p class='resultat-gagnant'>V</p>");
+                if ($match[4] > $match[5]) {
+                    print("<p class='resultat-gagnant'>V</p>");
+                } else if ($match[4] < $match[5]) {
+                    print("<p class='resultat-perdant'>D</p>");
+                } else {
+                    print("<p class='resultat-egalite'>N</p>");
+                }
                 print("</div>");
                 print("</article>");
             }
