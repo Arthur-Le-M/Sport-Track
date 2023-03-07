@@ -2,6 +2,7 @@ window.addEventListener('load', async () => {
 
 
   const calendar = document.querySelector(".calendar"),
+    eventsContainer = document.querySelector(".events"),
     date = document.querySelector(".date"),
     daysContainer = document.querySelector(".days"),
     prev = document.querySelector(".prev"),
@@ -379,15 +380,25 @@ window.addEventListener('load', async () => {
         year === event.year
       ) {
         event.events.forEach((event) => {
-          events += `<div class="event">
-            <div class="title">
-              <i class="fas fa-circle"></i>
-              <h3 class="event-title">${event.title}</h3>
-            </div>
-            <div class="event-time">
-              <span class="event-time">${event.time}</span>
-            </div>
-        </div>`;
+          let eventHtml = `<div class="event">
+            <div class="title_time_event">
+              <div class="title">
+                <i class="fas fa-circle"></i>
+                <h3 class="event-title">${event.title}</h3>
+              </div>
+              <div class="event-time">
+                <span class="event-time">${event.time}</span>
+              </div>
+            </div>`;
+          if (event.title.startsWith("Match")) {
+            eventHtml += `<div class="divBoutonConsulter">
+              <button class="boutonConsulter" onClick="window.location.href='Sport-Track/Profil/Match/index.php?id=${event.id}'">
+                Consulter
+              </button>
+            </div>`;
+          }
+          eventHtml += `</div>`;
+          events += eventHtml;
         });
       }
     });
@@ -399,6 +410,7 @@ window.addEventListener('load', async () => {
     eventsContainer.innerHTML = events;
     saveEvents();
   }
+  
 
 
 

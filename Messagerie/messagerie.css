@@ -10,14 +10,9 @@ body {
     background-color: #F7F7F7;
 }
 
-header {
-    height: 100px;
-    background-color: rgb(24, 19, 19);
-}
-
 main {
-    margin: 40px 0;
-    height: 65vh;
+    height: 75vh;
+    margin: 85px 0;
 }
 
 #champ-vide {
@@ -359,3 +354,5 @@ main {
     width: 30px;
     margin-right: 8px;
 }
+
+/* ******************* RESPONSIVITE ******************* */
