@@ -176,7 +176,7 @@ class Encodeur {
             //Application de quelques rêgle CSS
             barreHTMLTemp.style.borderLeft = "5px solid white"
             barreHTMLTemp.style.display = "inline-block"
-            barreHTMLTemp.style.marginLeft = "2%"
+            barreHTMLTemp.style.marginLeft = "1.8%"
             barreHTMLTemp.style.borderRadius = "5px"
         }
     }

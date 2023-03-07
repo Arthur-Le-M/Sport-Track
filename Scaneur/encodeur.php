@@ -22,7 +22,7 @@ if(!isset($_SESSION['role'])){
 
     <span class="divBarres">
         <img class="logoST" src="./image.png">
-        <span id="barreReference"></span>
+        <span id="barreReference1" class="barreReference"></span>
         <span id="vertical0" class="barreHTML"></span>
         <span id="vertical1" class="barreHTML"></span>
         <span id="vertical2" class="barreHTML"></span>
@@ -44,7 +44,7 @@ if(!isset($_SESSION['role'])){
         <span id="vertical18"></span>
         <span id="vertical19"></span>
         <span id="vertical20"></span>
-        <span id="barreReference"></span>
+        <span id="barreReference2" class="barreReference"></span>
 </span>
 
     <div id="modal-container">

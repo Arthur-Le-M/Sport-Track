@@ -18,7 +18,7 @@ body {
     height: 100%;
 }
 
-#barreReference {
+.barreReference {
     background: white;
     border-radius: 50%;
     margin-left: 10px;
@@ -107,7 +107,7 @@ body {
         margin-right: 3px;
     }
 
-    #barreReference {
+    .barreReference {
         background: white;
         border-radius: 50%;
         margin-left: 5px;
@@ -127,7 +127,7 @@ body {
         width: 100%;
     }
     
-    #barreReference {
+    .barreReference {
         background: white;
         border-radius: 50%;
         margin-left: 5px;
@@ -149,11 +149,14 @@ body {
         width: 100%;
     }
     
-    #barreReference {
+    .barreReference {
         background: white;
         border-radius: 50%;
         margin-left: 0px;
         border: 5px solid white;
+    }
+    #barreReference2{
+        margin-left: 5px;
     }
     
     .logoST{

@@ -25,11 +25,12 @@ unEncodeur.genererCodeBarre(uneListeBarre.getListeBarre(),20);
 
 };
 
-function checkWidth() {
+/*function checkWidth() {
     if (window.innerWidth < 650) {
-        var unEncodeur = new Encodeur()
-      unEncodeur.genererCodeBarre(uneListeBarre.getListeBarre(),10)
+        mainEncodeur()
+
     }
   }
 
-window.addEventListener('resize', checkWidth);
+window.addEventListener('resize', checkWidth);*/
+
