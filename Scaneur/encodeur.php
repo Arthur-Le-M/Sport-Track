@@ -16,7 +16,6 @@ if(!isset($_SESSION['role'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/encodeur.css">
     <link rel="stylesheet" href="../Template/style.css">
-    <title>Algorithme</title>
 </head>
 <body>
     <?php require("./../Template/header.php"); ?>

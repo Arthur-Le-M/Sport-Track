@@ -1,5 +1,10 @@
 //MAIN ENCODEUR
 
+const codeBarre = document.getElementsByClassName('divBarres');
+
+codeBarre.addEventListener('click', () => {
+    
+});
 //Function main encodeur lancé lors du click sur un bouton
 function mainEncodeur(name){
 //Appelle des fonction d'encodeur

@@ -87,10 +87,12 @@ body {
 }
 
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 550px) {
+
     .divBarres {
         padding: 0px 0px 0px 0px;
         width: 100%;
+        transform: rotate(90deg);
     }
     
     #barreReference {
