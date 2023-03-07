@@ -1,0 +1,110 @@
+main {
+    line-height: 1.5;
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titre {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+}
+
+#titre h2 {
+    color: #F9B233;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+#titre p {
+    font-size: 1.2em;
+}
+
+#sport-track-team {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+#sport-track-team .avatar {
+    height: 300px;
+    border-radius: 20px;
+}
+
+#description {
+    margin: 75px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#description #partie1 {
+    width: 70%;
+    height: 275px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#description #partie1 #intitule {
+    line-height: 25px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#description #partie1 #intitule p {
+    font-weight: 400;
+    font-size: 1.3em;
+}
+#description #partie1 #intitule #marque {
+    font-weight: 600;
+    font-size: 1.8em;
+}
+#description #partie1 #intitule img {
+    padding-top: 25px;
+    width: 235px;
+}
+
+#description #partie1 #texte {
+    width: 50%;
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#description #partie2 {
+    width: 70%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#description #partie2 h3 {
+    font-weight: 400;
+    font-size: 1.7em;
+    padding-bottom: 10px;
+}
+#description #partie2 #texte {
+    width: 60%;
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+}
