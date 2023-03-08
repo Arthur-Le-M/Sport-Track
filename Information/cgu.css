@@ -1,0 +1,25 @@
+main {
+    margin: 85px 0;
+}
+
+#titre {
+    height: 130px;
+    background-color: #F9B233;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 25px;
+}
+#titre h2 {
+    font-size: 2.3em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+#titre .date {
+    color: rgb(233, 233, 233);
+}

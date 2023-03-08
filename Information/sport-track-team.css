@@ -1,0 +1,169 @@
+main {
+    line-height: 1.5;
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titre {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px;
+}
+
+#titre h2 {
+    color: #F9B233;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+#titre p {
+    font-size: 1.2em;
+}
+
+#sport-track-team {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+
+#sport-track-team .avatar {
+    height: 300px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1212px) {
+    #sport-track-team .avatar {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 616px) {
+    #sport-track-team {
+        flex-direction: column;
+    }
+}
+
+#description {
+    margin: 75px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#description #partie1 {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#description #partie1 #intitule {
+    line-height: 25px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#description #partie1 #intitule p {
+    font-weight: 400;
+    font-size: 1.3em;
+}
+#description #partie1 #intitule #marque {
+    font-weight: 600;
+    font-size: 1.8em;
+}
+#description #partie1 #intitule img {
+    padding-top: 25px;
+    width: 235px;
+}
+
+#description #partie1 #texte {
+    width: 50%;
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#description #partie1 #texte p {
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    #description #partie1 {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #description #partie1 {
+        width: 95%;
+    }
+}
+
+#description #partie2 {
+    width: 70%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#description #partie2 h3 {
+    font-weight: 400;
+    font-size: 1.7em;
+    padding-bottom: 10px;
+}
+#description #partie2 #texte {
+    width: 60%;
+    height: 100%;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#description #partie2 #texte p{
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+    #description #partie2 #texte {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 525px) {
+    #description #partie1 {
+        flex-direction: column;
+    }
+
+    #description #partie1 #texte {
+        width: 90%;
+    }
+
+    #description #partie1 #intitule img {
+        padding-top: 25px;
+        padding-bottom: 50px;
+        width: 235px;
+    }
+
+    #description #partie2 {
+        width: 90%;
+    }
+
+    #description #partie2 #texte {
+        width: 95%;
+    }
+}
