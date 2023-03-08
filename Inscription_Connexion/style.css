@@ -79,6 +79,21 @@ button{
     border-radius: 10px;
 }
 
+.inputElementErreur{
+    border: none;
+    background-color: rgb(255, 205, 205);
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.messageErreur{
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 .validConditionContainer{
     display: flex;
 }

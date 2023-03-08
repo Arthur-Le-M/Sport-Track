@@ -4,6 +4,8 @@ if(isset($_SESSION['user'])){
     header('location: accueil.php');
     exit;
 }
+
+$err = $_GET['err'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +26,28 @@ if(isset($_SESSION['user'])){
             </section>
             <section class="sectionPage">
                 <form class="formulaire" action="traitementConnexion.php" method="post">
-                    <input class="inputElement" type="email" name="email" placeholder="Email*">
-                    <input class="inputElement" type="password" name="passwd" placeholder="Mot de passe*">
+                    <?php if($err == 'mail'){
+                        print('<input class="inputElementErreur" type="email" name="email" placeholder="Email*">');
+                    } 
+                    else{
+                        print('<input class="inputElement" type="email" name="email" placeholder="Email*">');
+                    }
+
+                    if($err == 'passwd'){
+                        print('<input class="inputElementErreur" type="password" name="passwd" placeholder="Mot de passe*">');
+                    } 
+                    else{
+                        print('<input class="inputElement" type="password" name="passwd" placeholder="Mot de passe*">');
+                    }
+                    if($err == 'mail'){
+                        print('<p class="messageErreur">Email incorrect</p>');
+                    }
+                    if($err == 'passwd'){
+                        print('<p class="messageErreur">Mot de passe incorrect</p>');
+                    }
+                    ?>
+
+                    
                     <input class="buttonFormulaire" type="submit" value="SE CONNECTER">
                 </form>
                 <p class="messageLinkToAnother">Vous n'avez pas de compte ?</p>
