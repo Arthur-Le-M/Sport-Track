@@ -6,10 +6,10 @@ $mail = htmlspecialchars($_POST['email']);
 $passwd = htmlspecialchars($_POST['passwd']);
 
 //Connexion à la base de donnée
-$conn = new PDO('mysql:host=localhost;dbname=bd_sporttrack;charset=utf8','root','root');
+require "../Template/config.php"; // Lien pour la connexion a la BD
+$conn = getConnection();
 
 //On verifie que l'email est valide
-//Vérification de l'existence de la licence
 $req = "SELECT * FROM inscrit WHERE mail=:mail";
 $req = $conn->prepare($req);
 $req->execute(['mail'=>$mail]);
@@ -22,7 +22,7 @@ if(count($res)==1){
     $req = $conn->prepare($req);
     $req->execute(['mail'=>$mail]);
     $res = $req->fetch();
-    if($res[0] == $passwd){
+    if(password_verify($passwd, $res['mdp'])){
         //Le mot de passe est bon
         //On démarre la session
         $_SESSION['user'] = $mail;

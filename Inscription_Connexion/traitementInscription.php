@@ -5,7 +5,9 @@ $mail = htmlspecialchars($_POST['email']);
 $passwd = htmlspecialchars($_POST['passwd']);
 
 //Connexion à la base de donnée
-$conn = new PDO('mysql:host=localhost;dbname=bd_sporttrack;charset=utf8','root','root');
+require "../Template/config.php"; // Lien pour la connexion a la BD
+$conn = getConnection();
+
 //Vérification des inputs
 //Vérification de l'existence de la licence
 $req = "SELECT * FROM joueur WHERE licence=:licence";
@@ -25,6 +27,9 @@ if(count($res) == 1){
         //Insertion dans la base de donnée -> Inscription
         $req = "INSERT INTO inscrit(licence, mail, mdp) VALUES(:licence, :mail, :mdp)";
         $req = $conn->prepare($req);
+        //Hashage du mot de passe
+        $passwd = password_hash($passwd, PASSWORD_DEFAULT);
+        //Execution de la requete
         $req->execute(['licence'=>$licence, 'mail'=>$mail, 'mdp'=>$passwd]);
         //Redirection vers connexion
         header("Location: connexion.php");
