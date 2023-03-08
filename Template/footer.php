@@ -32,7 +32,7 @@
         <div id="newsletter">
             <form>
                 <p id="newsletter-title"> Rejoindre le Club SportTrack !</p>
-                <input type="email" id="input-email" name="email" placeholder="Adresse e-mail" size="20" maxsize="50">
+                <input type="email" id="input-email" name="email-newsletter" placeholder="Adresse e-mail" size="20" maxsize="50">
 
                 <div class="checkbox-container">
                     <input type="checkbox" id="checkbox-news" name="consentement-nouveautés">

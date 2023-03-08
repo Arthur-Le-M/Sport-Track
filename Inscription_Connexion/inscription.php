@@ -12,6 +12,7 @@
         <?php require("../Template/header.php"); 
         $err = $_GET['err'] ?? null;
         ?>
+        <script src="script-connexion-inscription.js" defer></script>
         <main>
             <section class="sectionTitre">
                 <h2 class="titrePage">Inscription</h2>

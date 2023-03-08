@@ -88,6 +88,15 @@ button{
     border-radius: 10px;
 }
 
+.inputElementValide{
+    border: none;
+    background-color: rgb(205, 255, 209);
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    border-radius: 10px;
+}
+
 .messageErreur{
     color: red;
     font-size: 15px;
