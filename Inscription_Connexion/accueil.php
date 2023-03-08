@@ -2,10 +2,10 @@
 //On démarre la session
 session_start();
 //On verifie qu'une session est active
-if(!isset($_SESSION['user'])){
+/*if(!isset($_SESSION['user'])){
     header('location: connexion.php');
     exit;
-}
+}*/
 //On se connect à la base de donnée
 require "../Template/config.php";
 $conn = getConnection();

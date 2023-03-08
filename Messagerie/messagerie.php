@@ -3,7 +3,9 @@ require "../Template/config.php"; // Lien pour la connexion a la BD
 if(isset($_SESSION['id'])){
     $id = $_SESSION['id'];
 }
-else{echo("id non-defini");}
+else{echo("id non-defini");
+    header('location: connexion.php');
+}
 ?>
 
 <!DOCTYPE html>
