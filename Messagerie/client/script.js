@@ -380,21 +380,15 @@ function dateToString(dateSql) {
 function ajouterMessageEnvoi(message,date){
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
-  var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + heureToString(date) + "</p></div>";
   // on ajoute ce nouveau message 
-  var messageElement = document.createElement("div");
-  messageElement.innerHTML = nouveauMessage;
-  blocMessages.appendChild(messageElement);
-  blocMessages.scrollTop = blocMessages.scrollHeight;
+  blocMessages.innerHTML = nouveauMessage + blocMessages.innerHTML;
 }
 
 function ajouterMessageReception(message,date){
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
-  var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + date + "</p></div>";
+  var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + heureToString(date) + "</p></div>";
   // on ajoute ce nouveau message 
-  var messageElement = document.createElement("div");
-  messageElement.innerHTML = nouveauMessage;
-  blocMessages.appendChild(messageElement);
-  blocMessages.scrollTop = blocMessages.scrollHeight;
+  blocMessages.innerHTML = nouveauMessage + blocMessages.innerHTML;
 }

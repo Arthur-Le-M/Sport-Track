@@ -97,7 +97,7 @@ class Chat implements MessageComponentInterface {
     {
         echo($data["envoyeur"]);
         echo("sauvegarde :");
-        $db = new \PDO("mysql:host=127.0.0.1:3306;dbname=bd_sporttrack", "root", "root"); 
+        $db = new \PDO("mysql:host=127.0.0.1:3306;dbname=bd_sporttrack", "root", ""); 
         
         $stmt = $db->prepare('INSERT INTO messages(message, id_destinataire, id_auteur, date) VALUES (?, ?, ?, NOW())');
         
