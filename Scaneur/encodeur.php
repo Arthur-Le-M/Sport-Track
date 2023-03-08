@@ -20,45 +20,76 @@ if(!isset($_SESSION['role'])){
 <body>
     <?php require("./../Template/header.php"); ?>
 
+
+
     <span class="divBarres">
         <img class="logoST" src="./image.png">
-        <span id="barreReference1" class="barreReference"></span>
-        <span id="vertical0" class="barreHTML"></span>
-        <span id="vertical1" class="barreHTML"></span>
-        <span id="vertical2" class="barreHTML"></span>
-        <span id="vertical3"></span>
-        <span id="vertical4"></span>
-        <span id="vertical5"></span>
-        <span id="vertical6"></span>
-        <span id="vertical7"></span>
-        <span id="vertical8"></span>
-        <span id="vertical9"></span>
-        <span id="vertical10"></span>
-        <span id="vertical11"></span>
-        <span id="vertical12"></span>
-        <span id="vertical13"></span>
-        <span id="vertical14"></span>
-        <span id="vertical15"></span>
-        <span id="vertical16"></span>
-        <span id="vertical17"></span>
-        <span id="vertical18"></span>
-        <span id="vertical19"></span>
-        <span id="vertical20"></span>
+        <span class="barreReference"></span>
+        <span class="vertical0"></span>
+        <span class="vertical1"></span>
+        <span class="vertical2"></span>
+        <span class="vertical3"></span>
+        <span class="vertical4"></span>
+        <span class="vertical5"></span>
+        <span class="vertical6"></span>
+        <span class="vertical7"></span>
+        <span class="vertical8"></span>
+        <span class="vertical9"></span>
+        <span class="vertical10"></span>
+        <span class="vertical11"></span>
+        <span class="vertical12"></span>
+        <span class="vertical13"></span>
+        <span class="vertical14"></span>
+        <span class="vertical15"></span>
+        <span class="vertical16"></span>
+        <span class="vertical17"></span>
+        <span class="vertical18"></span>
+        <span class="vertical19"></span>
+        <span class="vertical20"></span>
         <span id="barreReference2" class="barreReference"></span>
 </span>
 
-    <div id="modal-container">
-        <div id="modal-content">
-            <img src="./image.png" alt="Image">
+
+
+    <div id="overlay">
+        <div id="modal-container">
+            <div id="modal-content">
+                <img class="logoST" src="./image.png">
+                <span class="barreReference"></span>
+                <span class="vertical21"></span>
+                <span class="vertical22"></span>
+                <span class="vertical23"></span>
+                <span class="vertical24"></span>
+                <span class="vertical25"></span>
+                <span class="vertical26"></span>
+                <span class="vertical27"></span>
+                <span class="vertical28"></span>
+                <span class="vertical29"></span>
+                <span class="vertical30"></span>
+                <span class="vertical31"></span>
+                <span class="vertical32"></span>
+                <span class="vertical33"></span>
+                <span class="vertical34"></span>
+                <span class="vertical35"></span>
+                <span class="vertical36"></span>
+                <span class="vertical37"></span>
+                <span class="vertical38"></span>
+                <span class="vertical39"></span>
+                <span class="vertical40"></span>
+                <span class="vertical41"></span>
+                <span id="barreReference4" class="barreReference"></span>
+            </div>
         </div>
     </div>
-
-    <div id="overlay"></div>
     <?php
     if ($_SESSION['role'] === 'coach') {
         echo "<button class='changePage' onclick=\"location.href='./decodeur.php'\">Scanneur</button>";
     }
 ?>
+
+
+
+
 
     <script src="./js/classObjet/licence.js"></script>
     <script src="./js/classObjet/grayCode.js"></script>

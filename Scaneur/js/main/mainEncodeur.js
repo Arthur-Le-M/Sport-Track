@@ -12,6 +12,7 @@ overlay.addEventListener('click', () => {
     modal.className ='modal-container';
 });
 
+
 //Function main encodeur lancé lors du click sur un bouton
 function mainEncodeur(name){
 //Appelle des fonction d'encodeur
@@ -24,13 +25,3 @@ unEncodeur.genererCodeBarre(uneListeBarre.getListeBarre(),20);
 
 
 };
-
-/*function checkWidth() {
-    if (window.innerWidth < 650) {
-        mainEncodeur()
-
-    }
-  }
-
-window.addEventListener('resize', checkWidth);*/
-

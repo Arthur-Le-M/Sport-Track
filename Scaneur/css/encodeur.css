@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(0, 0, 0);
     width: 70%;
     height: 100%;
 }
@@ -58,9 +58,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.938);
     z-index: 1;
     display: none;
 }
@@ -72,27 +72,31 @@ body {
 
 #modal-container.visible {
     display: block;
+    height: 100vh;
+    margin-top: 18vh;
 }
 
 
 /* Styler le contenu de la fenêtre modale */
 #modal-content {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
-    max-width: 90%;
-    max-height: 90%;
     margin: auto;
+    margin-top: 20px;
+    background-color: rgb(0, 0, 0);
+    width: 70%;
+    height: 40%;
 }
 
 /* Centrer l'image dans la fenêtre modale */
 #modal-content img {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
+    align-items: center;
+    height: 175px;
 }
   
-
 
 
 
@@ -118,6 +122,10 @@ body {
         width: 90%;
     }
 
+    #modal-content {
+        width: 90%;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
@@ -138,6 +146,9 @@ body {
         height: 175px;
         margin-right: 10px;
     }
+    #modal-content {
+        width: 100%;
+    }
 
 }
 
@@ -155,12 +166,20 @@ body {
         margin-left: 0px;
         border: 5px solid white;
     }
+
     #barreReference2{
+        margin-left: 5px;
+    }
+
+    #barreReference4{
         margin-left: 5px;
     }
     
     .logoST{
         height: 175px;
         margin-right: 10px;
+    }
+    #modal-content {
+        width: 100%;
     }
 }
