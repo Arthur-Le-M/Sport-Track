@@ -10,50 +10,49 @@ eventContacts();
 
 
 // connexion au serveur de websocket
-    var id = document.getElementsByName("id_client")[0].value;
-    console.log("l'id est :",id)
-    var conn = new WebSocket('ws://localhost:8080?id=' + id);
+var id = document.getElementsByName("id_client")[0].value;
+console.log("l'id est :", id)
+var conn = new WebSocket('ws://localhost:8080?id=' + id);
 
-  conn.onopen = function() {
-    console.log("Connexion ouverte!");
-  };
+conn.onopen = function () {
+  console.log("Connexion ouverte!");
+};
 
-  conn.onmessage = function(e) {
-    //Récupération du JSON
-    var data = JSON.parse(e.data);
-    //recuperer les données
+conn.onmessage = function (e) {
+  //Récupération du JSON
+  var data = JSON.parse(e.data);
+  //recuperer les données
   var message = data.message
   var id = data.auteur;
   var date = data.heure;
-  console.log("id recevoir: ",id,
-  "date: ",date,
-  "message: ",message)
+  console.log("id recevoir: ", id,
+    "date: ", date,
+    "message: ", message)
 
-    //verifier si la conversation est ouverte  
-    if(document.getElementsByName(id).length > 0)
-    {
-      //Ajouter le message en html sur la page
-      ajouterMessageReception(message,date);
-    }
-    else{ console.log("conversation avec: " + id + " pas ouverte")}
-  };
-
-  conn.onclose = function(e) {
-    console.log("Connexion fermée!");
+  //verifier si la conversation est ouverte  
+  if (document.getElementsByName(id).length > 0) {
+    //Ajouter le message en html sur la page
+    ajouterMessageReception(message, date);
   }
+  else { console.log("conversation avec: " + id + " pas ouverte") }
+};
+
+conn.onclose = function (e) {
+  console.log("Connexion fermée!");
+}
 // Déclare les actions à réaliser lors d'un clic sur le bouton "Nouveau Contact" 
 function eventNouveauContactBtn() {
   document.querySelector("#nv-conv").addEventListener('click', (event) => {
     // Affichage de la fenetre modale 
     const modal = document.querySelector("#modal");
     modal.classList.add('visible');
-  
+
     // Récupération du champ de saisie permettant de trier les joueurs
     const inputJoueur = document.querySelector("#input-pseudo");
-  
+
     // Requete qui récupère tous les joueurs de la bd (sauf celui connecté)
     var url = "http://localhost/Sport-Track/Messagerie/API/retournerTousLesUsers.php";
-  
+
     //Requete AJAX 
     var xhr1 = new XMLHttpRequest();
     xhr1.open("GET", url, true);
@@ -61,23 +60,23 @@ function eventNouveauContactBtn() {
     xhr1.onload = () => {
       console.log(xhr1.response)
       var tousLesJoueurs = JSON.parse(xhr1.response);
-      console.log("joueurs:",tousLesJoueurs);
+      console.log("joueurs:", tousLesJoueurs);
       afficherJoueursModale(tousLesJoueurs);
-  
+
       // Evenement correspondant à la saisie dans l'input (effectue un tri et affiche les joueurs correspondant à la saisie)
       inputJoueur.addEventListener("keyup", function () {
         // Récupération de la valeur de l'input
         var valeurSaisie = inputJoueur.value;
-  
+
         // Filtre en fonction de la saisie
         var joueursFiltres = tousLesJoueurs.filter(function (element) {
           return element[1].toLowerCase().includes(valeurSaisie.toLowerCase());
         });
-  
+
         afficherJoueursModale(joueursFiltres);
       });
     }
-  
+
     // Evenement qui ferme la fenetre modale si on clique autour
     modal.addEventListener("click", function (e) {
       // Vérifier si le clic est sur l'élément modal
@@ -172,7 +171,7 @@ function afficherContacts() {
         } else {
           date = dateToString(contactsAssocies[i][3]);
         }
-        
+
 
         html += "<a class='select-contact'><div class='unContact' name='" + idContact + "'><img src='http://localhost/Sport-Track/Messagerie/images/pp.png' alt=''><div class='infos-contact'><p class='nom-contact'>" + pseudoContact + "</p><p class='last-msg'>" + date + " : " + message + "</p></div></div></a>";
 
@@ -219,7 +218,7 @@ function eventContacts() {
 }
 
 // Affiche la partie droite de l'écran, l'information de la discussion choisie (le nom/prenom), la conversation (vide) ainsi que la barre de saisie
-function afficherPartieConversation(json,id) {
+function afficherPartieConversation(json, id) {
   const conversation = document.querySelector('#conversation');
 
   // On efface le contenu de la div avant d'y ajouter la nouvelle conv
@@ -254,11 +253,11 @@ function afficherPartieConversation(json,id) {
   });
 
   // Une fois la partie conversation préparée, on affiche les messages entre la personne sélectionnée et la personne connectée
-  afficherDiscussion(document.getElementById("tous-les-messages"),id);
+  afficherDiscussion(document.getElementById("tous-les-messages"), id);
 }
 
 // Affiche la conversation, c'est à dire affiche les messages dans la partie conversation préparée dans le sous programme précédent "afficherPartieConversation()"
-function afficherDiscussion(baliseAffichage,id) {
+function afficherDiscussion(baliseAffichage, id) {
   var htmlConv = "";
   console.log("affichage des messages ...")
   // Interrogation de la bd qui va nous retourner tous les messages entre l'utilisateur connecté et celui sélectionné
@@ -276,15 +275,15 @@ function afficherDiscussion(baliseAffichage,id) {
       if (messages.length === 0) {
         console.log("aucune message")
         htmlConv += "<p id='pas-de-msg'>Début de la conversation.</p>";
-      } 
+      }
       else {
         console.log("plusieurs messages")
         // Ecriture de la partie messages 
         for (var j = 0; j < messages.length; j++) {
           var date = heureToString(messages[j].date);
           console.log(messages[j])
-          console.log("l'id est un",typeof id)
-          console.log("l'auteur est un",typeof messages[j].id_auteur)
+          console.log("l'id est un", typeof id)
+          console.log("l'auteur est un", typeof messages[j].id_auteur)
           switch (id) {
             case parseInt(messages[j].id_auteur):
               console.log("recu")
@@ -324,21 +323,17 @@ function envoyerUnMessage() {
   var message = msgInput.value;
   const form = document.querySelector('#form');
   var id_destinataire = parseInt(form.getAttribute('name'));
-  console.log("destinataire: ",id_destinataire);
+  console.log("destinataire: ", id_destinataire);
   let date = new Date();
   // Preparation du message à envoyer
   let messageJSON = {
-      "message": message,
-      "destinataire": id_destinataire,
-      "date":date,
-    };
+    "message": message,
+    "destinataire": id_destinataire,
+    "date": date,
+  };
 
   let messageJSONString = JSON.stringify(messageJSON);
-  // envoi du message au serveur
-    conn.send(messageJSONString);
-    console.log("message envoyé au serveur");
-  // ajout du message
-  ajouterMessageEnvoi(message,date);
+  
   // Après récupération du message dans la table, on vide l'input 
   msgInput.value = "";
 
@@ -349,8 +344,12 @@ function envoyerUnMessage() {
     // On retire le message d'erreur 
     document.getElementById("champ-vide").innerHTML = "";
     // envoi du message sur le websocket
-    }
-  };
+    conn.send(messageJSONString);
+    console.log("message envoyé au serveur");
+    eventContacts();
+    ajouterMessageEnvoi(message, date);
+  }
+};
 /* ********** Autres sous programmes ********** */
 
 // Transforme une date sql (2023-02-08 19:21:06) en string pour affichage (19h21)
@@ -365,19 +364,19 @@ function heureToString(dateSql) {
     var date = heures + "h" + minutes;
   }
   return date;
-} 
+}
 
 // Transforme une date sql (2023-02-08 19:21:06) en string pour affichage (08/02/2023)
 function dateToString(dateSql) {
   var dateRecup = new Date(dateSql);
 
-  const options = {day: 'numeric', month: 'numeric', year: 'numeric'}; // options de formatage
+  const options = { day: 'numeric', month: 'numeric', year: 'numeric' }; // options de formatage
   const date = dateRecup.toLocaleDateString('fr-FR', options);
-  
-  return date;
-} 
 
-function ajouterMessageEnvoi(message,date){
+  return date;
+}
+
+function ajouterMessageEnvoi(message, date) {
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
   var nouveauMessage = "<div class='envoye'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + heureToString(date) + "</p></div>";
@@ -385,7 +384,7 @@ function ajouterMessageEnvoi(message,date){
   blocMessages.innerHTML = nouveauMessage + blocMessages.innerHTML;
 }
 
-function ajouterMessageReception(message,date){
+function ajouterMessageReception(message, date) {
   var blocMessages = document.getElementById("tous-les-messages");
   // on creer le nouveau message 
   var nouveauMessage = "<div class='recu'><p class='msg-contenu'>" + message + "</p><p class='msg-date'>" + heureToString(date) + "</p></div>";
