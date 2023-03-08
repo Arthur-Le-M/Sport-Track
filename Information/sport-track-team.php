@@ -47,7 +47,7 @@
                 <h3>Vos interlocuteurs</h3>
                 <div id="texte">
                     <p>Actuellement en deuxième année de BUT Informatique à Anglet, notre équipe est composée de quatre membres, chacun apportant sa propre expertise et ses compétences uniques pour faire avancer notre projet.</p>
-                    <p>Retournons sur les 4 avatars que l'on retrouve en haut de page. De gauche à droite, nous retrouvons <strong>Arthur Le Menn</strong>, <strong>Matis Chabanat</strong>, <strong>Titouan Cocheril</strong> et <strong>Ivan Salle</strong>.</p>
+                    <p>Retournons sur les 4 avatars que l'on retrouve en haut de page. Nous retrouvons respectivement <strong>Arthur Le Menn</strong>, <strong>Matis Chabanat</strong>, <strong>Titouan Cocheril</strong> et <strong>Ivan Salle</strong>.</p>
                     <p>Nous avons choisi le thème du sport car étant nous 4 de grands sportifs, cela nous tenait à coeur de réaliser un projet sur ce thème.</p>
                 </div> 
             </section>
