@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../Template/style.css"/>
 <?php
 require "../Template/header.php";
 require "../Template/config.php";
@@ -21,7 +22,7 @@ $matchs = $req->fetchAll();
 
 ?>
 <link rel="stylesheet" href="page-joueur.css"/>
-<script src="script-statJoueur.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <main>
     <div id="containerGauche">
         <section id="sectionPP">
@@ -116,6 +117,16 @@ $matchs = $req->fetchAll();
             </article>
             -->
         </section>
+
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <script src="chart.js"></script>
+        <?php 
+            if (isset($licence)) {
+                echo "<script>chargerChartJoueur('{$licence}');</script>";
+            }
+        ?>
     </div>
 </main>
 

@@ -15,7 +15,8 @@ $req->execute(array('id_equipe' => $idEquipe));
 $matchs = $req->fetchAll();
 ?>
 
-<script src="script-statEquipe.js" defer></script>
+<link rel="stylesheet" href="../Template/style.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="stylesheet" href="page-equipe.css"/>
 <main>
     <?php
@@ -41,43 +42,18 @@ $matchs = $req->fetchAll();
             <p class="statElementUnité">matchs</p>
         </article>
     </section>
-    <section id="victoireDefaite">
-        <h3>Victoires / Egalité / Défaites</h3>
-        <div id="ProgressBarre">
-            <?php
-            //Calculer les pourcentages a partir de la liste de match et du nombre de match
-            $victoire = 0;
-            $defaite = 0;
-            $egalite = 0;
-            foreach ($matchs as $match) {
-                $numEquipe = 0;
-                if($equipe[0] == $match[2]){
-                    $numEquipe = 0;
-                } else {
-                    $numEquipe = 1;
-                }
-                if ($match[4] > $match[5] && $numEquipe == 0 || $match[4] < $match[5] && $numEquipe == 1) {
-                    $victoire++;
-                } else if ($match[4] == $match[5]) {
-                    $egalite++;
-                } else {
-                    $defaite++;
-                }
-            }
-            $victoire = $victoire / $equipe[2] * 100;
-            $defaite = $defaite / $equipe[2] * 100;
-            $egalite = $egalite / $equipe[2] * 100;
-            if($victoire > 0){
-                print('<div id="Victoire" style="width:'.round($victoire).'%;">'.round($victoire).'%</div>');
-            }
-            if($egalite > 0){
-                print('<div id="Egalite" style="width:'.round($egalite).'%;">'.round($egalite).'%</div>');
-            }
-            if($defaite > 0){
-                print('<div id="Defaite" style="width:'.round($defaite).'%;">'.round($defaite).'%</div>');
-            }
-            ?>
+    
+    <section class="chart">
+        <div>
+            <canvas id="myChart3"></canvas>
         </div>
+        <script src="chart.js"></script>
+        <?php 
+            if (isset($idEquipe)) {
+                echo '<script>chargerChartEquipe('.$idEquipe.')</script>';
+            }
+        ?>
+
     </section>
     <section id="matchsContainer">
         <h3>Matchs</h3>

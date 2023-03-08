@@ -14,6 +14,7 @@ $match = $req->fetch();
 
 ?>
 <link rel="stylesheet" href="page-match.css"/>
+<link rel="stylesheet" href="../Template/style.css"/>
 <main>
     <section id="sectionResultat">
         <div class="equipe">
