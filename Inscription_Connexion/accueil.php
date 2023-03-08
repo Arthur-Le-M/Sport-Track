@@ -7,7 +7,8 @@ if(!isset($_SESSION['user'])){
     exit;
 }
 //On se connect à la base de donnée
-$conn = new PDO('mysql:host=localhost;dbname=bd_sporttrack;charset=utf8','root','root');
+require "../Template/config.php";
+$conn = getConnection();
 
 //On récupère les données de l'user 
 $req = "SELECT * FROM inscrit WHERE mail=:mail";
