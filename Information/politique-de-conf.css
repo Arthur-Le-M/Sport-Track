@@ -1,6 +1,10 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
 main {
-    line-height: 1.5;
-    margin: 85px 0;
+    margin: 35px 0;
 }
 
 #titre {
@@ -13,7 +17,7 @@ main {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    line-height: 25px;
+    line-height: 30px;
 }
 #titre h2 {
     font-size: 2.3em;
@@ -23,4 +27,82 @@ main {
 }
 #titre .date {
     color: rgb(233, 233, 233);
+}
+
+#introduction {
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+}
+
+#introduction p, #introduction ul {
+    width: 50%;
+}
+
+#introduction p {
+    padding-right: 5%;
+}
+#introduction ul {
+    padding-left: 5%;
+    border-left: 1px solid #F9B233;
+}
+#introduction ul li {
+    list-style-type: decimal;
+    color: #f9b233;
+    list-style-position: outside;
+}
+#introduction ul li:hover {
+    text-decoration: underline;
+    text-decoration-color: #f9b233;
+}
+#introduction ul li a {
+    color: black;
+}
+
+@media screen and (max-width: 680px) {
+    #introduction {
+        flex-direction: column;
+    }
+
+    #introduction p, #introduction ul {
+        width: 100%;
+    }
+
+    #introduction p {
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+    
+    #introduction ul li {
+        line-height: 2;
+    }
+    #introduction ul {
+        border: none;
+    }
+}
+
+#developpement {
+    padding: 0 5%;
+}
+
+#developpement article h3 {
+    padding-top: 40px;
+    padding-bottom: 15px;
+    font-size: 1.8em;
+}
+#developpement article p, #developpement article ul li {
+    font-size: 1.2em;
+}
+#developpement article p, #developpement article ul {
+    padding-bottom: 10px;
+}
+
+
+#developpement #point7 p span {
+    text-decoration: underline;
+}
+#developpement ul li {
+    margin-left: 19px;
 }
