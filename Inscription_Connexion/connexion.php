@@ -26,24 +26,21 @@ $err = $_GET['err'] ?? null;
             </section>
             <section class="sectionPage">
                 <form class="formulaire" action="traitementConnexion.php" method="post">
-                    <?php if($err == 'mail'){
+                    <?php if($err == 'true'){
                         print('<input class="inputElementErreur" type="email" name="email" placeholder="Email*">');
                     } 
                     else{
                         print('<input class="inputElement" type="email" name="email" placeholder="Email*">');
                     }
 
-                    if($err == 'passwd'){
+                    if($err == 'true'){
                         print('<input class="inputElementErreur" type="password" name="passwd" placeholder="Mot de passe*">');
                     } 
                     else{
                         print('<input class="inputElement" type="password" name="passwd" placeholder="Mot de passe*">');
                     }
-                    if($err == 'mail'){
-                        print('<p class="messageErreur">Email incorrect</p>');
-                    }
-                    if($err == 'passwd'){
-                        print('<p class="messageErreur">Mot de passe incorrect</p>');
+                    if($err == 'true'){
+                        print('<p class="messageErreur">Le mail ou le mot de passe est incorrect</p>');
                     }
                     ?>
 

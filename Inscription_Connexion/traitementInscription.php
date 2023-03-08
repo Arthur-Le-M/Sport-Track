@@ -37,13 +37,13 @@ if(count($res) == 1){
     }else{
         //La licence est utilisé
         //Redirection avec le paramètre erreur
-        header("Location: inscription.php?err=alreadyUse");
+        header("Location: inscription.php?err=licence");
         exit;
     }
 }else{
     //La licence n'existe pas
     //Redirection avec le paramètre erreur
-    header("Location: inscription.php?err=notExiste");
+    header("Location: inscription.php?err=licence");
     exit;
 }
 

@@ -30,12 +30,12 @@ if(count($res)==1){
         exit;
     }else{
         //Le mot de passe est faux
-        header('location: connexion.php?err=passwd');
+        header('location: connexion.php?err=true');
         exit;
     }
 }else{
     //L'email n'est pas valide
-    header('location: connexion.php?err=mail');
+    header('location: connexion.php?err=true');
     exit;
 }
 
