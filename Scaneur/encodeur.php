@@ -79,15 +79,14 @@ if(!isset($_SESSION['role'])){
                 <span class="vertical41"></span>
                 <span id="barreReference4" class="barreReference"></span>
             </div>
-            <?php
-            if ($_SESSION['role'] === 'coach') {
-                    echo "<button class='changePage' onclick=\"location.href='./decodeur.php'\">Scanneur</button>";
-                }
-            ?>
         </div>
     </div>
 
-
+<?php
+    if ($_SESSION['role'] === 'coach') {
+            echo "<button class='changePage' onclick=\"location.href='./decodeur.php'\">Scanneur</button>";
+        }
+?>
 
 
 
