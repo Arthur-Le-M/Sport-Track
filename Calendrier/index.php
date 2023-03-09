@@ -11,7 +11,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['role'])){
-    $_SESSION['role']='cch';
+    $_SESSION['role']='coach';
     $_SESSION['idClub']='12427';
     $_SESSION['idStade']='1720';
 }

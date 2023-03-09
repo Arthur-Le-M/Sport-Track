@@ -1,9 +1,10 @@
-<link rel="stylesheet" href="../Template/style.css"/>
 <?php
+
+session_start();
 require "../Template/header.php";
 require "../Template/config.php";
 $bdd = getConnection();
-$licence = $_GET['licence'];
+$licence = $_SESSION['licence'];
 
 //Récupérer les informaton du joueur
 $req = $bdd->prepare('SELECT j.nom, j.prenom, j.id_equipe, j.poste, e.nom, COUNT(*) FROM joueur j JOIN equipe e ON j.id_equipe = e.id JOIN matchtable m ON j.id_equipe = id_equipe_dom OR id_equipe = id_equipe_ext WHERE licence=:licence AND m.jouer = 1 GROUP BY j.nom, j.prenom, j.id_equipe, j.poste, e.nom;');
@@ -22,6 +23,7 @@ $matchs = $req->fetchAll();
 
 ?>
 <link rel="stylesheet" href="page-joueur.css"/>
+<link rel="stylesheet" href="../Template/style.css"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <main>
     <div id="containerGauche">

@@ -15,7 +15,7 @@
         <a href="#"> <img src="../Template/img/logo.png"> </a>
     </div>
     <div id="barre-nav">
-        <a href="/Sport-Track/Inscription_Connexion/accueil.php"> <img src="../Template/img/maison.png"> </a>
+        <a href="/Sport-Track/Accueil/accueil_connecte.php"> <img src="../Template/img/maison.png"> </a>
         <a href="/Sport-Track/Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
         <a href="/Sport-Track/Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
         <a href="/Sport-Track/Profil/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
@@ -34,7 +34,7 @@
                 <a href="#" id="separation"> Réglages </a>
                 <a href="../information/contact.php"> Contact </a>
                 <a href="#"> Aide </a>
-                <a href="#"> Déconnexion </a>
+                <a href="/Sport-Track/Inscription_Connexion/deconnexion.php"> Déconnexion </a>
             </div>
         </div>
     </div>

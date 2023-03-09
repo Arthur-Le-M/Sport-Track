@@ -25,14 +25,16 @@ if(count($res)==1){
     if(password_verify($passwd, $res['mdp'])){
         //Le mot de passe est bon
         //On ajoute l'id au variables de session // Lien pour la connexion a la BD
-        $recupID = $conn->prepare('SELECT id FROM inscrit WHERE mail=? AND mdp=?');
+        $recupID = $conn->prepare('SELECT id, licence FROM inscrit WHERE mail=? AND mdp=?');
         $recupID->execute([$mail,$res['mdp']]);
         //array($_SESSION['id'])
         $resultat = $recupID->fetch();
         $id = $resultat['id'];
+        $licence = $resultat['licence'];
         //On démarre la session
         $_SESSION['user'] = $mail;
         $_SESSION['id'] = $id;
+        $_SESSION['licence'] = $licence;
         header('location: ../Accueil/accueil_connecte.php');
         exit;
     }else{
