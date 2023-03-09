@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']='jetestavec';
+$_SESSION['id']='041zixz0qS';
 if(!isset($_SESSION['role'])){
     $_SESSION['role']='coach';
     $_SESSION['idClub']='12427';

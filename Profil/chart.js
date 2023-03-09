@@ -1,7 +1,7 @@
 function chargerChartEquipe(_id) {
   const ctx3 = document.getElementById('myChart3');
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", 'http://localhost:8888/Sport-Track/Profil/API/chargerChartEquipe.php?id=' + _id);
+  xhr.open("GET", 'http://localhost:80/Sport-Track/Profil/API/chargerChartEquipe.php?id=' + _id);
   xhr.send();
   // Attendre la réponse avant de continuer
   xhr.onreadystatechange = function () {
@@ -37,7 +37,7 @@ function chargerChartJoueur(_id) {
   const ctx3 = document.getElementById('myChart');
   // Récupérer les données via AJAX
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", 'http://localhost:8888/Sport-Track/Profil/API/chargerChartJoueur.php?id=' + _id);
+  xhr.open("GET", 'http://localhost:80/Sport-Track/Profil/API/chargerChartJoueur.php?id=' + _id);
   xhr.send();
 
   xhr.onreadystatechange = function () {

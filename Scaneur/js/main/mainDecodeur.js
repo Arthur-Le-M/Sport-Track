@@ -1,12 +1,15 @@
 //Main Decodeur 
 
+//Initiation des variables
 //Récupération des éléments de la page HTML par leur ID (context)
 const parametres = { video: true, audio: false };
 var video = document.getElementById("player");
 const photo = document.getElementById('canvas');
-
+const hiddenCanvas = document.getElementById('hiddenCanvas');
+const context = photo.getContext('2d');
 const boutonPhoto = document.getElementById('photo');
 navigator.mediaDevices.getUserMedia(parametres).then(function (stream) { player.srcObject = stream; });
+
 
 
 // Fonction d'affichage de la mire
@@ -50,13 +53,8 @@ video.onplay = async function () {
   setInterval(drawImg, 300);
 };
 
-function preparerEcran() {
-  body.classList.toggle('cacher');
-};
-
 //Fonction qui se lance lors du click sur un bouton et qui lance le scanneur
 boutonPhoto.addEventListener('click', async () => {
-  //body.classList.toggle('cacher');
   var trouve = false;
   while (true) {
     try {
@@ -95,8 +93,9 @@ boutonPhoto.addEventListener('click', async () => {
     }
     if (trouve == true) {
       console.log("LICENCE TROUVE ! FIN");
-      window.location = ('http://localhost:80/SportTrack/Profil/page-joueur.php?licence='+numLicence.getNumLicence());
+      window.location.href=('http://localhost:80/Sport-Track/Profil/page-joueur.php?licence='+numLicence.getNumLicence());
       break;
     }
   };
 });
+

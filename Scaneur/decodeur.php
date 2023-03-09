@@ -16,12 +16,19 @@
             <canvas id="videoCanvas"></canvas>
             <button id="photo">Scanner</button>
         </div>
+    <div class="result">
+        <canvas id="canvas" width="320" height="240"></canvas>
+        <canvas type=hidden id="hiddenCanvas"></canvas>
+        <canvas id="output1"></canvas>
+        <canvas id="output2"></canvas>
+        <canvas id="output3"></canvas>
+        <canvas id="output4"></canvas>
+        <canvas id="output5"></canvas>
+        <p id="text"></p>
+        <button id="boutonJoueur" style="display: none;">Afficher Joueur</button>
+    </div>
 
-        <div class="result">
-            <button id="boutonJoueur" style="display: none;">Afficher Joueur</button>
-        </div>
     </main>
-    <?php require("./../Template/footer.php"); ?>
     <script async src="./librairie/opencv.js" type="text/javascript"></script>  
     <script src="./js/classObjet/licence.js"></script>
     <script src="./js/classObjet/grayCode.js"></script>
@@ -29,4 +36,5 @@
     <script src="./js/classObjet/contoursObjet.js"></script>
     <script src="./js/classMethod/decodeur.js"></script>
     <script src="./js/main/mainDecodeur.js"></script>
+    <?php require("./../Template/footer.php"); ?>
 </body>
