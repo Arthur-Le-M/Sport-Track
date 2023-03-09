@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+#conteneur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
+.boite {
+    height: 450px;
+    width: 300px;
+    border-radius: 10px;
+    padding: 1%;
+    
+}
+.boite img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.boite:hover {
+    transform: scale(1.02);
+  }
+  
+h1 {
+    padding-top: 12%;
+    padding-bottom: 2%;
+    text-align: center;
+    font-family: Oswald;
+}
+h1 img {
+    margin-left: 0.8%;
+  }
+
+

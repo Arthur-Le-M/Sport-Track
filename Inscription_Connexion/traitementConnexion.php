@@ -24,9 +24,16 @@ if(count($res)==1){
     $res = $req->fetch();
     if(password_verify($passwd, $res['mdp'])){
         //Le mot de passe est bon
+        //On ajoute l'id au variables de session // Lien pour la connexion a la BD
+        $recupID = $conn->prepare('SELECT id FROM inscrit WHERE mail=? AND mdp=?');
+        $recupID->execute([$mail,$res['mdp']]);
+        //array($_SESSION['id'])
+        $resultat = $recupID->fetch();
+        $id = $resultat['id'];
         //On démarre la session
         $_SESSION['user'] = $mail;
-        header('location: accueil.php');
+        $_SESSION['id'] = $id;
+        header('location: ../Accueil/accueil_connecte.php');
         exit;
     }else{
         //Le mot de passe est faux

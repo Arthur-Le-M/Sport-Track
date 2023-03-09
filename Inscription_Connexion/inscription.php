@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+    header('location: ../Accueil/accueil_connecte.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
