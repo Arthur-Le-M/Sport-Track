@@ -30,7 +30,7 @@
             </button>
             <div class="dropdownContent">
                 <a href="#"> Partager </a>
-                <a href="#"> Avis </a>
+                <a href="/Sport-Track/Information/avis.php"> Avis </a>
                 <a href="#" id="separation"> Réglages </a>
                 <a href="../information/contact.php"> Contact </a>
                 <a href="#"> Aide </a>
