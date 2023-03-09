@@ -1,10 +1,9 @@
 <?php
-require_once("config.php");
+require_once("../../Template/config.php");
+$bdd = getConnection();
 $nomtable= "MatchTable"; /* Connection bdd */
-$db = new PDO("mysql:host=$host;dbname=$bdd", $user, $pass);
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-function readMatch($db, $id){
+function readMatch($bdd, $id){
     $queryParams = [];
     $queryText = "SELECT m.id, m.heure_debut, m.heure_fin, eq.nom as equipe_dom, eq2.nom as equipe_ext, st.nom as nomStade 
                   FROM MatchTable m 
@@ -12,7 +11,7 @@ function readMatch($db, $id){
                   LEFT JOIN Equipe eq2 ON m.id_equipe_ext = eq2.id 
                   LEFT JOIN Stade st ON m.id_stade = st.id 
                   WHERE m.id_equipe_dom=:id or m.id_equipe_ext=:id";
-    $query = $db->prepare($queryText);
+    $query = $bdd->prepare($queryText);
     $queryParams[":id"] = $id;
     $query->execute($queryParams);
     $events = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -23,7 +22,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
     case "GET":
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
-            $result = readMatch($db, $id);
+            $result = readMatch($bdd, $id);
         } else {
             $result = array("error" => "ID is required");
         }

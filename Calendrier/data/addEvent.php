@@ -1,6 +1,6 @@
 <?php
-require_once("config.php");
-
+require_once("../../Template/config.php");
+getConnection();
 // récupérer les paramètres depuis le formulaire
 $type_ = $_POST['type_'];
 $categorie = $_POST['categorie'];
@@ -11,10 +11,6 @@ $id_stade = $_POST['id_stade'];
 
 
 try {
-    $connexion = new PDO("mysql:host=$host;dbname=$bdd", $user, $pass);
-    // activer les erreurs PDO
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     // préparer la requête d'insertion
     $requete = $connexion->prepare("INSERT INTO Calendrier (type_,categorie,debut ,fin , idEquipe, idStade) VALUES (:type_,:categorie, :debut, :fin,:id_equipe, :id_stade)");
 
