@@ -163,22 +163,33 @@ class Encodeur {
      * @param {Array} listeBarre - La liste de hauteur de barre
      */
     //Méthode : Aucune données >> genererCodeBarre >> Aucun résultat
-    genererCodeBarre(listeBarre) {
+    genererCodeBarre(listeBarre, indicateur) {
         //Affichage du ST code
         //Parcours complet du ST code avec traitement sytématique 
         for (var i = 0; i < listeBarre.length; i++) {
             //barreHTMLTemp >> Affectation de la hauteur pour les éléments grpahique correspondant aux barres >> barreHTMLTemp
-            var barreHTMLTemp = document.getElementById('vertical' + i);
+            var barreHTMLTemp = document.getElementsByClassName('vertical' + i)[0];
+            var barreHTMLTemp2 = document.getElementsByClassName('vertical' + (i+21))[0];
             //hateurBareTemp >> Affectation de la hauteur de barre dans une variable temporaire >> hauteurBarreTemp
-            var hauteurBarreTemp = 20 * listeBarre[i];
+            var hauteurBarreTemp = indicateur * listeBarre[i];
             //barreHTMLTemp, hauteurBarreTemp >> Affectation de la hauteur courante à l'élément graphique courant >> Aucun résultat
             barreHTMLTemp.style.height = `${hauteurBarreTemp}px`
+            barreHTMLTemp2.style.height = `${hauteurBarreTemp}px`
             //Application de quelques rêgle CSS
             barreHTMLTemp.style.borderLeft = "5px solid white"
+            barreHTMLTemp2.style.borderLeft = "5px solid white"
+
             barreHTMLTemp.style.display = "inline-block"
-            barreHTMLTemp.style.marginLeft = "2%"
+            barreHTMLTemp2.style.display = "inline-block"
+
+            barreHTMLTemp.style.marginLeft = "1.8%"
+            barreHTMLTemp2.style.marginLeft = "1.8%"
+
             barreHTMLTemp.style.borderRadius = "5px"
+            barreHTMLTemp2.style.borderRadius = "5px"
+
         }
+
     }
 
 };
