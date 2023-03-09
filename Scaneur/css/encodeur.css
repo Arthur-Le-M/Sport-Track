@@ -96,6 +96,11 @@ body {
     align-items: center;
     height: 175px;
 }
+
+#modal-container button {
+    margin-left: 50%;
+}
+  
   
 
 

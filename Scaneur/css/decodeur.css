@@ -1,28 +1,9 @@
-body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-    align-items: center;
-}
 
 .corpsScaneur{
-    height: 100vh;
-    margin-top:10%;
+    height: 70vh;
+    margin-top:13%;
 }
 
-  
-
-.header{
-    display: flex;
-}
-
-.header h1{
-    color: aliceblue;
-    font-size:60px;
-    font-family : Arial, Helvetica, sans-serif;
-    align-items: center;
-}
 
 .content{
     display:flex;
@@ -30,6 +11,8 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+
 
 .content button {
     margin-top:15px;
@@ -83,3 +66,30 @@ body.cacher header,
 body.cacher footer {
 display: none;
 }
+
+
+@media screen and (max-width: 850px) {
+    .corpsScaneur{
+        height: 85vh;
+        margin-top:20%;
+    }
+    canvas{
+        width: 90%;
+        height: 90%;
+      }
+}
+
+@media screen and (max-width: 700px) {
+    .corpsScaneur{
+        height: 70vh;
+        margin-top:20%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .corpsScaneur{
+        height: 60vh;
+        margin-top:20%;
+    }
+}
+

@@ -95,11 +95,8 @@ boutonPhoto.addEventListener('click', async () => {
     }
     if (trouve == true) {
       console.log("LICENCE TROUVE ! FIN");
+      window.location = ('http://localhost:80/SportTrack/Profil/page-joueur.php?licence='+numLicence.getNumLicence());
       break;
     }
   };
-  document.getElementById('boutonJoueur').style.display = 'block';
-  document.getElementById('boutonJoueur').addEventListener('click', function() {
-  window.location.assign('http://localhost:80/SportTrack/Scaneur/joueur.php?licence='+numLicence.getNumLicence());
-  });
 });
