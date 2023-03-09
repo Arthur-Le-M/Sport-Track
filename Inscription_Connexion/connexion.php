@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-    header('location: accueil.php');
+    header('location: ../Accueil/accueil_connecte.php');
     exit;
 }
 

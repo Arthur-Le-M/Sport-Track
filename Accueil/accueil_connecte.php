@@ -1,14 +1,15 @@
 <?php
 session_start();
-/*if(!isset($_SESSION['user'])){
-    header('location: connexion.php');
+if(!isset($_SESSION['user'])){
+    header('location: ../Inscription_Connexion/connexion.php');
     exit;
-}*/
+}
+$id = $_SESSION['id'];
+
 require "../Template/config.php"; // Lien pour la connexion a la BD
 $bdd = getConnection();
-$recupPrenom = $bdd->prepare('SELECT prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=3');
-$recupPrenom->execute();
-//array($_SESSION['id'])
+$recupPrenom = $bdd->prepare('SELECT prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
+$recupPrenom->execute([$id]); // Vous devez passer le paramètre dans un tableau
 $resultat = $recupPrenom->fetch();
 $prenom = $resultat['prenom'];
 
