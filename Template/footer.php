@@ -1,4 +1,5 @@
 <footer>
+
     <section id="foot-top">
         <div id="sport-track-infos">
             <img src="../Template/img/logo.png" width="40">
@@ -30,7 +31,7 @@
             </div>
         </div>
         <div id="newsletter">
-            <form>
+            <form id=form-newsletter>
                 <p id="newsletter-title"> Rejoindre le Club SportTrack !</p>
                 <input type="email" id="input-email" name="email-newsletter" placeholder="Adresse e-mail" size="20" maxsize="50">
 
@@ -51,5 +52,6 @@
     </section>
     <p id="droit-auteur">©Sport Track, Inc</p>
 </footer>
+<script src="/Sport-Track/Template/javascript/newsletter.js" defer> </script>
 </body>
 <html>
