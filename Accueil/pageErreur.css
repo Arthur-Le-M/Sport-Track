@@ -1,0 +1,47 @@
+body {
+    background-image: url("image_de_fond.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 10vw;
+    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6;
+    animation: move 5s ease-in-out infinite; 
+    margin: 0;
+    padding: 0;
+}
+
+
+@keyframes move {
+0% {
+    transform: translateY(0); /* Position initiale */
+}
+50% {
+    transform: translateY(-10px); /* Position maximale */
+}
+100% {
+    transform: translateY(0); /* Retour à la position initiale */
+}
+}
+p {
+    font-size: 3vw;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6;
+}
+@keyframes glow {
+    from {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6, 0 0 70px #6dcff6;}
+    to {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6, 0 0 70px #6dcff6;}
+}
