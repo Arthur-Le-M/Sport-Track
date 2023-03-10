@@ -2,14 +2,31 @@
 
 //Initiation des variables
 //Récupération des éléments de la page HTML par leur ID (context)
-const parametres = { video: true, audio: false };
 var video = document.getElementById("player");
 const photo = document.getElementById('canvas');
 const hiddenCanvas = document.getElementById('hiddenCanvas');
 const context = photo.getContext('2d');
 const boutonPhoto = document.getElementById('photo');
-navigator.mediaDevices.getUserMedia(parametres).then(function (stream) { player.srcObject = stream; });
-
+navigator.mediaDevices.enumerateDevices()
+  .then(function(devices) {
+    let hasBackCamera = false;
+    devices.forEach(function(device) {
+      if (device.kind === 'videoinput') {
+        if (device.facingMode === 'environment') {
+          hasBackCamera = true;
+        }
+      }
+    });
+    if (hasBackCamera) {
+      console.log('Une caméra arrière est disponible.');
+      var parametres = {video: { facingMode: "environment" }, audio: false };
+    } else {
+      console.log('Aucune caméra arrière n\'est disponible.');
+      var parametres = {video: { facingMode: "user" }, audio: false };
+      console.log(parametres)
+    }
+    navigator.mediaDevices.getUserMedia(parametres).then(function (stream) { player.srcObject = stream; });
+  })
 
 
 // Fonction d'affichage de la mire
