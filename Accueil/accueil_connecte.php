@@ -24,16 +24,19 @@
     $resultat = $recupPrenom->fetch();
     $prenom = $resultat['prenom'];
     ?>
-<h1>Bienvenue <span style="color: #267AB8;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
+<h1>Bienvenue <span style="color: #F9B233;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
 <div id ="conteneur" >
     <div id="boite1" class="boite" >
-        <a href="../Messagerie/messagerie.php"><img src="msg.png" alt="description-de-l-image"></a>
+        <a href="../Messagerie/messagerie.php"><img src="../Template/img/MessageImage2.png" alt="description-de-l-image"></a>
+        <h3>Messagerie</h3>
     </div>
     <div id="boite2" class="boite" >
-        <a href="lien-de-la-page"><img src="msg.png" alt="description-de-l-image"></a>
+        <a href="lien-de-la-page"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
+        <h3>Calendrier</h3>
     </div>
     <div id="boite3" class="boite">
-        <a href="lien-de-la-page"><img src="msg.png"  alt="description-de-l-image"></a>
+        <a href="lien-de-la-page"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
+        <h3>Profil</h3>
     </div>
 </div>
 <?php
