@@ -1,10 +1,8 @@
 <?php
 session_start();
-$_SESSION['id']=10;
-function getConnection() {
-    $bdd = new PDO('mysql:host=127.0.0.1:3306;dbname=bd_sporttrack','root','root');
-    return $bdd;
-}
+
+require "../../Template/config.php"; // Lien pour la connexion a la BD
+
 $bdd = getConnection();
 
 $idDest = $_GET['id'];
