@@ -1,8 +1,5 @@
 <?php 
-$email = $GET_['email']
-$email = $GET_['consentement-nouveautés']
-$email = $GET_['consentement-publicités']
-
+$email = htmlspecialchars($GET_['email']);
 
 
 $subject = 'Newsletter SportTrack';
@@ -27,7 +24,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     mail($email, $subject, $message, implode("\r\n", $headers));
 } 
 else {
-    echo "L'adresse email n'est pas valide."
+    echo "L'adresse email n'est pas valide.";
 }
 
 ?>

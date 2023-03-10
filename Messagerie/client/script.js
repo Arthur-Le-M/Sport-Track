@@ -66,7 +66,7 @@ function eventNouveauContactBtn() {
       // Evenement correspondant à la saisie dans l'input (effectue un tri et affiche les joueurs correspondant à la saisie)
       inputJoueur.addEventListener("keyup", function () {
         // Récupération de la valeur de l'input
-        var valeurSaisie = inputJoueur.value;
+        var valeurSaisie = htmlspecialchars(inputJoueur.value);
 
         // Filtre en fonction de la saisie
         var joueursFiltres = tousLesJoueurs.filter(function (element) {
@@ -320,7 +320,7 @@ function eventEnvoyerMessage() {
 
 function envoyerUnMessage() {
   const msgInput = document.getElementById("msg-input")
-  var message = msgInput.value;
+  var message = htmlspecialchars(msgInput.value);
   const form = document.querySelector('#form');
   var id_destinataire = parseInt(form.getAttribute('name'));
   console.log("destinataire: ", id_destinataire);

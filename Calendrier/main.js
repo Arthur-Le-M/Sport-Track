@@ -91,10 +91,10 @@ window.addEventListener('load', async () => {
 
     //function to add event to eventsArr
     addEventSubmit.addEventListener("click", () => {
-      const eventTitle = addEventTitle.value;
-      const eventCategorie = addEventCategorie.value;
-      const eventTimeFrom = addEventFrom.value;
-      const eventTimeTo = addEventTo.value;
+      const eventTitle = htmlspecialchars(addEventTitle.value);
+      const eventCategorie = htmlspecialchars(addEventCategorie.value);
+      const eventTimeFrom = htmlspecialchars(addEventFrom.value);
+      const eventTimeTo = htmlspecialchars(addEventTo.value);
 
 
       console.log(eventTimeFrom);

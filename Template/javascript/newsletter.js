@@ -1,11 +1,11 @@
 
 var form = document.getElementById("form-newsletter");
-form.addEventListener("submit",
-function(event) {
+form.addEventListener("submit",function(event) {
     console.log("ok");
     var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     var email = document.getElementById("input-email").value;
     console.log(email)
+    document.getElementById("input-email").value = "";
     var pubs = document.getElementById("checkbox-pubs").checked;
     var news = document.getElementById("checkbox-news").checked;
     event.preventDefault();
@@ -13,6 +13,7 @@ function(event) {
     if (!regex.test(email)) 
     {
             var errorMessage = document.createElement("div");
+            errorMessage.style.zIndex = "9999";
             errorMessage.innerHTML = "Erreur : Veuillez entrer une adresse email valide";
             errorMessage.style.position = 'fixed';
             errorMessage.style.top = '0';
@@ -40,7 +41,7 @@ function(event) {
         // Affiche le code de l'article dans la console
         
         // Crée une URL avec les informations de l'article
-        url = "../php/inscription-newsletter.php?email=" + email + "&news=" + news + "&pubs=" + pubs;
+        url = "/Sport-Track/Template/php/inscription-newsletter.php?email=" + email + "&news=" + news + "&pubs=" + pubs;
         // Affiche l'URL dans la console
         console.log(url);
         // Crée une nouvelle requête HTTP
@@ -60,6 +61,7 @@ function(event) {
 
         // afficher le message de succes
         var successMessage = document.createElement("div");
+            successMessage.style.zIndex = "9999";
             successMessage.innerHTML = "Félicitation : vous etes inscrit à la newsletter de SportTrack, allez tous ensemble ... 1 .. 2.. 3  .. SPORTRACK !";
             successMessage.style.position = 'fixed';
             successMessage.style.top = '0';
