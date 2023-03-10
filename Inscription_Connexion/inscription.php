@@ -1,10 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['user'])){
-    header('location: ../Accueil/accueil_connecte.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -17,6 +10,10 @@ if(isset($_SESSION['user'])){
 
     <body>
         <?php require("../Template/header.php"); 
+        if(isset($_SESSION['user'])){
+            header('location: ../Accueil/accueil_connecte.php');
+            exit;
+        }
         $err = $_GET['err'] ?? null;
         ?>
         <script src="script-connexion-inscription.js" defer></script>
