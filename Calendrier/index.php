@@ -8,18 +8,21 @@
   <link rel="stylesheet" href="../Template/style.css">
   <link href="style.css" rel="stylesheet">
 </head>
-<?php
-session_start();
-if(!isset($_SESSION['role'])){
-    $_SESSION['role']='coach';
-    $_SESSION['idClub']='12427';
-    $_SESSION['idStade']='1720';
-}
-
-?>
 
 <body>
-  <?php require("../Template/header.php"); ?>
+  <?php 
+  require("../Template/header.php"); 
+  if(!isset($_SESSION['user'])){
+    header('location: ../Inscription_Connexion/connexion.php');
+    exit;
+  }
+  if(!isset($_SESSION['role'])){
+      $_SESSION['role']='coach';
+      $_SESSION['idClub']='12427';
+      $_SESSION['idStade']='1720';
+  }
+  ?>
+
   <div class="container">
     <div class="left">
       <div class="calendar">

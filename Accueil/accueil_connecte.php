@@ -1,20 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['user'])){
-    header('location: ../Inscription_Connexion/connexion.php');
-    exit;
-}
-$id = $_SESSION['id'];
-
-require "../Template/config.php"; // Lien pour la connexion a la BD
-$bdd = getConnection();
-$recupPrenom = $bdd->prepare('SELECT prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
-$recupPrenom->execute([$id]); // Vous devez passer le paramètre dans un tableau
-$resultat = $recupPrenom->fetch();
-$prenom = $resultat['prenom'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +11,18 @@ $prenom = $resultat['prenom'];
 <?php
     // Import du header (commun à toutes les pages)
     require "../Template/header.php";
+    if(!isset($_SESSION['user'])){
+        header('location: ../Inscription_Connexion/connexion.php');
+        exit;
+    }
+    $id = $_SESSION['id'];
+
+    require "../Template/config.php"; // Lien pour la connexion a la BD
+    $bdd = getConnection();
+    $recupPrenom = $bdd->prepare('SELECT prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
+    $recupPrenom->execute([$id]); // Vous devez passer le paramètre dans un tableau
+    $resultat = $recupPrenom->fetch();
+    $prenom = $resultat['prenom'];
     ?>
 <h1>Bienvenue <span style="color: #267AB8;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
 <div id ="conteneur" >

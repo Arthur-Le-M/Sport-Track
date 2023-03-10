@@ -1,5 +1,10 @@
 <?php
+
 require "../Template/header.php";
+if(!isset($_SESSION['user'])){
+    header('location: ../Inscription_Connexion/connexion.php');
+    exit;
+}
 require "../Template/config.php";
 $bdd = getConnection();
 

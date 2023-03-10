@@ -9,7 +9,13 @@
     <title>Algorithme</title>
 </head>
 <body>
-    <?php require("./../Template/header.php"); ?>
+    <?php 
+    require("./../Template/header.php");
+    if(!isset($_SESSION['user'])){
+        header('location: ../Inscription_Connexion/connexion.php');
+        exit;
+    }
+    ?>
     <main class='corpsScaneur'>
         <div class="content">
             <video id="player" autoplay style="display: none"></video>

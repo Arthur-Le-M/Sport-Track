@@ -1,13 +1,3 @@
-<?php
-session_start();
-$_SESSION['id']='041zixz0qS';
-if(!isset($_SESSION['role'])){
-    $_SESSION['role']='coach';
-    $_SESSION['idClub']='12427';
-    $_SESSION['idStade']='1720';
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +10,20 @@ if(!isset($_SESSION['role'])){
 </head>
 
 <body>
-    <?php require("./../Template/header.php"); ?>
+    <?php 
+    require("./../Template/header.php");
+    if(!isset($_SESSION['user'])){
+        header('location: ../Inscription_Connexion/connexion.php');
+        exit;
+    }
+    //$_SESSION['id']='041zixz0qS';
+    if(!isset($_SESSION['role'])){
+        $_SESSION['role']='coach';
+        $_SESSION['idClub']='12427';
+        $_SESSION['idStade']='1720';
+    }
+    
+    ?>
 
 
         <span class="divBarres">
@@ -98,7 +101,7 @@ if(!isset($_SESSION['role'])){
     <script src="./js/main/mainEncodeur.js"></script>
     <?php 
     if (isset($_SESSION['id'])) {
-        echo "<script>mainEncodeur('{$_SESSION['id']}');
+        echo "<script>mainEncodeur('{$_SESSION['licence']}');
         </script>";
     }
     require("./../Template/footer.php"); ?>

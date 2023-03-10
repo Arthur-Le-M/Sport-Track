@@ -1,13 +1,3 @@
-<?php
-session_start();
-if(isset($_SESSION['user'])){
-    header('location: ../Accueil/accueil_connecte.php');
-    exit;
-}
-
-$err = $_GET['err'] ?? null;
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -19,7 +9,14 @@ $err = $_GET['err'] ?? null;
     </head>
 
     <body>
-        <?php require("../Template/header.php"); ?>
+        <?php require("../Template/header.php"); 
+        if(isset($_SESSION['user'])){
+            header('location: ../Accueil/accueil_connecte.php');
+            exit;
+        }
+
+        $err = $_GET['err'] ?? null;
+        ?>
         <main>
             <section class="sectionTitre">
                 <h2 class="titrePage">Connexion</h2>

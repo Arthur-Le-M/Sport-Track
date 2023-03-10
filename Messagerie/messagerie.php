@@ -1,13 +1,3 @@
-<?php session_start();
-require "../Template/config.php"; // Lien pour la connexion a la BD
-if(isset($_SESSION['id'])){
-    $id = $_SESSION['id'];
-}
-else{echo("id non-defini");
-    header('location: connexion.php');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +12,19 @@ else{echo("id non-defini");
 <body>
     <?php
     // Import du header (commun à toutes les pages)
-    require "../Template/header.php";
+    require 
+    "../Template/header.php";
+    if(!isset($_SESSION['user'])){
+        header('location: ../Inscription_Connexion/connexion.php');
+        exit;
+    }
+    require "../Template/config.php"; // Lien pour la connexion a la BD
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+    }
+    else{echo("id non-defini");
+        header('location: connexion.php');
+    }
     ?>
     <main>
         <div id="modal">
