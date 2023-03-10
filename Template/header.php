@@ -39,9 +39,9 @@
             <div class="dropdownContent">
                 <span id="partage"><a href="#"> Partager </a></span>
                 <a href="/Sport-Track/Information/avis.php"> Avis </a>
-                <a href="#" id="separation"> Réglages </a>
+                <a href="/Sport-Track/Information/reglages.php" id="separation"> Réglages </a>
                 <a href="../information/contact.php"> Contact </a>
-                <a href="#"> Aide </a>
+                <a href="/Sport-Track/Information/aide.php"> Aide </a>
                 <a href="/Sport-Track/Inscription_Connexion/deconnexion.php"> Déconnexion </a>
             </div>
         </div>
