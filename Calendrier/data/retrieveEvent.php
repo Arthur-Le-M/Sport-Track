@@ -27,7 +27,6 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         }
         break;
     case "POST":
-        // we'll implement this later
     break;
     default: 
         throw new Exception("Unexpected Method"); 
