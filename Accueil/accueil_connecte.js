@@ -12,8 +12,9 @@ function createBalle() {
   // Définir les attributs de la balle
   const imageBalleAleatoire = imagesBalles[Math.floor(Math.random() * imagesBalles.length)];
   balle.src = imageBalleAleatoire;
-  balle.style.width = '60px';
-  balle.style.height = '60px';
+  const tailleAleatoire = Math.floor(Math.random() * 50) + 40;
+  balle.style.width = tailleAleatoire + 'px';
+  balle.style.height = tailleAleatoire + 'px';
   balle.style.position = 'absolute';
   
   balle.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
