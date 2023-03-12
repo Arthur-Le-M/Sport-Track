@@ -5,6 +5,7 @@ html {
 
 main {
     margin: 35px 0;
+    min-height: 320vh;
 }
 
 #titre {
@@ -61,7 +62,15 @@ main {
     color: black;
 }
 
-@media screen and (max-width: 680px) {
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    main {
+        margin: 35px 0;
+    }
     #introduction {
         flex-direction: column;
     }
@@ -106,3 +115,4 @@ main {
 #developpement ul li {
     margin-left: 19px;
 }
+

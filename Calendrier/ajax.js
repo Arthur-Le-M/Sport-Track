@@ -1,5 +1,6 @@
 //function to get events from local storage
 const eventsArr = [];
+var roleImportant=false;
 async function getEvents(_id) {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/retrieveEvent.php?id=' + _id);
@@ -22,6 +23,7 @@ async function getEvents(_id) {
                         title: event.type_ + " (" + event.categorie + ")",
                         time: dhour + ":" + dminute + " - " + fhour + ":" + fminute,
                         team: event.nom_equipe,
+                        id: event.id,
                         stadium: event.nom_stade
                     };
                     let eventAdded = false;
@@ -126,7 +128,7 @@ function addEvent(type_, categorie, debut, fin, id_equipe, id_stade) {
 
     // envoyer les données au fichier PHP en utilisant la méthode POST
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://localhost:8888/Sport-Track/Calendrier/data/addEvent.php');
+    xhr.open("POST", 'http://localhost:80/Sport-Track/Calendrier/data/addEvent.php');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             alert(xhr.responseText); // afficher la réponse du serveur
@@ -134,3 +136,19 @@ function addEvent(type_, categorie, debut, fin, id_equipe, id_stade) {
     };
     xhr.send(formData);
 }
+
+function suppEvent(_id) {
+    // envoyer les données au fichier PHP en utilisant la méthode POST
+    const xhr = new XMLHttpRequest();
+    console.log("L'id qui va être supptimé est ",_id)
+    xhr.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/suppEvent.php?id='+ _id);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(xhr.responseText); // afficher la réponse du serveur
+        }
+    };
+
+}
+
+

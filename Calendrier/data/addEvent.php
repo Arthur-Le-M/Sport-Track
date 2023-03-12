@@ -1,6 +1,6 @@
 <?php
-require_once("../../Template/config.php");
-getConnection();
+require("./../../Template/config.php");
+$bdd = getConnection();
 // récupérer les paramètres depuis le formulaire
 $type_ = $_POST['type_'];
 $categorie = $_POST['categorie'];
@@ -12,7 +12,7 @@ $id_stade = $_POST['id_stade'];
 
 try {
     // préparer la requête d'insertion
-    $requete = $connexion->prepare("INSERT INTO Calendrier (type_,categorie,debut ,fin , idEquipe, idStade) VALUES (:type_,:categorie, :debut, :fin,:id_equipe, :id_stade)");
+    $requete = $bdd->prepare("INSERT INTO Calendrier (type_,categorie,debut ,fin , idEquipe, idStade) VALUES (:type_,:categorie, :debut, :fin,:id_equipe, :id_stade)");
 
     // lier les paramètres
     $requete->bindParam(':type_', $type_);
@@ -31,7 +31,7 @@ try {
 }
 
 // fermer la connexion à la base de données
-$connexion = null;
+$bdd = null;
 
 
 ?>

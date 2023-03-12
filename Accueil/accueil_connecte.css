@@ -5,13 +5,49 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 10%;
+    position: relative;
 }
+#balle-container {
+    position: relative;
+  }
+
+  .fade-in {
+    opacity: 0; /* Définir l'opacité initiale à 0 */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Utiliser une animation pour augmenter l'opacité progressivement */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Définir l'opacité au début de l'animation */
+    }
+    to {
+      opacity: 1; /* Définir l'opacité à la fin de l'animation */
+    }
+  }
+
+  .fade-out {
+    opacity: 1; /* Définir l'opacité initiale à 1 */
+    animation: fadeOut 0.5s ease-in-out forwards; /* Utiliser une animation pour diminuer l'opacité progressivement */
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1; /* Définir l'opacité au début de l'animation */
+    }
+    to {
+      opacity: 0; /* Définir l'opacité à la fin de l'animation */
+    }
+  }
+  
 .boite {
     height: 450px;
     width: 300px;
     border-radius: 10px;
     padding: 1%;
-    
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .boite img {
     max-width: 100%;
@@ -21,6 +57,7 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .boite:hover {
+    transition: transform 0.2s ease-in-out;
     transform: scale(1.02);
   }
   
@@ -29,9 +66,74 @@ h1 {
     padding-bottom: 2%;
     text-align: center;
     font-family: Oswald;
+    z-index:1;
 }
 h1 img {
     margin-left: 0.8%;
+    width: 30px;
+  }
+  @media screen and (max-width: 700px) {
+    #conteneur{
+        flex-direction: column;
+    }
+    h1 {
+        padding-top: 20%;
+        padding-bottom: 4%;
+    }
   }
 
+  .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: drop-shadow(0 0 0.75rem #fff);
+}
+  .img-container {
+    text-align: center;
+}
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.author {
+    font-style: italic;
+    text-align: right;
+}
+
+.date {
+    margin-top: 10px;
+    font-style: italic;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  article {
+    max-width: 800px;
+    text-align: justify;
+    margin-bottom: 100px;
+  }
+
+@media screen and (max-width: 680px) {
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    article {
+        max-width: 90%;
+        text-align: justify;
+      }
+}

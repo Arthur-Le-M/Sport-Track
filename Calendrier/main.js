@@ -2,8 +2,8 @@ window.addEventListener('load', async () => {
 
 
   const calendar = document.querySelector(".calendar"),
-    eventsContainer = document.querySelector(".events"),
     date = document.querySelector(".date"),
+    eventsContainer = document.querySelector(".events"),
     daysContainer = document.querySelector(".days"),
     prev = document.querySelector(".prev"),
     next = document.querySelector(".next"),
@@ -91,10 +91,10 @@ window.addEventListener('load', async () => {
 
     //function to add event to eventsArr
     addEventSubmit.addEventListener("click", () => {
-      const eventTitle = htmlspecialchars(addEventTitle.value);
-      const eventCategorie = htmlspecialchars(addEventCategorie.value);
-      const eventTimeFrom = htmlspecialchars(addEventFrom.value);
-      const eventTimeTo = htmlspecialchars(addEventTo.value);
+      const eventTitle = addEventTitle.value;
+      const eventCategorie = addEventCategorie.value;
+      const eventTimeFrom = addEventFrom.value;
+      const eventTimeTo = addEventTo.value;
 
 
       console.log(eventTimeFrom);
@@ -380,8 +380,8 @@ window.addEventListener('load', async () => {
         year === event.year
       ) {
         event.events.forEach((event) => {
-          let eventHtml = `<div class="event">
-            <div class="title_time_event">
+          let eventHtml = `<div class="event" id="${event.id}">
+            <div class="title_time_event" id="${event.id}">
               <div class="title">
                 <i class="fas fa-circle"></i>
                 <h3 class="event-title">${event.title}</h3>
@@ -392,7 +392,7 @@ window.addEventListener('load', async () => {
             </div>`;
           if (event.title.startsWith("Match")) {
             eventHtml += `<div class="divBoutonConsulter">
-              <button class="boutonConsulter" onClick="window.location.href='Sport-Track/Profil/Match/index.php?id=${event.id}'">
+              <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
                 Consulter
               </button>
             </div>`;
@@ -410,7 +410,6 @@ window.addEventListener('load', async () => {
     eventsContainer.innerHTML = events;
     saveEvents();
   }
-  
 
 
 

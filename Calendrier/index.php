@@ -7,19 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Template/style.css">
   <link href="style.css" rel="stylesheet">
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
 </head>
 
 <body>
   <?php 
   require("../Template/header.php"); 
   if(!isset($_SESSION['user'])){
-    header('location: ../Inscription_Connexion/connexion.php');
-    exit;
-  }
-  if(!isset($_SESSION['role'])){
-      $_SESSION['role']='coach';
-      $_SESSION['idClub']='12427';
-      $_SESSION['idStade']='1720';
+      header('location: ../Inscription_Connexion/connexion.php');
+      exit;
+    }
+  require "../Template/config.php"; // Lien pour la connexion a la BD
+  $conn = getConnection();
+  
+  if(!isset($_SESSION['poste'])){
+    $recupPoste = $conn->prepare('SELECT poste FROM Joueur WHERE licence=?');
+    $recupPoste->execute([$_SESSION['licence']]);
+    $resultat = $recupPoste->fetch();
+    $_SESSION['poste'] = $resultat['poste'];
+
+    $recupClub = $conn->prepare('SELECT id_equipe FROM Joueur WHERE licence=?');
+    $recupClub->execute([$_SESSION['licence']]);
+    $resultat = $recupClub->fetch();
+    $_SESSION['idClub'] = $resultat['id_equipe'];
+
+    $recupStade = $conn->prepare('SELECT id_stade FROM Equipe WHERE id=?');
+    $recupStade->execute([$_SESSION['idClub']]);
+    $resultat = $recupStade->fetch();
+    $_SESSION['idStade'] = $resultat['id_stade'];
   }
   ?>
 
@@ -83,7 +99,7 @@
       </div>
     </div>
     <?php
-        if($_SESSION['role']=='coach'){
+        if($_SESSION['poste']=='DIRIGEANT' || $_SESSION['poste']=='ENTRAINEUR'){
             print '<button class="add-event">';
             print '<i class="fas fa-plus"></i>';
             print ' </button>';
@@ -96,43 +112,9 @@
             </script>";
       ?>
 
-  <script src="ajax.js" type="text/javascript"></script>
-  <script src="main.js" type="text/javascript"></script>
   <?php
-    if ($_SESSION['role'] === 'coach') {
-    echo '<script>
-    var eventsContainer = document.querySelector(".events");
-    eventsContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("event")) {
-        if (confirm("Êtes-vous sur de vouloir supprimer cette évènement ?")) {
-          const eventTitle = e.target.children[0].children[1].innerHTML;
-          eventsArr.forEach((event) => {
-            if (
-              event.day === activeDay &&
-              event.month === month + 1 &&
-              event.year === year
-            ) {
-              event.events.forEach((item, index) => {
-                if (item.title === eventTitle) {
-                  event.events.splice(index, 1);
-                }
-              });
-              //if no events left in a day then remove that day from eventsArr
-              if (event.events.length === 0) {
-                eventsArr.splice(eventsArr.indexOf(event), 1);
-                //remove event class from day
-                const activeDayEl = document.querySelector(".day.active");
-                if (activeDayEl.classList.contains("event")) {
-                  activeDayEl.classList.remove("event");
-                }
-              }
-            }
-          });
-          updateEvents(activeDay);
-        }
-      }
-    });
-    </script>';
+    if ($_SESSION['poste']=='DIRIGEANT' || $_SESSION['poste']=='ENTRAINEUR') {
+    echo '<script src="methode.js"></script>';
     echo '<style>
       .events .event:hover {
         background: #e73d16;

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Messagerie/messagerie.css">
     <!-- Lien vers le CSS du header et du footer -->
     <link rel="stylesheet" href="../Template/style.css">
     <title>Sport Track</title>
@@ -12,37 +11,45 @@
 <body>
 <header>
     <div id="logo"> 
-        <a href="#"> <img src="../Template/img/logo.png"> </a>
-    </div>
-    <div id="barre-nav">
-        <?php 
+    <?php 
         session_start();
-        if(!isset($_SESSION['user'])){
-            echo "<a href='/Sport-Track/index.php'> <img src='../Template/img/maison.png'> </a>";
+        if(isset($_SESSION['user'])){
+            echo '<a href="../Accueil/accueil_connecte.php"> <img src="../Template/img/logo.png"> </a>';
         }
         else{
-            echo '<a href="/Sport-Track/Accueil/accueil_connecte.php"> <img src="../Template/img/maison.png"> </a>';
+            echo '<a href="../index.php"> <img src="../Template/img/logo.png"> </a>';
+        }
+
+        ?>
+    </div>
+    <div id="barre-nav">
+    <?php
+        if(!isset($_SESSION['user'])){
+            echo "<a href='../index.php'> <img src='../Template/img/maison.png'> </a>";
+        }
+        else{
+            echo '<a href="../Accueil/accueil_connecte.php"> <img src="../Template/img/maison.png"> </a>';
         }
         ?>
         <a href="../Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
-        <a href="/Sport-Track/Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
-        <a href="/Sport-Track/Profil/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
+        <a href="../Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
+        <a href="../Profil/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
     </div>
     <div id="right-part">
         <div id="scanner"> 
-            <a href="/Sport-Track/Scaneur/encodeur.php"> <img src="../Template/img/scanner.png"> </a>
+            <a href="../Scaneur/encodeur.php"> <img src="../Template/img/scanner.png"> </a>
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
-                <img id="icon" src="../Template/img/menu.png" />
+                <img id="icon" src="/Sport-Track/Template/img/menu.png" />
             </button>
             <div class="dropdownContent">
                 <span id="partage"><a href="#"> Partager </a></span>
-                <a href="/Sport-Track/Information/avis.php"> Avis </a>
-                <a href="/Sport-Track/Information/reglages.php" id="separation"> Réglages </a>
+                <a href="../Information/avis.php"> Avis </a>
+                <a href="../Information/reglages.php" id="separation"> Réglages </a>
                 <a href="../information/contact.php"> Contact </a>
-                <a href="/Sport-Track/Information/aide.php"> Aide </a>
-                <a href="/Sport-Track/Inscription_Connexion/deconnexion.php"> Déconnexion </a>
+                <a href="../Information/aide.php"> Aide </a>
+                <a href="../Inscription_Connexion/deconnexion.php"> Déconnexion </a>
             </div>
         </div>
     </div>

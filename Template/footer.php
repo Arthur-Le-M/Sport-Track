@@ -4,9 +4,9 @@
             <img src="../Template/img/logo.png" width="40">
             <p id="slogan">Atteignez votre potentiel maximal avec <strong>SportTrack</strong>.</p>
             <div id="reseaux-container">
-                <a href="#"> <img class="iconReseau" src="../Template/img/twitter.png"> </a>
-                <a href="#"> <img class="iconReseau" src="../Template/img/instagram.png"> </a>
-                <a href="#"> <img class="iconReseau" src="../Template/img/github.png"> </a>
+                <a href="https://www.twitter.com/"> <img class="iconReseau" src="../Template/img/twitter.png"> </a>
+                <a href="https://www.instagram.com/"> <img class="iconReseau" src="../Template/img/instagram.png"> </a>
+                <a href="https://github.com/Arthur-Le-M/Sport-Track"> <img class="iconReseau" src="../Template/img/github.png"> </a>
             </div>
         </div>
         <div id="mentions-du-site">
@@ -23,8 +23,8 @@
             <div id="aide">
                 <p class="libelle-liens">Aide</p>
                 <ul>
-                    <li><a href="#" class="lien">Plan du site</a></li>
-                    <li><a href="#" class="lien">RGPD</a></li>
+                    <li><a href="../Information/planSite.php" class="lien">Plan du site</a></li>
+                    <li><a href="../Information/rgpd.php" class="lien">RGPD</a></li>
                     <li><a href="../Information/sport-track-team.php" class="lien">La Team Sport Track</a></li>
                 </ul>
             </div>
