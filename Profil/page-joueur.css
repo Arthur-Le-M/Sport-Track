@@ -207,7 +207,232 @@ main{
     border-radius: 10px;
 }
 
+/* Responsive Tablette */
+@media screen and (max-width: 768px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    #containerGauche{
+        margin-top: 100px;
+        width: 100%;
+        height: 30%;
+    }
 
+    #sectionPP{
+        height: 30%;
+    }
 
+    #pp{
+        width: 30%;
+    }
 
+    #sectionPP h5{
+        font-size: 20px;
+    }
 
+    #sectionPP h3{
+        font-size: 40px;
+    }
+
+    #lienEquipe{
+        font-size: 20px;
+    }
+
+    #sectionPP h4{
+        font-size: 20px;
+    }
+
+    #statPerso{
+        height: 100px;
+    }
+
+    .statElement{
+        width: 10%;
+    }
+
+    .statElementVal{
+        font-size: 30px;
+    }
+
+    .statElementUnité{
+        font-size: 15px;
+    }
+
+    #containerDroite{
+        width: 100%;
+        height: 70%;
+    }
+
+    #matchContainer{
+        height: 70%;
+    }
+
+    #matchContainerTitle{
+        font-size: 20px;
+    }
+
+    .match{
+        width: 95%;
+    }
+
+    .dateContainer{
+        width: 20%;
+    }
+
+    .equipesContainer{
+        width: 60%;
+    }
+
+    .equipe{
+        font-size: 15px;
+    }
+
+    .resultatContainer{
+        width: 20%;
+    }
+
+    .resultat-gagnant{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+
+    .resultat-perdant{    
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+
+    .resultat-egalite{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 480px) {
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    #containerGauche{
+        margin-top: 100px;
+        width: 100%;
+        height: 30%;
+    }
+
+    #sectionPP{
+        height: 30%;
+    }
+
+    #pp{
+        width: 30%;
+    }
+
+    #sectionPP h5{
+        font-size: 20px;
+    }
+
+    #sectionPP h3{
+        font-size: 40px;
+    }
+
+    #lienEquipe{
+        font-size: 20px;
+    }
+
+    #sectionPP h4{
+        font-size: 20px;
+    }
+
+    #statPerso{
+        height: 100px;
+    }
+
+    .statElement{
+        width: 15%;
+    }
+
+    .statElementVal{
+        font-size: 30px;
+    }
+
+    .statElementUnité{
+        font-size: 15px;
+    }
+
+    #containerDroite{
+        width: 100%;
+        height: 70%;
+    }
+
+    #matchContainer{
+        height: 70%;
+    }
+
+    #matchContainerTitle{
+        font-size: 20px;
+    }
+
+    .match{
+        width: 95%;
+    }
+
+    .dateContainer{
+        width: 20%;
+    }
+
+    .equipesContainer{
+        width: 60%;
+    }
+
+    .equipe{
+        font-size: 15px;
+    }
+
+    .equipe-win{
+        font-size: 15px;
+    }
+
+    .resultatContainer{
+        width: 20%;
+    }
+
+    .resultat-gagnant{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+
+    .resultat-perdant{    
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+
+    .resultat-egalite{
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px;
+    }
+
+    .date{
+        font-size: 12px;
+    }
+}
