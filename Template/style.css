@@ -21,6 +21,7 @@ header {
     justify-content: space-between;
     padding: 25px 3%;
 }
+
 #logo img {
     width: 60px;
 }
@@ -37,14 +38,24 @@ header {
     box-shadow: 1px 1px 3px rgb(67, 67, 67);
 }
 
+#barre-nav a svg:hover{
+    /* Change SVG Color */
+    stroke: #F9B233;
+}
+
 #barre-nav a {
     display: flex;
     justify-content: center;
 }
 
-#barre-nav a img {
-    width: 25px;
+#barre-nav a svg{
+    width: 30px;
+    stroke: black;
+    stroke-width: 4px;
+    fill: white;
 }
+
+
 
 #right-part {
     display: flex;
