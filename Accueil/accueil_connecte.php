@@ -24,21 +24,27 @@
     $resultat = $recupPrenom->fetch();
     $prenom = $resultat['prenom'];
     ?>
-<h1>Bienvenue <span style="color: #F9B233;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
-<div id ="conteneur" >
-    <div id="boite1" class="boite" >
-        <a href="../Messagerie/messagerie.php"><img src="../Template/img/MessageImage2.png" alt="description-de-l-image"></a>
-        <h3>Messagerie</h3>
+<div id="balle-container"></div>
+
+<div class="principal">
+    <h1>Bienvenue <span style="color: #F9B233;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" ></h1>
+    <div id ="conteneur" >
+        <div id="boite1" class="boite" >
+            <a href="../Messagerie/messagerie.php"><img src="../Template/img/MessageImage2.png" alt="description-de-l-image"></a>
+            <h3>Messagerie</h3>
+        </div>
+        <div id="boite2" class="boite" >
+            <a href="lien-de-la-page"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
+            <h3>Calendrier</h3>
+        </div>
+        <div id="boite3" class="boite">
+            <a href="lien-de-la-page"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
+            <h3>Profil</h3>
+        </div>
     </div>
-    <div id="boite2" class="boite" >
-        <a href="../Calendrier/index.php"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
-        <h3>Calendrier</h3>
-    </div>
-    <div id="boite3" class="boite">
-        <a href="../Profil/page-joueur.php"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
-        <h3>Profil</h3>
-    </div>
-</div>
+
+
+
     <div class="container">
 		<article>
 			<h2>Le Meilleur Joueur du Mois</h2>
@@ -51,6 +57,8 @@
 			<div class="author">Par Matis Chabana</div>
 		</article>
 	</div>
+  </div>
+  <script src="accueil_connecte.js"> </script>
 <?php
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
