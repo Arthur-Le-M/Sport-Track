@@ -34,7 +34,7 @@ $matchs = $req->fetchAll();
             <?php
             print("<h5>".$joueur[0]."</h5>");
             print("<h3>".$joueur[1]."</h3>");
-            print("<a id='lienEquipe' href='page-equipe.php?id=$joueur[2]><h4'>".$joueur[4]."</h4></a>");
+            print("<a id='lienEquipe' href='page-equipe.php?id=$joueur[2]'><h4>".$joueur[4]."</h4></a>");
             print("<h5>".$joueur[3]."</h5>");
             ?>
         </section>
