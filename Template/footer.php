@@ -1,5 +1,4 @@
 <footer>
-
     <section id="foot-top">
         <div id="sport-track-infos">
             <img src="../Template/img/logo.png" width="40">
@@ -52,6 +51,6 @@
     </section>
     <p id="droit-auteur">©Sport Track, Inc</p>
 </footer>
-<script src="/Sport-Track/Template/javascript/newsletter.js" defer> </script>
+<script src="javascript/newsletter.js" defer></script>
 </body>
 <html>

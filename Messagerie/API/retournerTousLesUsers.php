@@ -2,9 +2,6 @@
 session_start();
 require "../../Template/config.php"; // Lien pour la connexion a la BD
 
-
-
-
 $bdd = getConnection();
 
 

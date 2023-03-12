@@ -51,7 +51,7 @@ function eventNouveauContactBtn() {
     const inputJoueur = document.querySelector("#input-pseudo");
 
     // Requete qui récupère tous les joueurs de la bd (sauf celui connecté)
-    var url = "http://localhost/Sport-Track/Messagerie/API/retournerTousLesUsers.php";
+    var url = "API/retournerTousLesUsers.php";
 
     //Requete AJAX 
     var xhr1 = new XMLHttpRequest();
@@ -147,7 +147,7 @@ function afficherContacts() {
     sectionContacts.innerHTML = "";
 
     // Interrogation de la bd qui va nous retourner les utilisateurs qui ont une interaction avec l'utilisateur connecté
-    var url = "http://localhost/Sport-Track/Messagerie/API/retournerUsersAssocies.php";
+    var url = "API/retournerUsersAssocies.php";
 
     // Requete AJAX 
     var xhr2 = new XMLHttpRequest();
@@ -198,7 +198,7 @@ function eventContacts() {
         var id = parseInt(unContact.getAttribute('name'));
 
         // Interrogation de la bd qui va nous retourner les infos de l'utilisateur sélectionné
-        var url = "http://localhost/Sport-Track/Messagerie/API/retournerInfoUser.php?id=" + id;
+        var url = "API/retournerInfoUser.php?id=" + id;
 
         //Requete AJAX 
         var xhr3 = new XMLHttpRequest();
@@ -231,7 +231,7 @@ function afficherPartieConversation(json, id) {
   htmlConv = "<div id='tous-les-messages'></div>";
 
   // Ecriture du code html de la barre de saisie
-  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='http://localhost/Sport-Track/Messagerie/images/envoyer.png'></a></div></div>";
+  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='/images/envoyer.png'></a></div></div>";
 
   // Ecriture du code html de la balise <section id="conversation">
   var html = htmlEnTete + htmlConv + htmlSaisie;
@@ -261,7 +261,7 @@ function afficherDiscussion(baliseAffichage, id) {
   var htmlConv = "";
   console.log("affichage des messages ...")
   // Interrogation de la bd qui va nous retourner tous les messages entre l'utilisateur connecté et celui sélectionné
-  var url = "http://localhost/Sport-Track/Messagerie/API/retournerConversation.php?id=" + id;
+  var url = "API/retournerConversation.php?id=" + id;
 
   //Requete AJAX
   var xhr4 = new XMLHttpRequest();

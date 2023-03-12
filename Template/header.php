@@ -18,19 +18,20 @@
         <?php 
         session_start();
         if(!isset($_SESSION['user'])){
-            echo "<a href='/Sport-Track/Inscription_Connexion/connexion.php'> <img src='/Sport-Track/Template/img/maison.png'> </a>";
+=
+            echo "<a href='../index.php'> <img src='../Template/img/maison.png'> </a>";
         }
         else{
-            echo '<a href="/Sport-Track/Accueil/accueil_connecte.php"> <img src="/Sport-Track/Template/img/maison.png"> </a>';
+            echo '<a href="../Accueil/accueil_connecte.php"> <img src="../Template/img/maison.png"> </a>';
         }
         ?>
-        <a href="/Sport-Track/Messagerie/messagerie.php"> <img src="/Sport-Track/Template/img/messager.png"> </a>
-        <a href="/Sport-Track/Calendrier/index.php"> <img src="/Sport-Track/Template/img/calendrier.png"> </a>
-        <a href="/Sport-Track/Profil/page-joueur.php"> <img src="/Sport-Track/Template/img/personne.png"> </a>
+        <a href="../Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
+        <a href="../Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
+        <a href="../Profil/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
     </div>
     <div id="right-part">
         <div id="scanner"> 
-            <a href="/Sport-Track/Scaneur/encodeur.php"> <img src="/Sport-Track/Template/img/scanner.png"> </a>
+            <a href="Scaneur/encodeur.php"> <img src="../Template/img/scanner.png"> </a>
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
@@ -38,11 +39,11 @@
             </button>
             <div class="dropdownContent">
                 <span id="partage"><a href="#"> Partager </a></span>
-                <a href="/Sport-Track/Information/avis.php"> Avis </a>
-                <a href="/Sport-Track/Information/reglages.php" id="separation"> Réglages </a>
-                <a href="/Sport-Track/Information/contact.php"> Contact </a>
-                <a href="/Sport-Track/Information/aide.php"> Aide </a>
-                <a href="/Sport-Track/Inscription_Connexion/deconnexion.php"> Déconnexion </a>
+                <a href="Information/avis.php"> Avis </a>
+                <a href="Information/reglages.php" id="separation"> Réglages </a>
+                <a href="../information/contact.php"> Contact </a>
+                <a href="Information/aide.php"> Aide </a>
+                <a href="Inscription_Connexion/deconnexion.php"> Déconnexion </a>
             </div>
         </div>
     </div>
