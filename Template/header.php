@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sport-Track/Messagerie/messagerie.css">
+    <link rel="stylesheet" href="../Messagerie/messagerie.css">
     <!-- Lien vers le CSS du header et du footer -->
-    <link rel="stylesheet" href="/Sport-Track/Template/style.css">
+    <link rel="stylesheet" href="../Template/style.css">
     <title>Sport Track</title>
 </head>
 <body>
@@ -15,10 +15,10 @@
     <?php 
         session_start();
         if(isset($_SESSION['user'])){
-            echo '<a href="../Accueil/accueil_connecte.php"> <img src="/Sport-Track/Template/img/logo.png"> </a>';
+            echo '<a href="../Accueil/accueil_connecte.php"> <img src="../Template/img/logo.png"> </a>';
         }
         else{
-            echo '<a href="../index.php"> <img src="/Sport-Track/Template/img/logo.png"> </a>';
+            echo '<a href="../index.php"> <img src="../Template/img/logo.png"> </a>';
         }
 
         ?>
