@@ -1,3 +1,8 @@
+let today = new Date();
+var activeDay;
+let month = today.getMonth();
+let year = today.getFullYear();
+
 function updateEvents(date) {
   let events = "";
   eventsArr.forEach((event) => {
@@ -7,8 +12,8 @@ function updateEvents(date) {
       year === event.year
     ) {
       event.events.forEach((event) => {
-        let eventHtml = `<div class="event">
-          <div class="title_time_event">
+        let eventHtml = `<div class="event" id="${event.id}">
+          <div class="title_time_event" id="${event.id}">
             <div class="title">
               <i class="fas fa-circle"></i>
               <h3 class="event-title">${event.title}</h3>
@@ -46,8 +51,11 @@ function saveEvents() {
 
 var eventsContainer = document.querySelector(".events");
 eventsContainer.addEventListener("click", (e) => {
+  console.log("Clicked element:", e.target.getAttribute("id"));
+  const eventId = e.target.getAttribute("id");
   if (e.target.classList.contains("event")) {
     if (confirm("Êtes-vous sur de vouloir supprimer cette évènement ?")) {
+      suppEvent(eventId);
       const eventTitle = e.target.children[0].children[1].innerHTML;
       eventsArr.forEach((event) => {
         if (
@@ -72,6 +80,7 @@ eventsContainer.addEventListener("click", (e) => {
         }
       });
       updateEvents(activeDay);
+      location.reload();
     }
   }
 });

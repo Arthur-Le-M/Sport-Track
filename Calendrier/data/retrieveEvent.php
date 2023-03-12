@@ -5,7 +5,7 @@ $nomtable= "Calendrier"; /* Connection bdd */
 
 function readCalendrier($bdd, $id){
     $queryParams = [];
-    $queryText = "SELECT e.type_, e.categorie, e.debut, e.fin, eq.nom as nom_equipe, st.nom as nom_stade 
+    $queryText = "SELECT e.id, e.type_, e.categorie, e.debut, e.fin, eq.nom as nom_equipe, st.nom as nom_stade 
                   FROM Calendrier e 
                   LEFT JOIN equipe eq ON e.idEquipe = eq.id 
                   LEFT JOIN stade st ON e.idStade = st.id 

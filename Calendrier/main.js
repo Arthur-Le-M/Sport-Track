@@ -1,80 +1,27 @@
-let today = new Date();
-var activeDay;
-let month = today.getMonth();
-let year = today.getFullYear();
-console.log(eventsArr);
-
-
-
 window.addEventListener('load', async () => {
 
 
+  const calendar = document.querySelector(".calendar"),
+    date = document.querySelector(".date"),
+    daysContainer = document.querySelector(".days"),
+    prev = document.querySelector(".prev"),
+    next = document.querySelector(".next"),
+    todayBtn = document.querySelector(".today-btn"),
+    gotoBtn = document.querySelector(".goto-btn"),
+    dateInput = document.querySelector(".date-input"),
+    eventDay = document.querySelector(".event-day"),
+    eventDate = document.querySelector(".event-date"),
+    addEventWrapper = document.querySelector(".add-event-wrapper "),
+    addEventTitle = document.querySelector(".event-name "),
+    addEventCategorie = document.querySelector(".event-team "),
+    addEventFrom = document.querySelector(".event-time-from "),
+    addEventTo = document.querySelector(".event-time-to "),
+    addEventSubmit = document.querySelector(".add-event-btn ");
 
-const calendar = document.querySelector(".calendar"),
-eventsContainer = document.querySelector(".events"),
-date = document.querySelector(".date"),
-daysContainer = document.querySelector(".days"),
-prev = document.querySelector(".prev"),
-next = document.querySelector(".next"),
-todayBtn = document.querySelector(".today-btn"),
-gotoBtn = document.querySelector(".goto-btn"),
-dateInput = document.querySelector(".date-input"),
-eventDay = document.querySelector(".event-day"),
-eventDate = document.querySelector(".event-date"),
-addEventWrapper = document.querySelector(".add-event-wrapper "),
-addEventTitle = document.querySelector(".event-name "),
-addEventCategorie = document.querySelector(".event-team "),
-addEventFrom = document.querySelector(".event-time-from "),
-addEventTo = document.querySelector(".event-time-to "),
-addEventSubmit = document.querySelector(".add-event-btn ");
-
-
-
-  function updateEvents(date) {
-    let events = "";
-    eventsArr.forEach((event) => {
-      if (
-        date === event.day &&
-        month + 1 === event.month &&
-        year === event.year
-      ) {
-        event.events.forEach((event) => {
-          let eventHtml = `<div class="event">
-            <div class="title_time_event">
-              <div class="title">
-                <i class="fas fa-circle"></i>
-                <h3 class="event-title">${event.title}</h3>
-              </div>
-              <div class="event-time">
-                <span class="event-time">${event.time}</span>
-              </div>
-            </div>`;
-          if (event.title.startsWith("Match")) {
-            eventHtml += `<div class="divBoutonConsulter">
-              <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
-                Consulter
-              </button>
-            </div>`;
-          }
-          eventHtml += `</div>`;
-          events += eventHtml;
-        });
-      }
-    });
-    if (events === "") {
-      events = `<div class="no-event">
-            <h3>No Events</h3>
-        </div>`;
-    }
-    eventsContainer.innerHTML = events;
-    saveEvents();
-  }
-
-
-  //function to save events in local storage
-function saveEvents() {
-  localStorage.setItem("events", JSON.stringify(eventsArr));
-}
+  let today = new Date();
+  let activeDay;
+  let month = today.getMonth();
+  let year = today.getFullYear();
 
   const months = [
     "Janvier",
@@ -143,11 +90,13 @@ function saveEvents() {
 
     //function to add event to eventsArr
     addEventSubmit.addEventListener("click", () => {
-      const eventTitle = (addEventTitle.value);
-      const eventCategorie = (addEventCategorie.value);
-      const eventTimeFrom = (addEventFrom.value);
-      const eventTimeTo = (addEventTo.value);
+      const eventTitle = addEventTitle.value;
+      const eventCategorie = addEventCategorie.value;
+      const eventTimeFrom = addEventFrom.value;
+      const eventTimeTo = addEventTo.value;
 
+
+      console.log(eventTimeFrom);
       if (eventTitle === "" || eventCategorie === "" || eventTimeFrom === "" || eventTimeTo === "") {
         alert("Veuillez remplir tous les champs.");
         return;
@@ -227,9 +176,12 @@ function saveEvents() {
       if (!activeDayEl.classList.contains("event")) {
         activeDayEl.classList.add("event");
       }
+
       const dateDebut = `${year}-${month + 1}-${activeDay} ${eventTimeFrom}:00`;
       const dateFin = `${year}-${month + 1}-${activeDay} ${eventTimeTo}:00`;
       addEvent(eventTitle, eventCategorie, dateDebut, dateFin, idEquipe, idStade);
+      location.reload();
+
     });
 
   } catch (error) {
@@ -239,6 +191,7 @@ function saveEvents() {
 
   const estValide = await getEvents(idEquipe);
   const estValide2 = await getMatchs(idEquipe);
+  console.log(eventsArr);
 
 
   //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
@@ -275,7 +228,7 @@ function saveEvents() {
         year === new Date().getFullYear() &&
         month === new Date().getMonth()
       ) {
-        var activeDay = i;
+        activeDay = i;
         getActiveDay(i);
         updateEvents(i);
         if (event) {
@@ -330,7 +283,7 @@ function saveEvents() {
       day.addEventListener("click", (e) => {
         getActiveDay(e.target.innerHTML);
         updateEvents(Number(e.target.innerHTML));
-        var activeDay = Number(e.target.innerHTML);
+        activeDay = Number(e.target.innerHTML);
         //remove active
         days.forEach((day) => {
           day.classList.remove("active");
@@ -416,7 +369,53 @@ function saveEvents() {
     eventDate.innerHTML = date + " " + months[month] + " " + year;
   }
 
+  //function update events when a day is active
+  function updateEvents(date) {
+    let events = "";
+    eventsArr.forEach((event) => {
+      if (
+        date === event.day &&
+        month + 1 === event.month &&
+        year === event.year
+      ) {
+        event.events.forEach((event) => {
+          let eventHtml = `<div class="event" id="${event.id}">
+            <div class="title_time_event" id="${event.id}">
+              <div class="title">
+                <i class="fas fa-circle"></i>
+                <h3 class="event-title">${event.title}</h3>
+              </div>
+              <div class="event-time">
+                <span class="event-time">${event.time}</span>
+              </div>
+            </div>`;
+          if (event.title.startsWith("Match")) {
+            eventHtml += `<div class="divBoutonConsulter">
+              <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
+                Consulter
+              </button>
+            </div>`;
+          }
+          eventHtml += `</div>`;
+          events += eventHtml;
+        });
+      }
+    });
+    if (events === "") {
+      events = `<div class="no-event">
+            <h3>No Events</h3>
+        </div>`;
+    }
+    eventsContainer.innerHTML = events;
+    saveEvents();
+  }
 
+
+
+  //function to save events in local storage
+  function saveEvents() {
+    localStorage.setItem("events", JSON.stringify(eventsArr));
+  }
 
   function convertTime(time) {
     //convert time to 24 hour format
@@ -428,39 +427,5 @@ function saveEvents() {
     time = timeHour + ":" + timeMin + " " + timeFormat;
     return time;
   }
-
-  if(roleImportant){
-    eventsContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("event")) {
-        if (confirm("Êtes-vous sur de vouloir supprimer cette évènement ?")) {
-          const eventTitle = e.target.children[0].children[1].innerHTML;
-          eventsArr.forEach((event) => {
-            if (
-              event.day === activeDay &&
-              event.month === month + 1 &&
-              event.year === year
-            ) {
-              event.events.forEach((item, index) => {
-                if (item.title === eventTitle) {
-                  event.events.splice(index, 1);
-                }
-              });
-              //if no events left in a day then remove that day from eventsArr
-              if (event.events.length === 0) {
-                eventsArr.splice(eventsArr.indexOf(event), 1);
-                //remove event class from day
-                const activeDayEl = document.querySelector(".day.active");
-                if (activeDayEl.classList.contains("event")) {
-                  activeDayEl.classList.remove("event");
-                }
-              }
-            }
-          });
-          updateEvents(activeDay);
-        }
-      }
-    });
-  }
-
 
 });
