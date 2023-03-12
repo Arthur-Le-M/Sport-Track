@@ -37,8 +37,6 @@ main{
 }
 
 
-
-
 .buttonDownload {
 	display: inline-block;
 	position: relative;
@@ -120,5 +118,17 @@ main{
 	100% {
 		margin-top: 0;
 		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 800px) {
+    .rgpdP{
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .rgpdP{
+		width: 90%;
 	}
 }

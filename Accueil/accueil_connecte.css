@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
+p{
+  margin-bottom: 20px;
+}
+
 #conteneur {
     display: flex;
     justify-content: center;
@@ -53,7 +57,6 @@
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
-    margin-right: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .boite:hover {
@@ -121,17 +124,12 @@ img {
   }
   
   article {
-    max-width: 800px;
+    max-width: 700px;
     text-align: justify;
     margin-bottom: 100px;
   }
 
 @media screen and (max-width: 680px) {
-    img {
-        max-width: 90%;
-        height: auto;
-    }
-
     article {
         max-width: 90%;
         text-align: justify;

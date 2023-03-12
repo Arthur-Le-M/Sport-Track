@@ -16,7 +16,6 @@
                     <li><a href="../Information/contact.php" class="lien">Contact</a></li>
                     <li><a href="../Information/mentions-legales.php" class="lien">Mentions Légales</a></li>
                     <li><a href="../Information/politique-de-conf.php" class="lien">Politique de Confidentialité</a></li>
-                    <li><a href="../Information/cgu.php" class="lien">Conditions Générales d'Utilisation</a></li>
                 </ul>
                 
             </div>
@@ -24,7 +23,7 @@
                 <p class="libelle-liens">Aide</p>
                 <ul>
                     <li><a href="../Information/planSite.php" class="lien">Plan du site</a></li>
-                    <li><a href="../Information/rgpd.php" class="lien">RGPD</a></li>
+                    <li><a href="../Information/rgpd.php" class="lien">RGPD & CGU</a></li>
                     <li><a href="../Information/sport-track-team.php" class="lien">La Team Sport Track</a></li>
                 </ul>
             </div>
