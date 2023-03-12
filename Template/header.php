@@ -18,7 +18,6 @@
         <?php 
         session_start();
         if(!isset($_SESSION['user'])){
-=
             echo "<a href='../index.php'> <img src='../Template/img/maison.png'> </a>";
         }
         else{
