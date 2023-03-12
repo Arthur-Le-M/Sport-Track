@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/decodeur.css">
-    <link rel="stylesheet" href="../Template/style.css">
-    <title>Algorithme</title>
-</head>
-<body>
     <?php 
     require("./../Template/header.php");
     if(!isset($_SESSION['user'])){
@@ -16,6 +5,7 @@
         exit;
     }
     ?>
+    <link rel="stylesheet" href="./css/decodeur.css">
     <main class='corpsScaneur'>
         <div class="content">
             <video id="player" autoplay style="display: none"></video>

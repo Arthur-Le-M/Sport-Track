@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../Template/style.css">
-    <link rel="stylesheet" href="./css/reglages.css">
-</head>
-<body>
 	<?php
         // Import du header (commun à toutes les pages)
         require "../Template/header.php";
     ?>
+	<link rel="stylesheet" href="./css/reglages.css">
 	<div class="div">
 	<div class="box1">
 		<h2>Cookies</h2>

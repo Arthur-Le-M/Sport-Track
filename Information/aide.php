@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Template/style.css">
-    <link rel="stylesheet" href="./css/aide.css">
-</head>
-<body>
     <?php
         // Import du header (commun à toutes les pages)
         require "../Template/header.php";
     ?>
+        <link rel="stylesheet" href="./css/aide.css">
     <div class="container">
     <h2>Questions régulièrement posées</h2>
     <div class="accordion">

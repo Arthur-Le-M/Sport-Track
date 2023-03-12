@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="accueil_connecte.css" >
-    <title>Document</title>
-</head>
-<body>
 <?php
     // Import du header (commun à toutes les pages)
     require "../Template/header.php";
@@ -25,6 +15,7 @@
     $prenom = $resultat['prenom'];
     $licence = $resultat['licence'];
     ?>
+    <link rel="stylesheet" href="accueil_connecte.css" >
 <div id="balle-container"></div>
 
 <div class="principal">

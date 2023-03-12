@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<link rel="stylesheet" href="style.css" />
-                <link rel="stylesheet" href="../Template/style.css">
-    </head>
-
-    <body>
         <?php require("../Template/header.php"); 
         if(isset($_SESSION['user'])){
             header('location: ../Accueil/accueil_connecte.php');
@@ -16,6 +5,7 @@
         }
         $err = $_GET['err'] ?? null;
         ?>
+        <link rel="stylesheet" href="style.css" />
         <script src="script-connexion-inscription.js" defer></script>
         <main>
             <section class="sectionTitre">

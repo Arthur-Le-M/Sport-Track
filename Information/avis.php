@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/avis.css">
-  <link rel="stylesheet" href="../Template/style.css">
-
-
-</head>
-<body>
 <?php
     // Import du header (commun à toutes les pages)
     require "../Template/header.php";
 ?>
+  <link rel="stylesheet" href="./css/avis.css">
 <!-- partial:index.partial.html -->
 <div class="outerdiv">
     <div class="innerdiv">

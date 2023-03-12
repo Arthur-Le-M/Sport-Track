@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/encodeur.css">
-    <link rel="stylesheet" href="../Template/style.css">
-</head>
-
-<body>
     <?php 
     require("./../Template/header.php");
     if(!isset($_SESSION['user'])){
@@ -24,7 +12,7 @@
     }
     
     ?>
-
+    <link rel="stylesheet" href="./css/encodeur.css">
 
         <span class="divBarres">
             <img class="logoST" src="./image.png">

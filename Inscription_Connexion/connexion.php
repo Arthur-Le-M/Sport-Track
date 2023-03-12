@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <!-- En-tête de la page -->
-        <meta charset="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" href="../Template/style.css">
-				<link rel="stylesheet" href="style.css" />
-    </head>
-
-    <body>
         <?php require("../Template/header.php"); 
         if(isset($_SESSION['user'])){
             header('location: ../Accueil/accueil_connecte.php');
             exit;
         }
-
         $err = $_GET['err'] ?? null;
         ?>
+        <link rel="stylesheet" href="style.css" />
         <main>
             <section class="sectionTitre">
                 <h2 class="titrePage">Connexion</h2>

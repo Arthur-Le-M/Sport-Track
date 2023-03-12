@@ -45,7 +45,7 @@
         </div>
         <div class="conteneur-dropdown">
             <button class="dropdownButton">
-                <img id="icon" src="/Sport-Track/Template/img/menu.png" />
+                <img id="icon" src="../Template/img/menu.png" />
             </button>
             <div class="dropdownContent">
                 <span id="partage"><a href="#"> Partager </a></span>
