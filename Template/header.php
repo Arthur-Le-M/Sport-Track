@@ -24,7 +24,7 @@
             echo '<a href="/Sport-Track/Accueil/accueil_connecte.php"> <img src="../Template/img/maison.png"> </a>';
         }
         ?>
-        <a href="/Sport-Track/Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
+        <a href="../Messagerie/messagerie.php"> <img src="../Template/img/messager.png"> </a>
         <a href="/Sport-Track/Calendrier/index.php"> <img src="../Template/img/calendrier.png"> </a>
         <a href="/Sport-Track/Profil/page-joueur.php"> <img src="../Template/img/personne.png"> </a>
     </div>

@@ -11,7 +11,7 @@ body {
 }
 
 main {
-    height: 75vh;
+    height: 80vh;
     margin: 85px 0;
 }
 
@@ -116,7 +116,6 @@ main {
     color: white;
 }
 
-
 /* Fin Fenetre modale */
 
 #messagerie {
@@ -130,6 +129,13 @@ main {
 #messagerie section {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 0px #777, 0px 10px 10px -5px RGBa(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+#messagerie #modalContacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     height: 100%;
 }
 
@@ -235,6 +241,87 @@ main {
     justify-content: space-between;
 }
 
+#afficher-contacts-modal {
+    display: none;
+    rotate: 180deg;
+}
+
+#afficher-contacts-modal img {
+    width: 20px;
+}
+  
+
+@media screen and (max-width: 1200px) {
+    #messagerie #modalContacts {
+        display: none;
+    }
+
+    #messagerie #modalContacts.visible {
+        display: flex;
+        position: fixed;
+        z-index: 500;
+        backdrop-filter: blur(3px);
+        background-color: rgba(0,0,0,0.5);
+        height: 105vh;
+        width: 200vw;
+    }
+
+    #messagerie #contacts {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 80%;
+    }
+
+    #messagerie #conversation {
+        width: 95%;
+        margin-left: 0;
+    }
+
+    #afficher-contacts-modal {
+        display: block;
+        position: fixed;
+        top: 120px;
+        left: 37px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        height: 82vh;
+    }
+
+    #afficher-contacts-modal {
+        top: 90px;
+        left: 30px;
+    }
+
+    #messagerie {
+        padding: 0;
+    }
+    #messagerie section {
+        padding: 0;
+        box-shadow: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    #messagerie #conversation {
+        border-radius: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #afficher-contacts-modal {
+        left: 10px;
+    }
+}
+
 #messagerie #conversation #info-conv {
     height: 100%;
     width: 100%;
@@ -245,6 +332,10 @@ main {
     font-size: 1.5em;
     color: #949494;
     font-weight: 300;
+}
+#messagerie #conversation #info-conv #entete-user {
+    text-align: center;
+    width: 95%;
 }
 
 #messagerie #conversation #info-utilisateur {

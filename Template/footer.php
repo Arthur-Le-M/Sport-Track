@@ -51,6 +51,6 @@
     </section>
     <p id="droit-auteur">©Sport Track, Inc</p>
 </footer>
-<script src="javascript/newsletter.js" defer></script>
+<script src="../Template/javascript/newsletter.js" defer></script>
 </body>
 <html>
