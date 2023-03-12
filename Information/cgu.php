@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,11 +8,10 @@
     <!-- Lien vers le CSS du header et du footer -->
     <link rel="stylesheet" href="../Template/style.css">
     <title>Conditions Générales d'Utilisation · Sport Track</title>
+    <script src="script-scroll.js"></script>
 </head>
-
 <body>
     <?php
-    // Import du header (commun à toutes les pages)
     require "../Template/header.php";
     ?>
     <main>
@@ -70,7 +67,6 @@
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
     ?>
-    <script src="script-scroll.js"></script>
 </body>
 </html>
 
