@@ -19,10 +19,11 @@
 
     require "../Template/config.php"; // Lien pour la connexion a la BD
     $bdd = getConnection();
-    $recupPrenom = $bdd->prepare('SELECT prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
+    $recupPrenom = $bdd->prepare('SELECT inscrit.licence, prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
     $recupPrenom->execute([$id]); // Vous devez passer le paramètre dans un tableau
     $resultat = $recupPrenom->fetch();
     $prenom = $resultat['prenom'];
+    $licence = $resultat['licence'];
     ?>
 <div id="balle-container"></div>
 
@@ -34,11 +35,11 @@
             <h3>Messagerie</h3>
         </div>
         <div id="boite2" class="boite" >
-            <a href="lien-de-la-page"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
+            <a href="../Calendrier/index.php"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
             <h3>Calendrier</h3>
         </div>
         <div id="boite3" class="boite">
-            <a href="lien-de-la-page"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
+            <a href="../Profil/page-joueur.php?id=<?php print($licence); ?>"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
             <h3>Profil</h3>
         </div>
     </div>
