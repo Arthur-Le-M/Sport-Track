@@ -3,7 +3,7 @@ const eventsArr = [];
 var roleImportant=false;
 async function getEvents(_id) {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/retrieveEvent.php?id=' + _id);
+    xhr.open("GET", 'data/retrieveEvent.php?id=' + _id);
     xhr.send();
     // Attendre la réponse avant de continuer
     const response = await new Promise((resolve, reject) => {
@@ -60,7 +60,7 @@ async function getEvents(_id) {
 
 async function getMatchs(id_) {
     const xhr2 = new XMLHttpRequest();
-    xhr2.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/retrieveMatch.php?id=' + id_);
+    xhr2.open("GET", 'data/retrieveMatch.php?id=' + id_);
     xhr2.send();
     // Attendre la réponse avant de continuer
     const response = await new Promise((resolve, reject) => {
@@ -128,7 +128,7 @@ function addEvent(type_, categorie, debut, fin, id_equipe, id_stade) {
 
     // envoyer les données au fichier PHP en utilisant la méthode POST
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", 'http://localhost:80/Sport-Track/Calendrier/data/addEvent.php');
+    xhr.open("POST", 'data/addEvent.php');
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             alert(xhr.responseText); // afficher la réponse du serveur
@@ -141,7 +141,7 @@ function suppEvent(_id) {
     // envoyer les données au fichier PHP en utilisant la méthode POST
     const xhr = new XMLHttpRequest();
     console.log("L'id qui va être supptimé est ",_id)
-    xhr.open("GET", 'http://localhost:80/Sport-Track/Calendrier/data/suppEvent.php?id='+ _id);
+    xhr.open("GET", 'data/suppEvent.php?id='+ _id);
     xhr.send();
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {

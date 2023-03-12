@@ -1,7 +1,7 @@
 <?php
 
 function getConnection() {
-    $bdd = new PDO('mysql:host=localhost;dbname=bd_sporttrack','root','root');
+    $bdd = new PDO('mysql:host=localhost;dbname=bd_sporttrack','root','');
     return $bdd;
 }
 

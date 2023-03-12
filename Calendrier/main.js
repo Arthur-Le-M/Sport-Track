@@ -392,7 +392,7 @@ window.addEventListener('load', async () => {
             </div>`;
           if (event.title.startsWith("Match")) {
             eventHtml += `<div class="divBoutonConsulter">
-              <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
+              <button class="boutonConsulter" onClick="window.location.href='../Profil/page-match.php?id=${event.id}'">
                 Consulter
               </button>
             </div>`;
