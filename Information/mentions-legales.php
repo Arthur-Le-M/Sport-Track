@@ -62,7 +62,6 @@
         </section>
     </main>
     <?php
-    // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
     ?>
 </body>

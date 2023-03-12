@@ -8,7 +8,7 @@
     <!-- Lien vers le CSS du header et du footer -->
     <link rel="stylesheet" href="../Template/style.css">
     <script src="script-scroll.js"></script>
-    <title>Politique de confidentialité · Sport Track</title>
+    <title>RGPD · Sport Track</title>
 </head>
 
 <body>

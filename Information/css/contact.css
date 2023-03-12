@@ -4,8 +4,8 @@ main {
 
 #info-contact {
     text-align: center;
-    padding-bottom: 3%;
-    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-top: 1%;
     font-size: 1.2em;
 }
 
@@ -49,22 +49,16 @@ input[type="email"],
 button[type="submit"],
 textarea {
     display: block;
+    border: none;
+    background-color: rgb(242, 242, 242);
     padding: 10px;
     border-radius: 5px;
     width: 100%;
     margin: 0 auto;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid black;
-    font-size: 1em;
-}
-textarea {
-    resize: vertical;
-}
+input[type="text"]:focus,
+input[type="email"]:focus,
 input:focus,textarea:focus {
     border: none;
     outline: 2px solid #F9B233;

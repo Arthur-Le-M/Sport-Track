@@ -17,8 +17,6 @@
     ?>
     <main>
         <div id="info-contact">
-            <p id="text1">Besoin d'aide ? Une question ? Un problème à résoudre ?</p>
-            <p id="text2">Contactez-nous !</p>
             <p id="text3">Notre équipe est là pour vous aider.</p>
         </div>
         <form method="post" action="contact-traitement.php">

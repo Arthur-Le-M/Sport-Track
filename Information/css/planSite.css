@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+  
+#img {
+    margin-top: 100px;
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 100px;
+    box-shadow: 0px 0px 0px #777, 0px 10px 10px -5px RGBa(0, 0, 0, 0.5);
+  }
+
+@media screen and (max-width: 800px) {
+    #img {
+        margin-top: 100px;
+        max-width: 70%;
+        max-height: 70%;
+        margin-bottom: 100px;
+      }
+}
+
+@media screen and (max-width: 600px) {
+    #img {
+        margin-top: 100px;
+        max-width: 90%;
+        max-height: 90%;
+        margin-bottom: 100px;
+      }
+}
