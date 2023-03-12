@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
+
 }
 
 a{
@@ -24,6 +25,7 @@ main{
     width: 30%;
     height: 100vh;
     overflow: hidden;
+    
 }
 
 #sectionPP{

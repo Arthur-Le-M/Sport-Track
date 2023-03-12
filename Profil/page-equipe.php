@@ -111,7 +111,6 @@ $matchs = $req->fetchAll();
         ?>
     </section>
 </main>
-
 <?php
 require "../Template/footer.php";
 ?>

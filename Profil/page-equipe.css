@@ -121,7 +121,7 @@ h3{
     border: #E0E0E0 1px solid;
     box-shadow:0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     transition: transform 0.1s;
-
+    font-size: 1.5vw;
 }
 
 /* Hover effect du container match qui s'agrandit sans bouger les autres*/
@@ -135,6 +135,8 @@ h3{
     align-items: center;
     justify-content: center;
     width: 15%;
+    
+
 }
 
 .equipesContainer{

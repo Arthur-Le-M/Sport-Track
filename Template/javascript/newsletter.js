@@ -1,4 +1,3 @@
-
 var form = document.getElementById("form-newsletter");
 form.addEventListener("submit",function(event) {
     console.log("ok");

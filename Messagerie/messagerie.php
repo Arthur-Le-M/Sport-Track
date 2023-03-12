@@ -27,6 +27,7 @@
     }
     ?>
     <main>
+        <a id="afficher-contacts-modal"> <img src="images/fleche-gauche.png" alt="Afficher les contacts"> </a>
         <div id="modal">
             <div id="modalDesc">
                 <input type="text" placeholder="Saisir un utilisateur ..." name="pseudo" id="input-pseudo">
@@ -35,12 +36,14 @@
             </div>
         </div>
         <article id="messagerie">
-            <section id="contacts">
-                <a id="nv-conv">Nouveau Contact</a>
-                <div id="tous-les-contacts">
-                    <p id="no-conversation">Aucune conversation commencée.</p>
-                </div>
-            </section>
+            <div id="modalContacts">
+                <section id="contacts">
+                    <a id="nv-conv">Nouveau Contact</a>
+                    <div id="tous-les-contacts">
+                        <p id="no-conversation">Aucune conversation commencée.</p>
+                    </div>
+                </section>
+            </div>
             <section id="conversation">
                 <div id="info-conv">
                     <p id="entete-user">Sélectionnez un contact pour afficher votre conversation.</p>
@@ -55,6 +58,14 @@
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
     ?>
+    <style>
+        @media screen and (max-width: 768px) {
+            footer {
+                display: none;
+            }
+        }
+    </style>
+
     <script src="../Messagerie/client/script.js"></script>
 </body>
 </html>

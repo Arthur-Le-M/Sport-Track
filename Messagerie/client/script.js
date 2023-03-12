@@ -8,6 +8,24 @@ eventContacts();
 
 
 
+const button = document.querySelector('a#afficher-contacts-modal');
+const modalContacts = document.querySelector('#modalContacts');
+
+button.addEventListener('click', () => {
+  modalContacts.classList.add('visible');
+
+  modalContacts.addEventListener("click", function (e) {
+    // Vérifier si le clic est sur l'élément modal
+    if (e.target === modalContacts) {
+      // Fermer la fenêtre modale
+      modalContacts.classList.remove('visible');
+    }
+  });
+});
+
+
+
+
 
 // connexion au serveur de websocket
 var id = document.getElementsByName("id_client")[0].value;
@@ -125,6 +143,7 @@ function afficherJoueursModale(tab) {
 
         // Fermer la fenetre modale
         modal.classList.remove('visible');
+        modalContacts.classList.remove('visible');
       });
     }
 
@@ -173,7 +192,7 @@ function afficherContacts() {
         }
 
 
-        html += "<a class='select-contact'><div class='unContact' name='" + idContact + "'><img src='http://localhost/Sport-Track/Messagerie/images/pp.png' alt=''><div class='infos-contact'><p class='nom-contact'>" + pseudoContact + "</p><p class='last-msg'>" + date + " : " + message + "</p></div></div></a>";
+        html += "<a class='select-contact'><div class='unContact' name='" + idContact + "'><img src='https://via.placeholder.com/100' alt=''><div class='infos-contact'><p class='nom-contact'>" + pseudoContact + "</p><p class='last-msg'>" + date + " : " + message + "</p></div></div></a>";
 
         sectionContacts.innerHTML = html;
       }
@@ -212,6 +231,8 @@ function eventContacts() {
             afficherPartieConversation(unUser, id)
           }
         }
+        // On ferme la fenetre modale si on est sur petit ecran
+        modalContacts.classList.remove('visible');
       });
     }
   });
@@ -231,7 +252,7 @@ function afficherPartieConversation(json, id) {
   htmlConv = "<div id='tous-les-messages'></div>";
 
   // Ecriture du code html de la barre de saisie
-  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='/images/envoyer.png'></a></div></div>";
+  htmlSaisie = "<div id='saisie-message'><div id='form' name='" + id + "'><input type='text' placeholder='Envoyer un message ...' name='message' id='msg-input'><a id='msg-envoyer'><img id='msg-envoyer-icon' src='images/envoyer.png'></a></div></div>";
 
   // Ecriture du code html de la balise <section id="conversation">
   var html = htmlEnTete + htmlConv + htmlSaisie;
