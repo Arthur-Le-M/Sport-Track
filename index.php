@@ -27,7 +27,7 @@
             </section>
             <section class='article'>
                 <div class='imageContainer'>
-                    <img src="https://via.placeholder.com/600x400" alt="">
+                    <img src="./Template/img/previewMessagerie.png" alt="">
                 </div>
                 <div class='texteContainer'>
                     <h2>Messagerie</h2>
@@ -40,15 +40,15 @@
                     <p>Les joueurs pourront consulter leur calendrier d'entraînement, les matchs à venir avec les horaires et les lieux. Les entraîneurs pourront planifier les entraînements et les matchs à venir, tandis que les dirigeants de club pourront gérer l'accès au terrain ou à la salle de sport de leur club.</p>
                 </div>
                 <div class='imageContainer'>
-                    <img src="https://via.placeholder.com/600x400" alt="">
+                    <img src="./Template/img/previewCalendrier.png" alt="">
                 </div>
             </section>
             <section class='article'>
                 <div class='imageContainer'>
-                    <img src="https://via.placeholder.com/600x400" alt="">
+                    <img src="./Template/img/previewProfil.png" alt="">
                 </div>
                 <div class='texteContainer'>
-                    <h2>Statistiques</h2>
+                    <h2>Profil</h2>
                     <p>Cette partie permettra aux utilisateurs d'accéder à leurs statistiques, leur classement, leur palmarès et la composition de leur équipe. Les utilisateurs pourront également accéder aux informations des équipes adverses.</p>
                 </div>
             </section>
