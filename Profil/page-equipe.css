@@ -9,8 +9,7 @@ main{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 80%;
-    padding-top: 40%;
+    height: 100%;
 }
 
 a{
@@ -193,13 +192,148 @@ h3{
     padding-right: 15px;
     border-radius: 10px;
 }
-@media screen and (max-width: 800px) {
-    main{
-       padding-top: 120%;
-       padding-bottom: 120%;
+
+/* responsive tablette */
+@media screen and (max-width: 1024px) {
+    h2{
+        font-size: 8vw;
     }
-    .match{
-        font-size: 2vw;
+    #statContainer{
+        width: 50%;
     }
- }
- 
+    .statElement{
+        width: 30%;
+    }
+    h3{
+        font-size: 3vw;
+    }
+    #victoireDefaite{
+        width: 60%;
+    }
+    #matchsContainer{
+        width: 80%;
+    }
+}
+
+/* responsive mobile L*/
+@media screen and (max-width: 768px) {
+    h2{
+        font-size: 10vw;
+    }
+    #statContainer{
+        width: 80%;
+    }
+    .statElement{
+        width: 40%;
+    }
+    h3{
+        font-size: 4vw;
+    }
+    #victoireDefaite{
+        width: 80%;
+    }
+    #matchsContainer{
+        width: 90%;
+    }
+
+    .date{
+        font-size: 12px;
+    }
+
+    .equipe{
+        font-size: 16px;
+    }
+    .equipe-win{
+        font-size: 16px;
+    }
+
+    .dateContainer{
+        width: 20%;
+    }
+
+    .resultatContainer{
+        width: 20%;
+    }
+}
+
+/* responsive mobile M*/
+@media screen and (max-width: 425px) {
+    h2{
+        font-size: 12vw;
+    }
+    #statContainer{
+        width: 90%;
+    }
+    .statElement{
+        width: 50%;
+    }
+    h3{
+        font-size: 5vw;
+    }
+    #victoireDefaite{
+        width: 90%;
+    }
+    #matchsContainer{
+        width: 100%;
+    }
+
+    .date{
+        font-size: 10px;
+    }
+
+    .equipe{
+        font-size: 14px;
+    }
+    .equipe-win{
+        font-size: 14px;
+    }
+
+    .dateContainer{
+        width: 25%;
+    }
+
+    .resultatContainer{
+        width: 25%;
+    }
+}
+
+/* responsive mobile S*/
+@media screen and (max-width: 375px) {
+    h2{
+        font-size: 14vw;
+    }
+    #statContainer{
+        width: 90%;
+    }
+    .statElement{
+        width: 50%;
+    }
+    h3{
+        font-size: 6vw;
+    }
+    #victoireDefaite{
+        width: 90%;
+    }
+    #matchsContainer{
+        width: 100%;
+    }
+
+    .date{
+        font-size: 8px;
+    }
+
+    .equipe{
+        font-size: 12px;
+    }
+    .equipe-win{
+        font-size: 12px;
+    }
+
+    .dateContainer{
+        width: 30%;
+    }
+
+    .resultatContainer{
+        width: 30%;
+    }
+}

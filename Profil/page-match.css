@@ -22,7 +22,7 @@ main{
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
-    width: 40%;
+    width: 70%;
     height: 20%;
 }
 
@@ -56,7 +56,7 @@ main{
     height: 100%;
     margin-top: 20px;
     display: flex;
-    width: 30%;
+    width: 20%;
     align-items: center;
     justify-content: center;
     border-radius: 15%;
@@ -88,3 +88,96 @@ main{
     font-weight: normal;
 }
 
+/* Responsive Tablet*/
+@media screen and (max-width: 768px) {
+    #sectionResultat{
+        width: 70%;
+        height: 40%;
+    }
+
+    .equipe{
+        width: 100%;
+        height: 40%;
+    }
+
+    .versus{
+        width: 100%;
+        height: 20%;
+    }
+
+    .versus p{
+        font-size: 30px;
+    }
+
+    .nomEquipe{
+        font-size: 17px;
+    }
+
+    .scoreEquipeContainer{
+        width: 25%;
+    }
+
+    .scoreEquipe{
+        font-size: 30px;
+    }
+
+    #sectionInformation{
+        width: 100%;
+        height: 40%;
+    }
+
+    #sectionInformation h3{
+        font-size: 20px;
+    }
+
+    #sectionInformation h4{
+        font-size: 15px;
+    }
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 685px) {
+    #sectionResultat{
+        width: 90%;
+        height: 40%;
+    }
+
+    .equipe{
+        width: 100%;
+        height: 40%;
+    }
+
+    .versus{
+        width: 100%;
+        height: 20%;
+    }
+
+    .versus p{
+        font-size: 30px;
+    }
+
+    .nomEquipe{
+        font-size: 10px;
+    }
+
+    .scoreEquipeContainer{
+        width: 25%;
+    }
+
+    .scoreEquipe{
+        font-size: 30px;
+    }
+
+    #sectionInformation{
+        width: 100%;
+        height: 40%;
+    }
+
+    #sectionInformation h3{
+        font-size: 20px;
+    }
+
+    #sectionInformation h4{
+        font-size: 15px;
+    }
+}
