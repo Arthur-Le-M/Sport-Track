@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/politique-de-conf.css">
     <!-- Lien vers le CSS du header et du footer -->
     <link rel="stylesheet" href="../Template/style.css">
+    <script src="script-scroll.js"></script>
     <title>Politique de confidentialité · Sport Track</title>
 </head>
 
@@ -93,6 +94,5 @@
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
     ?>
-    <script src="script-scroll.js"></script>
 </body>
 </html>

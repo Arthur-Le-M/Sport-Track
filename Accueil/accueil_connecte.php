@@ -42,9 +42,23 @@
             <h3>Profil</h3>
         </div>
     </div>
-</div>
 
-<script src="accueil_connecte.js"> </script>
+
+
+    <div class="container">
+		<article>
+			<h2>Le Meilleur Joueur du Mois</h2>
+			<p>Après une série de performances exceptionnelles, le joueur de football Antoine Dupont a été nommé le meilleur joueur du mois de février. Avec six buts en cinq matchs, il a été le principal artisan des victoires de son équipe.</p>
+			<div class="img-container">
+				<img src="https://via.placeholder.com/800x400.png?text=Antoine+Dupont" alt="Antoine Dupont">
+			</div>
+			<p>Interrogé après la remise de son prix, Alex Dupont s'est montré humble et a tenu à féliciter ses coéquipiers pour leur travail acharné. "Je ne peux pas y arriver tout seul", a-t-il déclaré. "C'est un effort d'équipe, et nous sommes tous très heureux des résultats que nous avons obtenus."</p>
+			<div class="date">Publié le 12 mars 2023</div>
+			<div class="author">Par Matis Chabana</div>
+		</article>
+	</div>
+  </div>
+  <script src="accueil_connecte.js"> </script>
 <?php
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";

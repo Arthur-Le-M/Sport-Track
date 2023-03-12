@@ -34,8 +34,8 @@ header{
 #titreSite h1{
     color: white;
     font-size: 10vw;
-    text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
-               1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black, 0.5vw 0.5vw 0px black;
+    text-shadow: 0.5px 0 black, -0.5px 0 black, 0 0.5px black, 0 -0.5px black,
+               0.25px 0.25px black, -0.25px -0.25px black, 0.25px -0.25px black, -0.25px 0.25px black, 0.12vw 0.12vw 0px black;
     font-weight: bolder;
     animation: float 5s ease-in-out infinite;
     z-index: 1;
@@ -69,7 +69,7 @@ header{
     align-items: center;
     border-radius: 10px;
     border: black 2px solid;
-    box-shadow: 7px 7px 0px rgb(0, 0, 0);
+    box-shadow: 1px 1px 0px rgb(0, 0, 0);
     transition: transform 0.1s ease-in-out;
     z-index: 1;
 }

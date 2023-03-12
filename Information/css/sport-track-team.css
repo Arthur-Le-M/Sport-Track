@@ -40,11 +40,6 @@ main {
     border-radius: 20px;
 }
 
-@media screen and (max-width: 1212px) {
-    #sport-track-team .avatar {
-        margin-top: 50px;
-    }
-}
 
 @media screen and (max-width: 616px) {
     #sport-track-team {

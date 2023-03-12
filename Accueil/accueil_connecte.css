@@ -94,3 +94,46 @@ h1 img {
   z-index: -1;
   filter: drop-shadow(0 0 0.75rem #fff);
 }
+  .img-container {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.author {
+    font-style: italic;
+    text-align: right;
+}
+
+.date {
+    margin-top: 10px;
+    font-style: italic;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  article {
+    max-width: 800px;
+    text-align: justify;
+    margin-bottom: 100px;
+  }
+
+@media screen and (max-width: 680px) {
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    article {
+        max-width: 90%;
+        text-align: justify;
+      }
+}
