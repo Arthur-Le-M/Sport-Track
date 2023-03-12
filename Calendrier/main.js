@@ -3,6 +3,7 @@ window.addEventListener('load', async () => {
 
   const calendar = document.querySelector(".calendar"),
     date = document.querySelector(".date"),
+    eventsContainer = document.querySelector(".events"),
     daysContainer = document.querySelector(".days"),
     prev = document.querySelector(".prev"),
     next = document.querySelector(".next"),

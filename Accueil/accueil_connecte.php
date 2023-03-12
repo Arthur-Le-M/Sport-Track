@@ -31,11 +31,11 @@
         <h3>Messagerie</h3>
     </div>
     <div id="boite2" class="boite" >
-        <a href="lien-de-la-page"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
+        <a href="../Calendrier/index.php"><img src="../Template/img/CalendrierImage2.png" alt="description-de-l-image"></a>
         <h3>Calendrier</h3>
     </div>
     <div id="boite3" class="boite">
-        <a href="lien-de-la-page"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
+        <a href="../Profil/page-joueur.php"><img src="../Template/img/StatisticImage2.png"  alt="description-de-l-image"></a>
         <h3>Profil</h3>
     </div>
 </div>
