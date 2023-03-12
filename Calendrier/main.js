@@ -4,75 +4,77 @@ let month = today.getMonth();
 let year = today.getFullYear();
 console.log(eventsArr);
 
-function updateEvents(date) {
-  let events = "";
-  eventsArr.forEach((event) => {
-    if (
-      date === event.day &&
-      month + 1 === event.month &&
-      year === event.year
-    ) {
-      event.events.forEach((event) => {
-        let eventHtml = `<div class="event">
-          <div class="title_time_event">
-            <div class="title">
-              <i class="fas fa-circle"></i>
-              <h3 class="event-title">${event.title}</h3>
-            </div>
-            <div class="event-time">
-              <span class="event-time">${event.time}</span>
-            </div>
-          </div>`;
-        if (event.title.startsWith("Match")) {
-          eventHtml += `<div class="divBoutonConsulter">
-            <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
-              Consulter
-            </button>
-          </div>`;
-        }
-        eventHtml += `</div>`;
-        events += eventHtml;
-      });
-    }
-  });
-  if (events === "") {
-    events = `<div class="no-event">
-          <h3>No Events</h3>
-      </div>`;
-  }
-  eventsContainer.innerHTML = events;
-  saveEvents();
-}
-
-
-//function to save events in local storage
-function saveEvents() {
-  localStorage.setItem("events", JSON.stringify(eventsArr));
-}
-
 
 
 window.addEventListener('load', async () => {
 
 
-  const calendar = document.querySelector(".calendar"),
-    eventsContainer = document.querySelector(".events"),
-    date = document.querySelector(".date"),
-    daysContainer = document.querySelector(".days"),
-    prev = document.querySelector(".prev"),
-    next = document.querySelector(".next"),
-    todayBtn = document.querySelector(".today-btn"),
-    gotoBtn = document.querySelector(".goto-btn"),
-    dateInput = document.querySelector(".date-input"),
-    eventDay = document.querySelector(".event-day"),
-    eventDate = document.querySelector(".event-date"),
-    addEventWrapper = document.querySelector(".add-event-wrapper "),
-    addEventTitle = document.querySelector(".event-name "),
-    addEventCategorie = document.querySelector(".event-team "),
-    addEventFrom = document.querySelector(".event-time-from "),
-    addEventTo = document.querySelector(".event-time-to "),
-    addEventSubmit = document.querySelector(".add-event-btn ");
 
+const calendar = document.querySelector(".calendar"),
+eventsContainer = document.querySelector(".events"),
+date = document.querySelector(".date"),
+daysContainer = document.querySelector(".days"),
+prev = document.querySelector(".prev"),
+next = document.querySelector(".next"),
+todayBtn = document.querySelector(".today-btn"),
+gotoBtn = document.querySelector(".goto-btn"),
+dateInput = document.querySelector(".date-input"),
+eventDay = document.querySelector(".event-day"),
+eventDate = document.querySelector(".event-date"),
+addEventWrapper = document.querySelector(".add-event-wrapper "),
+addEventTitle = document.querySelector(".event-name "),
+addEventCategorie = document.querySelector(".event-team "),
+addEventFrom = document.querySelector(".event-time-from "),
+addEventTo = document.querySelector(".event-time-to "),
+addEventSubmit = document.querySelector(".add-event-btn ");
+
+
+
+  function updateEvents(date) {
+    let events = "";
+    eventsArr.forEach((event) => {
+      if (
+        date === event.day &&
+        month + 1 === event.month &&
+        year === event.year
+      ) {
+        event.events.forEach((event) => {
+          let eventHtml = `<div class="event">
+            <div class="title_time_event">
+              <div class="title">
+                <i class="fas fa-circle"></i>
+                <h3 class="event-title">${event.title}</h3>
+              </div>
+              <div class="event-time">
+                <span class="event-time">${event.time}</span>
+              </div>
+            </div>`;
+          if (event.title.startsWith("Match")) {
+            eventHtml += `<div class="divBoutonConsulter">
+              <button class="boutonConsulter" onClick="window.location.href='http://localhost/Sport-Track/Profil/page-match.php?id=${event.id}'">
+                Consulter
+              </button>
+            </div>`;
+          }
+          eventHtml += `</div>`;
+          events += eventHtml;
+        });
+      }
+    });
+    if (events === "") {
+      events = `<div class="no-event">
+            <h3>No Events</h3>
+        </div>`;
+    }
+    eventsContainer.innerHTML = events;
+    saveEvents();
+  }
+
+
+  //function to save events in local storage
+function saveEvents() {
+  localStorage.setItem("events", JSON.stringify(eventsArr));
+}
 
   const months = [
     "Janvier",
