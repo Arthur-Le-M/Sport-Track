@@ -17,7 +17,7 @@ body {
 
 h1 {
     font-size: 10vw;
-    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6;
+    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #f9b233, 0 0 40px #f9b233, 0 0 50px #f9b233, 0 0 60px #f9b233;
     animation: move 5s ease-in-out infinite; 
     margin: 0;
     padding: 0;
@@ -39,9 +39,9 @@ p {
     font-size: 3vw;
     margin: 0;
     padding: 0;
-    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6;
+    text-shadow: 0 0 1px white, 0 0 10px white, 0 0 20px white, 0 0 30px #f9b233, 0 0 40px #f9b233, 0 0 50px #f9b233, 0 0 60px #f9b233;
 }
 @keyframes glow {
-    from {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6, 0 0 70px #6dcff6;}
-    to {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #6dcff6, 0 0 40px #6dcff6, 0 0 50px #6dcff6, 0 0 60px #6dcff6, 0 0 70px #6dcff6;}
+    from {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #f9b233, 0 0 40px #f9b233, 0 0 50px #f9b233, 0 0 60px #f9b233, 0 0 70px #f9b233;}
+    to {text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px #f9b233, 0 0 40px #f9b233, 0 0 50px #f9b233, 0 0 60px #f9b233, 0 0 70px #f9b233;}
 }

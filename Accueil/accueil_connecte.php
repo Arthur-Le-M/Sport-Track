@@ -24,22 +24,23 @@
     $resultat = $recupPrenom->fetch();
     $prenom = $resultat['prenom'];
     ?>
-<h1>Bienvenue <span style="color: #267AB8;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
-<div id ="conteneur" >
-    <div id="boite1" class="boite" >
-        <a href="../Messagerie/messagerie.php"><img src="msg.png" alt="description-de-l-image"></a>
-    </div>
-    <div id="boite2" class="boite" >
-        <a href="lien-de-la-page"><img src="msg.png" alt="description-de-l-image"></a>
-    </div>
-    <div id="boite3" class="boite">
-        <a href="lien-de-la-page"><img src="msg.png"  alt="description-de-l-image"></a>
+<div id="principal">
+    <h1>Bienvenue <span style="color: #267AB8;"> <?php echo ucfirst(strtolower($prenom));?> </span> <img src="emoji.png" alt="icone" width="2.5%"></h1>
+    <div id ="conteneur" >
+        <div id="boite1" class="boite" >
+            <a href="../Messagerie/messagerie.php"><img src="msg.png" alt="description-de-l-image"></a>
+        </div>
+        <div id="boite2" class="boite" >
+            <a href="lien-de-la-page"><img src="msg.png" alt="description-de-l-image"></a>
+        </div>
+        <div id="boite3" class="boite">
+            <a href="lien-de-la-page"><img src="msg.png"  alt="description-de-l-image"></a>
+        </div>
     </div>
 </div>
 <?php
     // Import du footer (commun à toutes les pages)
     require "../Template/footer.php";
     ?>
-
 </body>
 </html>

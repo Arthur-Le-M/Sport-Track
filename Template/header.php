@@ -18,7 +18,7 @@
         <?php 
         session_start();
         if(!isset($_SESSION['user'])){
-            echo "<a href='/Sport-Track/index.php'> <img src='/Sport-Track/Template/img/maison.png'> </a>";
+            echo "<a href='/Sport-Track/Inscription_Connexion/connexion.php'> <img src='/Sport-Track/Template/img/maison.png'> </a>";
         }
         else{
             echo '<a href="/Sport-Track/Accueil/accueil_connecte.php"> <img src="/Sport-Track/Template/img/maison.png"> </a>';

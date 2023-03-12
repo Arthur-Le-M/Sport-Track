@@ -35,3 +35,16 @@ h1 img {
   }
 
 
+  .principal {
+    position: relative;
+    z-index: 0;
+  }
+  
+  .random-image {
+    position: fixed;
+    bottom: calc(10% + 50px);
+    left: calc(10% + 50px);
+    width: 10%;
+    z-index: -2;
+  }
+  
