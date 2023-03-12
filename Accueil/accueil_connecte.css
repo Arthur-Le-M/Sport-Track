@@ -5,8 +5,40 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 10%;
-    
+    position: relative;
 }
+#balle-container {
+    position: relative;
+  }
+
+  .fade-in {
+    opacity: 0; /* Définir l'opacité initiale à 0 */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Utiliser une animation pour augmenter l'opacité progressivement */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Définir l'opacité au début de l'animation */
+    }
+    to {
+      opacity: 1; /* Définir l'opacité à la fin de l'animation */
+    }
+  }
+
+  .fade-out {
+    opacity: 1; /* Définir l'opacité initiale à 1 */
+    animation: fadeOut 0.5s ease-in-out forwards; /* Utiliser une animation pour diminuer l'opacité progressivement */
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1; /* Définir l'opacité au début de l'animation */
+    }
+    to {
+      opacity: 0; /* Définir l'opacité à la fin de l'animation */
+    }
+  }
+  
 .boite {
     height: 450px;
     width: 300px;
@@ -34,6 +66,7 @@ h1 {
     padding-bottom: 2%;
     text-align: center;
     font-family: Oswald;
+    z-index:1;
 }
 h1 img {
     margin-left: 0.8%;
@@ -48,3 +81,16 @@ h1 img {
         padding-bottom: 4%;
     }
   }
+
+  .background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: drop-shadow(0 0 0.75rem #fff);
+}
