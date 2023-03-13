@@ -6,7 +6,7 @@ if(!isset($_SESSION['user'])){
     exit;
 }
 require "../Template/config.php";
-$bdd = getConnection();
+$bdd = getConnection_Lecture();
 
 //Récupérer les informaton de l'équipe le nombre de joueurs, de matchs et de buts
 $idEquipe = $_GET['id'];

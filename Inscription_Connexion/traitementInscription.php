@@ -6,7 +6,7 @@ $passwd = htmlspecialchars($_POST['passwd']);
 
 //Connexion à la base de donnée
 require "../Template/config.php"; // Lien pour la connexion a la BD
-$conn = getConnection();
+$conn = getConnection_Ecriture();
 
 //Vérification des inputs
 //Vérification de l'existence de la licence

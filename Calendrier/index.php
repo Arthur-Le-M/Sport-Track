@@ -5,7 +5,7 @@
       exit;
     }
   require "../Template/config.php"; // Lien pour la connexion a la BD
-  $conn = getConnection();
+  $conn = getConnection_Ecriture();
   
   if(!isset($_SESSION['poste'])){
     $recupPoste = $conn->prepare('SELECT poste FROM Joueur WHERE licence=?');

@@ -8,7 +8,7 @@
     $id = $_SESSION['id'];
 
     require "../Template/config.php"; // Lien pour la connexion a la BD
-    $bdd = getConnection();
+    $bdd = getConnection_Lecture();
     $recupPrenom = $bdd->prepare('SELECT inscrit.licence, prenom FROM joueur JOIN inscrit ON inscrit.licence=joueur.licence WHERE id=?');
     $recupPrenom->execute([$id]); // Vous devez passer le paramètre dans un tableau
     $resultat = $recupPrenom->fetch();

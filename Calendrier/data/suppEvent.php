@@ -1,6 +1,6 @@
 <?php
 require("./../../Template/config.php");
-$bdd = getConnection();
+$bdd = getConnection_Ecriture();
 // récupérer les paramètres depuis le formulaire
 $id = $_GET['id'];
 

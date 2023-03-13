@@ -1,6 +1,6 @@
 <?php
 require_once("../../Template/config.php");
-$bdd = getConnection();
+$bdd = getConnection_Lecture();
 $nomtable= "Calendrier"; /* Connection bdd */
 
 function readCalendrier($bdd, $id){

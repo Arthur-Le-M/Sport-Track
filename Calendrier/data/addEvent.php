@@ -1,6 +1,6 @@
 <?php
 require("./../../Template/config.php");
-$bdd = getConnection();
+$bdd = getConnection_Ecriture();
 // récupérer les paramètres depuis le formulaire
 $type_ = $_POST['type_'];
 $categorie = $_POST['categorie'];

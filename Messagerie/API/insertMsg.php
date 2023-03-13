@@ -3,7 +3,7 @@ session_start();
 
 require "../../Template/config.php"; // Lien pour la connexion a la BD
 
-$bdd = getConnection();
+$bdd = getConnection_Ecriture();
 
 $idDest = $_GET['id'];
 $message = $_GET['message'];

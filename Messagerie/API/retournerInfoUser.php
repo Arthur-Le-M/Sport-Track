@@ -4,7 +4,7 @@ require "../../Template/config.php"; // Lien pour la connexion a la BD
 
 $id = $_GET['id'];
 
-$bdd = getConnection();
+$bdd = getConnection_Lecture();
 
 // Recuperation de la licence 
 $recupLicence = $bdd->prepare('SELECT * FROM inscrit WHERE id = ?');

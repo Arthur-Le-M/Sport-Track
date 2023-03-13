@@ -2,7 +2,7 @@
 session_start();
 require "../../Template/config.php"; // Lien pour la connexion a la BD
 
-$bdd = getConnection();
+$bdd = getConnection_Lecture();
 
 /* 
  * Objectif de ce script php : générer un tableau contenant les infos : 

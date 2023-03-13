@@ -1,17 +1,11 @@
 <?php
-  // Connect to the database
-  $bdd= "bd_sporttrack"; // Database
-  $host= "localhost";
-  $user= "root"; // User
-  $pass= "root"; // Password
-  $nomtable= "Joueur"; /* Connection bdd */
-  $link=mysqli_connect($host,$user,$pass,$bdd);
-  // Get the license number from the request data
-  $licence = $_GET['licence'];
-  // Query the database to check if the license number exists
-  $query = "SELECT * FROM $nomtable WHERE licence = '$licence'";
-  $result= mysqli_query($link,$query);
-  // Check if the license number exists
+$licence = $_GET['licence'];
+require "../../Template/config.php"; // Lien pour la connexion a la BD
+$bdd = getConnection_Lecture();
+$verifLicence = $bdd->prepare("SELECT * FROM Joueur WHERE licence = :licence");
+$verifLicence->execute(array(':licence' => $licence));
+
+$link = $verifLicence->fetchAll();
   if (!$link) {}
   else {
     // If the license number exists, loop through the query results
@@ -36,9 +30,6 @@
       echo $row['poste'];
       echo '</p>';
     }
-?>
-    <button class='changePage' onclick="location.href='../html/decodeur.html'">Décodeur ST-CODE</button>
-    <?php
     echo "</div>";
 
 

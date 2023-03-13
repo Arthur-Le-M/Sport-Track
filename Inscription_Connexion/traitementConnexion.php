@@ -7,7 +7,7 @@ $passwd = htmlspecialchars($_POST['passwd']);
 
 //Connexion à la base de donnée
 require "../Template/config.php"; // Lien pour la connexion a la BD
-$conn = getConnection();
+$conn = getConnection_Lecture();
 
 //On verifie que l'email est valide
 $req = "SELECT * FROM inscrit WHERE mail=:mail";

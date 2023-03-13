@@ -5,7 +5,7 @@ if(!isset($_SESSION['user'])){
     exit;
 }
 require "../Template/config.php";
-$bdd = getConnection();
+$bdd = getConnection_Lecture();
 $licence = $_SESSION['licence'];
 
 //Récupérer les informaton du joueur
