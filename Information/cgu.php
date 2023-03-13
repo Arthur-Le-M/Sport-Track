@@ -59,36 +59,3 @@
 </body>
 </html>
 
-<!-- texte généré par chat gpt
-
-Conditions générales d'utilisation de Sport Track
-
-Bienvenue sur Sport Track, un site web dédié au sport et à la remise en forme. En utilisant notre site web, vous acceptez les conditions générales d'utilisation suivantes. Si vous n'êtes pas d'accord avec ces conditions, veuillez ne pas utiliser notre site web.
-
-Utilisation du site web
-Sport Track est destiné à être utilisé à des fins personnelles et non commerciales. Vous ne pouvez pas utiliser notre site web à des fins commerciales sans notre autorisation écrite préalable. Vous êtes responsable de l'exactitude et de l'exhaustivité des informations que vous fournissez sur notre site web.
-
-Contenu du site web
-Le contenu de Sport Track est fourni à titre informatif uniquement et ne doit pas être considéré comme des conseils professionnels ou médicaux. Nous ne sommes pas responsables de l'utilisation que vous faites des informations fournies sur notre site web.
-
-Propriété intellectuelle
-Tous les contenus de Sport Track, y compris le texte, les graphiques, les logos, les images et les logiciels, sont la propriété exclusive de Sport Track ou de ses concédants de licence. Vous ne pouvez pas utiliser, copier, reproduire, distribuer ou modifier tout contenu de notre site web sans notre autorisation écrite préalable.
-
-Liens vers des sites tiers
-Notre site web peut contenir des liens vers des sites web de tiers. Ces liens sont fournis à titre informatif uniquement et nous ne sommes pas responsables du contenu de ces sites web.
-
-Responsabilité
-Sport Track ne sera pas responsable des dommages directs, indirects, accessoires, spéciaux ou consécutifs découlant de l'utilisation ou de l'impossibilité d'utiliser notre site web.
-
-Modifications
-Nous nous réservons le droit de modifier ces conditions générales d'utilisation à tout moment et sans préavis. Nous vous encourageons à vérifier régulièrement nos conditions générales d'utilisation pour vous assurer que vous êtes au courant de toute modification.
-
-Droit applicable et juridiction compétente
-Ces conditions générales d'utilisation seront régies et interprétées conformément aux lois en vigueur. Tout litige découlant de l'utilisation de notre site web sera soumis à la compétence exclusive des tribunaux compétents.
-
-Divers
-Si une disposition de ces conditions générales d'utilisation est jugée invalide ou inapplicable, les autres dispositions resteront en vigueur. Le fait de ne pas exercer un droit ou une disposition de ces conditions générales d'utilisation ne constitue pas une renonciation à ce droit ou à cette disposition.
-
-Contact
-Si vous avez des questions ou des préoccupations concernant ces conditions générales d'utilisation, veuillez nous contacter à l'adresse e-mail suivante : support@sporttrack.com.
--->

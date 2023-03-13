@@ -51,7 +51,7 @@
                 <span id="partage"><a href="#"> Partager </a></span>
                 <a href="../Information/avis.php"> Avis </a>
                 <a href="../Information/reglages.php" id="separation"> Réglages </a>
-                <a href="../information/contact.php"> Contact </a>
+                <a href="../Information/contact.php"> Contact </a>
                 <a href="../Information/aide.php"> Aide </a>
                 <a href="../Inscription_Connexion/deconnexion.php"> Déconnexion </a>
             </div>

@@ -1,6 +1,6 @@
         <?php require("../Template/header.php"); 
         if(isset($_SESSION['user'])){
-            //header('location: ../Accueil/accueil_connecte.php');
+            header('location: ../Accueil/accueil_connecte.php');
             exit;
         }
         $err = $_GET['err'] ?? null;
