@@ -1,11 +1,11 @@
+<link rel="stylesheet" href="./css/decodeur.css">
     <?php 
-    require("./../Template/header.php");
+    require("../Template/header.php");
     if(!isset($_SESSION['user'])){
         header('location: ../Inscription_Connexion/connexion.php');
         exit;
     }
     ?>
-    <link rel="stylesheet" href="./css/decodeur.css">
     <main class='corpsScaneur'>
         <div class="content">
             <video id="player" autoplay style="display: none"></video>

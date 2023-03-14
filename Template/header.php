@@ -13,6 +13,7 @@
     <div id="logo"> 
     <?php 
         session_start();
+        ob_start();
         if(isset($_SESSION['user'])){
             echo '<a href="../Accueil/accueil_connecte.php"> <img src="../Template/img/logo.png"> </a>';
         }
