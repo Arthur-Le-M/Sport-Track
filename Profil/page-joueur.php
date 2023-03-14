@@ -2,6 +2,7 @@
 require "../Template/header.php";
 if(!isset($_SESSION['user'])){
     header('location: ../Inscription_Connexion/connexion.php');
+    ob_end_flush();
     exit;
 }
 require "../Template/config.php";

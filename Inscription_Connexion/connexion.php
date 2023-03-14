@@ -1,6 +1,7 @@
         <?php require("../Template/header.php"); 
         if(isset($_SESSION['user'])){
             header('location: ../Accueil/accueil_connecte.php');
+            ob_end_flush();
             exit;
         }
         $err = $_GET['err'] ?? null;
