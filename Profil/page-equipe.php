@@ -11,12 +11,12 @@ $bdd = getConnection_Lecture();
 
 //Récupérer les informaton de l'équipe le nombre de joueurs, de matchs et de buts
 $idEquipe = $_GET['id'];
-$req = $bdd->prepare('SELECT e.nom AS equipe, COUNT(DISTINCT j.licence) AS nb_joueurs, COUNT(DISTINCT m.id) AS nb_matchs, COUNT(DISTINCT IF(em.type = "but" AND em.id_equipe = :id, em.id, NULL)) AS nb_buts FROM equipe e LEFT JOIN joueur j ON j.id_equipe = e.id LEFT JOIN matchtable m ON m.id_equipe_dom = e.id OR m.id_equipe_ext = e.id LEFT JOIN evenementmatch em ON m.id = em.id_match WHERE e.id = :id AND m.jouer = 1 GROUP BY e.nom;');
+$req = $bdd->prepare('SELECT e.nom AS equipe, COUNT(DISTINCT j.licence) AS nb_joueurs, COUNT(DISTINCT m.id) AS nb_matchs, COUNT(DISTINCT IF(em.type = "but" AND em.id_equipe = :id, em.id, NULL)) AS nb_buts FROM Equipe e LEFT JOIN Joueur j ON j.id_equipe = e.id LEFT JOIN Matchtable m ON m.id_equipe_dom = e.id OR m.id_equipe_ext = e.id LEFT JOIN Evenementmatch em ON m.id = em.id_match WHERE e.id = :id AND m.jouer = 1 GROUP BY e.nom;');
 $req->execute(array('id' => $idEquipe));
 $equipe = $req->fetch();
 
 //Récupérer les matchs de l'équipe
-$req = $bdd->prepare('SELECT m.id, m.heure_debut, e1.nom, e2.nom,SUM(CASE WHEN em.id_equipe = m.id_equipe_dom THEN 1 ELSE 0 END) AS score_dom,SUM(CASE WHEN em.id_equipe = m.id_equipe_ext THEN 1 ELSE 0 END) AS score_ext FROM `matchtable` m JOIN equipe e1 ON m.id_equipe_dom = e1.id JOIN equipe e2 ON m.id_equipe_ext = e2.id LEFT JOIN evenementmatch em ON m.id = em.id_match AND em.type = "but" WHERE m.jouer = 1 AND (m.id_equipe_dom = :id_equipe OR m.id_equipe_ext = :id_equipe) GROUP BY m.id, m.heure_debut, e1.nom, e2.nom ORDER BY m.heure_debut DESC;');
+$req = $bdd->prepare('SELECT m.id, m.heure_debut, e1.nom, e2.nom,SUM(CASE WHEN em.id_equipe = m.id_equipe_dom THEN 1 ELSE 0 END) AS score_dom,SUM(CASE WHEN em.id_equipe = m.id_equipe_ext THEN 1 ELSE 0 END) AS score_ext FROM `Matchtable` m JOIN Equipe e1 ON m.id_equipe_dom = e1.id JOIN Equipe e2 ON m.id_equipe_ext = e2.id LEFT JOIN Evenementmatch em ON m.id = em.id_match AND em.type = "but" WHERE m.jouer = 1 AND (m.id_equipe_dom = :id_equipe OR m.id_equipe_ext = :id_equipe) GROUP BY m.id, m.heure_debut, e1.nom, e2.nom ORDER BY m.heure_debut DESC;');
 $req->execute(array('id_equipe' => $idEquipe));
 $matchs = $req->fetchAll();
 ?>

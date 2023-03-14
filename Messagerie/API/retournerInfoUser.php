@@ -7,12 +7,12 @@ $id = $_GET['id'];
 $bdd = getConnection_Lecture();
 
 // Recuperation de la licence 
-$recupLicence = $bdd->prepare('SELECT * FROM inscrit WHERE id = ?');
+$recupLicence = $bdd->prepare('SELECT * FROM Inscrit WHERE id = ?');
 $recupLicence->execute(array($id));
 $licence = $recupLicence->fetch()['licence'];
 
 // Recuperation du pseudo
-$recupPseudo = $bdd->prepare('SELECT * FROM joueur WHERE licence = ?');
+$recupPseudo = $bdd->prepare('SELECT * FROM Joueur WHERE licence = ?');
 $recupPseudo->execute(array($licence));
 $infoJoueur = $recupPseudo->fetch();
 

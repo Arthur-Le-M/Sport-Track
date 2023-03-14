@@ -5,11 +5,11 @@ require "../../Template/config.php"; // Lien pour la connexion a la BD
 $bdd = getConnection_Lecture();
 
 
-$recupAllUser = $bdd->prepare('SELECT * FROM inscrit WHERE id != ?');
+$recupAllUser = $bdd->prepare('SELECT * FROM Inscrit WHERE id != ?');
 $recupAllUser->execute(array($_SESSION['id']));
 $allUser = $recupAllUser->fetchAll();
 
-$recupPseudo = $bdd->prepare('SELECT * FROM joueur WHERE licence = ?');
+$recupPseudo = $bdd->prepare('SELECT * FROM Joueur WHERE licence = ?');
 
 
 $tousLesUsers = array();

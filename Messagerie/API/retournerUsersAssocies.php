@@ -15,10 +15,10 @@ $recupContactsAssocies->execute(array($_SESSION['id'],$_SESSION['id'],$_SESSION[
 $idContacts = $recupContactsAssocies->fetchAll();
 
 // Préparation d'une requete qui récupèrera la licence d'un utilisateur
-$recupLicence = $bdd->prepare('SELECT licence FROM inscrit WHERE id = ?');
+$recupLicence = $bdd->prepare('SELECT licence FROM Inscrit WHERE id = ?');
 
 // Préparation d'une requete qui récupèrera le pseudo d'un utilisateur
-$recupPseudo = $bdd->prepare('SELECT * FROM joueur WHERE licence = ?');
+$recupPseudo = $bdd->prepare('SELECT * FROM Joueur WHERE licence = ?');
 
 // Récupération du dernier message entre 2 utilisateurs
 $recupLastMsg = $bdd->prepare('SELECT * FROM messages WHERE (id_destinataire=? AND id_auteur=? AND date = (SELECT MAX(date) FROM messages WHERE id_destinataire=? AND id_auteur=?)) OR (id_destinataire=? AND id_auteur=? AND date = (SELECT MAX(date) FROM messages WHERE id_destinataire=? AND id_auteur=?)) ORDER BY id DESC');

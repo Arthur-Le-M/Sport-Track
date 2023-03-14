@@ -7,8 +7,8 @@ function readCalendrier($bdd, $id){
     $queryParams = [];
     $queryText = "SELECT e.id, e.type_, e.categorie, e.debut, e.fin, eq.nom as nom_equipe, st.nom as nom_stade 
                   FROM Calendrier e 
-                  LEFT JOIN equipe eq ON e.idEquipe = eq.id 
-                  LEFT JOIN stade st ON e.idStade = st.id 
+                  LEFT JOIN Equipe eq ON e.idEquipe = eq.id 
+                  LEFT JOIN Stade st ON e.idStade = st.id 
                   WHERE e.idEquipe=:id";
     $query = $bdd->prepare($queryText);
     $queryParams[":id"] = $id;
